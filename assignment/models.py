@@ -3,9 +3,9 @@ from user.models import Course
 
 class Assignment(models.Model):
     TYPE_CHOICES = (
-        ('theoretical', 'Theoretical'),
-        ('practical', 'Practical'),
-        ('project', 'Project'),
+        ('Theoretical', 'Theoretical'),
+        ('Practical', 'Practical'),
+        ('Project', 'Project'),
     )
 
     id = models.AutoField(primary_key=True)

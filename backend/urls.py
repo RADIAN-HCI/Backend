@@ -15,8 +15,19 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from question.views import QuestionViewSet
+from assignment.views import AssignmentViewSet
+from assignment.views import generate_pdf_api
+
+# Create a router and register our viewsets with it.
+router = DefaultRouter()
+router.register(r'questions', QuestionViewSet, basename='question')
+router.register(r'assignments', AssignmentViewSet, basename='assignment')
 
 urlpatterns = [
+    path('generate_pdf/', generate_pdf_api, name='generate_pdf_api'),
     path('admin/', admin.site.urls),
+    path('api/', include(router.urls)),
 ]
