@@ -8,7 +8,9 @@ class Question(models.Model):
     details_original = models.TextField()
     details_modified = models.TextField()
     author = models.ForeignKey('user.User', on_delete=models.CASCADE)  # Assuming you have a User model
-    attachment = models.FileField(upload_to='question_attachments/', null=True, blank=True)
+    attachment = models.FileField(upload_to='latex/questionattachments/', null=True, blank=True)
+    order = models.PositiveIntegerField(default=0)
+    is_selected_for_assignment = models.BooleanField(default=True)
 
     def __str__(self):
         return self.title
