@@ -1,18 +1,20 @@
-# views.py
 from rest_framework import viewsets
 from rest_framework.response import Response
 from rest_framework import status
 from .models import Question
 from .serializers import QuestionSerializer
 
-class QuestionViewSet(viewsets.ViewSet):
+class QuestionViewSet(viewsets.ModelViewSet):
+    queryset = Question.objects.all()
+    serializer_class = QuestionSerializer
+
     def partial_update(self, request, pk=None):
         try:
-            question = Question.objects.get(pk=pk)
+            question = self.get_object()
         except Question.DoesNotExist:
             return Response({'error': 'Question does not exist'}, status=status.HTTP_404_NOT_FOUND)
 
-        serializer = QuestionSerializer(question, data=request.data, partial=True)
+        serializer = self.get_serializer(question, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)

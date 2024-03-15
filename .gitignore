@@ -1,0 +1,29 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+# If you are using pipenv, keep the next line uncommented
+Pipfile
+# Pipfile.lock
+
+# Django local settings file
+# Make sure it's ignored if you have it outside the Django project directory
+*/local_settings.py
+
+# Media files
+media/
+
+# Static files
+staticfiles/
+
+# Logs
+*.log
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore database files
+*.sqlite3
+*.db

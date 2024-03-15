@@ -1,28 +1,30 @@
 # views.py
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from .assignment_generator.create_assignment import retrieve_and_generate_pdf 
+
 from rest_framework import viewsets
 from rest_framework.response import Response
 from rest_framework import status
 from .models import Assignment
 from .serializers import AssignmentSerializer
 
-from django.http import JsonResponse
-from django.views.decorators.csrf import csrf_exempt
-from .assignment_generator.create_assignment import retrieve_and_generate_pdf 
+class AssignmentViewSet(viewsets.ModelViewSet):
+    queryset = Assignment.objects.all()
+    serializer_class = AssignmentSerializer
 
-class AssignmentViewSet(viewsets.ViewSet):
     def partial_update(self, request, pk=None):
         try:
-            assignment = Assignment.objects.get(pk=pk)
+            assignment = self.get_object()
         except Assignment.DoesNotExist:
             return Response({'error': 'Assignment does not exist'}, status=status.HTTP_404_NOT_FOUND)
 
-        # Only allow modification of title and assignment_type
-        serializer = AssignmentSerializer(assignment, data=request.data, partial=True)
+        serializer = self.get_serializer(assignment, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-        
+
 
 @csrf_exempt
 def generate_pdf_api(request):

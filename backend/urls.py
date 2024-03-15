@@ -27,7 +27,7 @@ router.register(r'questions', QuestionViewSet, basename='question')
 router.register(r'assignments', AssignmentViewSet, basename='assignment')
 
 urlpatterns = [
+    path('api/', include(router.urls)),
     path('generate_pdf/', generate_pdf_api, name='generate_pdf_api'),
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls)),
 ]

@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     'idea.apps.IdeaConfig',
     'question.apps.QuestionConfig',
     'user.apps.UserConfig',
-    "corsheaders",
+    'corsheaders',
+    'rest_framework',
+    'rest_framework.authtoken'
 ]
 
 MIDDLEWARE = [
