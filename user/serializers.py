@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import User, Course
+from .models import UserProfile, Course
 
 class CourseSerializer(serializers.ModelSerializer):
     class Meta:
@@ -10,5 +10,5 @@ class UserSerializer(serializers.ModelSerializer):
     courses = CourseSerializer(many=True, read_only=True)
 
     class Meta:
-        model = User
-        fields = ['id', 'created_at', 'username', 'role', 'courses']
+        model = UserProfile
+        fields = ['id', 'username', 'password', 'courses']

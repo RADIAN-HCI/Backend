@@ -7,7 +7,7 @@ class Question(models.Model):
     title = models.CharField(max_length=255)
     details_original = models.TextField()
     details_modified = models.TextField()
-    author = models.ForeignKey('user.User', on_delete=models.CASCADE)  # Assuming you have a User model
+    author = models.ForeignKey('user.UserProfile', on_delete=models.CASCADE)  # Assuming you have a User model
     attachment = models.FileField(upload_to='latex/questionattachments/', null=True, blank=True)
     order = models.PositiveIntegerField(default=0)
     is_selected_for_assignment = models.BooleanField(default=True)
