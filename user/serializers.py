@@ -6,7 +6,7 @@ class CourseSerializer(serializers.ModelSerializer):
         model = Course
         fields = ['id', 'name', 'professor_name']
 
-class UserSerializer(serializers.ModelSerializer):
+class UserProfileSerializer(serializers.ModelSerializer):
     courses = CourseSerializer(many=True, read_only=True)
 
     class Meta:
