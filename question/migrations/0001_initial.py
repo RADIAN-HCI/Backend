@@ -9,33 +9,37 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ("assignment", "__first__"),
-        ("user", "0001_initial"),
+        ("assignment", "0001_initial"),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
     operations = [
         migrations.CreateModel(
-            name="BrainStorm",
+            name="Question",
             fields=[
                 ("id", models.AutoField(primary_key=True, serialize=False)),
                 ("created_at", models.DateTimeField(auto_now_add=True)),
-                ("prompt", models.TextField()),
+                ("title", models.CharField(max_length=255)),
+                ("details_original", models.TextField()),
+                ("details_modified", models.TextField()),
+                (
+                    "attachment",
+                    models.FileField(
+                        blank=True, null=True, upload_to="latex/questionattachments/"
+                    ),
+                ),
+                ("order", models.PositiveIntegerField(default=0)),
+                ("is_selected_for_assignment", models.BooleanField(default=True)),
                 (
                     "assignment",
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.CASCADE,
+                        related_name="questions",
                         to="assignment.assignment",
                     ),
                 ),
                 (
-                    "course",
-                    models.ForeignKey(
-                        on_delete=django.db.models.deletion.CASCADE, to="user.course"
-                    ),
-                ),
-                (
-                    "owner",
+                    "author",
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.CASCADE,
                         to=settings.AUTH_USER_MODEL,

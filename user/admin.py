@@ -8,21 +8,26 @@ from .models import Course, UserProfile  # Import your custom user model
 
 # Define an inline admin descriptor for Employee model
 # which acts a bit like a singleton
-class UserProfileInline(admin.StackedInline):
-    model = UserProfile
-    can_delete = False
-    verbose_name_plural = "user"
-    
+# class UserProfileInline(admin.StackedInline):
+#     model = UserProfile
+#     can_delete = False
+#     verbose_name_plural = "user"
 
-# Define a new User admin
-class UserAdmin(BaseUserAdmin):
-    inlines = [UserProfileInline]
-    
-# Re-register UserAdmin
-admin.site.unregister(User)
-admin.site.register(User, UserAdmin)
+
+# # Define a new User admin
+# class UserAdmin(BaseUserAdmin):
+#     inlines = [UserProfileInline]
+
+# # Re-register UserAdmin
+# admin.site.unregister(User)
+# admin.site.register(User, UserAdmin)
+
+admin.site.register(UserProfile, BaseUserAdmin)
+
 
 @admin.register(Course)
 class CourseAdmin(admin.ModelAdmin):
-  list_data = ["id"]
+    list_data = ["id"]
+
+
 #   list_display = [field.name for field in Course._meta.get_fields()]

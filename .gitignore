@@ -18,6 +18,9 @@ media/
 # Static files
 staticfiles/
 
+# Editor files
+.vscode/
+
 # Logs
 *.log
 
