@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -37,14 +38,20 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "assignment.apps.AssignmentConfig",
-    "brainstorming.apps.BrainstormingConfig",
-    "idea.apps.IdeaConfig",
-    "question.apps.QuestionConfig",
-    "user.apps.UserConfig",
+    "assignment",
+    "brainstorming",
+    "idea",
+    "question",
+    "core",
+    "course",
+    # "assignment.apps.AssignmentConfig",
+    # "brainstorming.apps.BrainstormingConfig",
+    # "idea.apps.IdeaConfig",
+    # "question.apps.QuestionConfig",
+    # "core.apps.CoreConfig",
     "corsheaders",
     "rest_framework",
-    "rest_framework.authtoken",
+    "djoser",
 ]
 
 MIDDLEWARE = [
@@ -88,7 +95,7 @@ TEMPLATES = [
     },
 ]
 
-AUTH_USER_MODEL = "user.UserProfile"
+AUTH_USER_MODEL = "core.User"
 
 WSGI_APPLICATION = "backend.wsgi.application"
 
@@ -144,3 +151,23 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+REST_FRAMEWORK = {
+    "COERCE_DECIMAL_TO_STRING": False,
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ),
+}
+
+SIMPLE_JWT = {
+    "AUTH_HEADER_TYPES": ("JWT",),
+    "ACCESS_TOKEN_LIFETIME": timedelta(days=1),
+}
+
+DJOSER = {
+    "SERIALIZERS": {
+        "user_create": "core.serializers.UserCreateSerializer",
+        "current_user": "core.serializers.UserSerializer",
+    }
+}

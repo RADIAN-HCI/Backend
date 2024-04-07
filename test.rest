@@ -12,6 +12,7 @@ Content-Type: application/json
 
 ###
 
-GET http://127.0.0.1:8000/test_token 
+POST http://127.0.0.1:8000/api/courses/
 Content-Type: application/json
-Authorization: token xxx
+
+{ "name": "eslam1", "professor_name": "fazli", "token": "5889d5decd1582f5d87ab2a9882b4c4c87b996dc" }

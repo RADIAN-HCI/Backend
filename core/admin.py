@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import User
-from .models import Course, UserProfile  # Import your custom user model
+from .models import Course, User  # Import your custom user model
 
 # Register your custom user model with the admin site
 # admin.site.register(UserProfile, UserAdmin)
@@ -22,7 +22,7 @@ from .models import Course, UserProfile  # Import your custom user model
 # admin.site.unregister(User)
 # admin.site.register(User, UserAdmin)
 
-admin.site.register(UserProfile, BaseUserAdmin)
+admin.site.register(User, BaseUserAdmin)
 
 
 @admin.register(Course)
