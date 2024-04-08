@@ -1,3 +1,10 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from .models import BrainStorm
+from .serializers import BrainStormSerializer
+from rest_framework.permissions import IsAuthenticated
 
-# Create your views here.
+
+class BrainstormViewSet(viewsets.ModelViewSet):
+    queryset = BrainStorm.objects.all()
+    serializer_class = BrainStormSerializer
+    permission_classes = [IsAuthenticated]

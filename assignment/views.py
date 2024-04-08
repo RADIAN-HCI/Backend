@@ -4,8 +4,6 @@ from django.views.decorators.csrf import csrf_exempt
 from .assignment_generator.create_assignment import retrieve_and_generate_pdf
 
 from rest_framework import viewsets
-from rest_framework.response import Response
-from rest_framework import status
 from .models import Assignment
 from .serializers import AssignmentSerializer
 from rest_framework.permissions import IsAuthenticated
