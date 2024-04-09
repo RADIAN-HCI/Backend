@@ -40,24 +40,10 @@ class BrainstormViewSet(viewsets.ModelViewSet):
         return questions
 
     def create(self, request, *args, **kwargs):
-        # put owner id as user's id
-        # remember old state
-        _mutable = request.data._mutable
-
-        # set to mutable
-        request.data._mutable = True
-
-        # сhange the values you want
-        request.data["owner"] = str(request.user.id)
-
-        # set mutable flag back
-        request.data._mutable = _mutable
-
-        # print(request.data)
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
+        serializer.validated_data["owner"] = request.user
         brainstorm_obj = serializer.save()
-        # brainstorm_obj = self.perform_create(serializer)
         headers = self.get_success_headers(serializer.data)
 
         assignment = Assignment.objects.get(id=request.data["assignment"])
@@ -106,12 +92,9 @@ class BrainstormViewSet(viewsets.ModelViewSet):
         llm = ChatCohere()
 
         llm_response = llm.invoke(prompt).content
-        # print("resp: " + llm_response)
 
         parsed_questions = self.parse_response(llm_response)
 
-        # client = APIClient()
-        # brainstorm_id = serializer.data["id"]
         for question in parsed_questions:
             title = question["title"]
             details = question["text"]
@@ -125,9 +108,6 @@ class BrainstormViewSet(viewsets.ModelViewSet):
                 "brainstorm": brainstorm_obj,
             }
             Idea(**data).save()
-            # response = client.post(
-            #     "/api/ideas/", data, format="json", HTTP_HOST="localhost"
-            # )
 
         return Response(
             serializer.data, status=status.HTTP_201_CREATED, headers=headers

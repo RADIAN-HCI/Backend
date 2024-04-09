@@ -2,6 +2,8 @@ from django.db import models
 
 
 class Question(models.Model):
+    LANG_CHOICES = (("fa", "Persian"), ("en", "English"))
+
     id = models.AutoField(primary_key=True)
     created_at = models.DateTimeField(auto_now_add=True)
     assignment = models.ForeignKey(
@@ -18,6 +20,8 @@ class Question(models.Model):
     )
     order = models.PositiveIntegerField(default=0)
     is_selected_for_assignment = models.BooleanField(default=True)
+
+    lang = models.CharField(max_length=20, choices=LANG_CHOICES)
 
     def __str__(self):
         return self.title
