@@ -10,6 +10,7 @@ class BrainStormSerializer(serializers.ModelSerializer):
     # owner = UserProfileSerializer()
     # assignment = AssignmentSerializer()
     # course = CourseSerializer()
+    # owner = serializers.PrimaryKeyRelatedField(read_only=True)
 
     class Meta:
         model = BrainStorm
