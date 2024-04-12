@@ -76,13 +76,18 @@ ROOT_URLCONF = "backend.urls"
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
+    "http://127.0.0.1:3000",
     "http://*",
+    "http://localhost:3000",
 ]
 
 CORS_ALLOW_HEADERS = (
     "content-disposition",
     "access-control-allow-headers",
     "content-type",
+    "Access-Control-Allow-Headers",
+    'content-disposition', 'accept-encoding',
+                      'content-type', 'accept', 'origin', 'authorization'
 )
 
 
