@@ -16,6 +16,7 @@ class Assignment(models.Model):
     )  # Assuming you have a Course model
     title = models.CharField(max_length=255)
     assignment_type = models.CharField(max_length=20, choices=TYPE_CHOICES)
+    deadline = models.DateField()  
     # 'questions' field is defined as a ManyToManyField in Assignment class
 
     def __str__(self):
