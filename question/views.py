@@ -7,6 +7,20 @@ from langchain_cohere import ChatCohere
 
 
 class QuestionViewSet(viewsets.ModelViewSet):
+
+    def partial_update(self, request, pk=None):
+        try:
+            question = Question.objects.get(pk=pk)
+        except Question.DoesNotExist:
+            return Response({'error': 'Question does not exist'}, status=status.HTTP_404_NOT_FOUND)
+
+        serializer = QuestionSerializer(question, data=request.data, partial=True)
+        if serializer.is_valid():
+            serializer.save()
+            print('hear we are', request.data, Question.objects.get(pk=pk).details_modified)
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
     queryset = Question.objects.all()
     serializer_class = QuestionSerializer
     # permission_classes = [IsAuthenticated]

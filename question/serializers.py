@@ -3,7 +3,7 @@ from .models import Question
 
 
 class QuestionSerializer(serializers.ModelSerializer):
-    details_modified = serializers.CharField(read_only=True)
+    # details_modified = serializers.CharField(read_only=True)
 
     class Meta:
         model = Question
