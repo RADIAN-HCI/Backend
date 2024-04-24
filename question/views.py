@@ -48,7 +48,9 @@ class QuestionViewSet(viewsets.ModelViewSet):
 
         3. Provide the anonymized and formatted version of the question back to the user.
         
-        4. You should only and exactly return the formatted question text without any personal information and no additional explanations before or after it. Just return the formatted and anonymized question text.
+        4. Change the style of the text into a FORMAL writing.
+        
+        5. You should only and exactly return the formatted question text without any personal information and no additional explanations before or after it. Just return the formatted and anonymized question text.
 
         Here is the raw text of the question:
         {question}
@@ -66,6 +68,8 @@ class QuestionViewSet(viewsets.ModelViewSet):
             - هر گونه قالب بندی دیگری که برای افزایش وضوح و ساختار لازم باشد
 
         3. ارائه نسخه حذف مشخصات شخصی شده و قالب بندی شده سوال به کاربر.
+        
+        4. فرمت نوشته را به نوع «رسمی» نوشتاری تغییر بده.
         
         4. فقط و فقط باید در جواب متن سوال را به صورت فرمت شده و بدون اطلاعات شخصی برگردانی و هیچ توضیحات اضافی ای قبل و یا بعد آن نیاوری. فقط متن سوال را جواب بده.
 

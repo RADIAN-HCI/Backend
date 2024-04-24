@@ -11,7 +11,7 @@ class Question(models.Model):
     )
     title = models.CharField(max_length=255)
     details_original = models.TextField()
-    details_modified = models.TextField()
+    details_modified = models.TextField(blank=True)
     author = models.ForeignKey(
         "core.User", on_delete=models.CASCADE
     )  # Assuming you have a User model
