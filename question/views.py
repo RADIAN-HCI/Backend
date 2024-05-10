@@ -91,3 +91,49 @@ class QuestionViewSet(viewsets.ModelViewSet):
         return Response(
             serializer.data, status=status.HTTP_201_CREATED, headers=headers
         )
+        
+    def list_sorted_for_assignment(self, request, assignment_id):
+        try:
+            questions = Question.objects.filter(assignment_id=assignment_id).order_by('order')
+            serializer = self.get_serializer(questions, many=True)
+            return Response(serializer.data)
+        except Question.DoesNotExist:
+            return Response({'error': 'Questions not found for the specified assignment'}, status=status.HTTP_404_NOT_FOUND)
+
+    def update_order_for_assignment(self, request, assignment):
+        try:
+            questions = Question.objects.filter(assignment=assignment)
+            
+            # Convert list of dictionaries to a dictionary for easy lookup
+            order_mapping = {str(item['id']): item['order'] for item in request.data}
+            
+            for question in questions:
+                question.order = order_mapping.get(str(question.id), 0)
+                question.save()
+                
+            return Response({'message': 'Questions order updated successfully'})
+        except Exception as e:
+            return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
+
+        
+import os
+from django.http import HttpResponseNotFound, FileResponse
+from django.conf import settings
+
+def image_detail(request, filename):
+    # Check if filename is provided
+    print(filename)
+    if not filename:
+        return HttpResponseNotFound("Filename not provided")
+
+    image_path = os.path.join(settings.STATIC_ROOT, 'latex/questionattachments', filename)
+    print(image_path)
+    
+    # Check if the requested file exists
+    if not os.path.isfile(image_path):
+        return HttpResponseNotFound("Image not found")
+    
+    # You might need to adjust MIME type based on the types of images you are serving
+    response = FileResponse(open(image_path, 'rb'), content_type='image/jpeg')  # Change MIME type as necessary
+    
+    return response
