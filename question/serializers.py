@@ -9,3 +9,4 @@ class QuestionSerializer(serializers.ModelSerializer):
         model = Question
         # fields = ['id', 'created_at', 'assignment', 'title', 'details_original', 'details_modified', 'author', 'attachment', 'is_selected_for_assignment', 'order']
         fields = "__all__"
+        read_only_fields = ("author",)

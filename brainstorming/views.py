@@ -112,24 +112,23 @@ class BrainstormViewSet(viewsets.ModelViewSet):
         return Response(
             serializer.data, status=status.HTTP_201_CREATED, headers=headers
         )
-        
-    def list(self, request, *args, **kwargs):
-        author_id = request.query_params.get('author_id')
-        assignment_id = request.query_params.get('assignment_id')
 
-        if not author_id or not assignment_id:
-            return Response({"error": "Both author_id and assignment_id are required"}, status=status.HTTP_400_BAD_REQUEST)
+    # def list(self, request, *args, **kwargs):
+    #     author_id = request.query_params.get('author_id')
+    #     assignment_id = request.query_params.get('assignment_id')
 
-        try:
-            author_id = int(author_id)
-            assignment_id = int(assignment_id)
-        except ValueError:
-            return Response({"error": "author_id and assignment_id must be integers"}, status=status.HTTP_400_BAD_REQUEST)
+    #     if not author_id or not assignment_id:
+    #         return Response({"error": "Both author_id and assignment_id are required"}, status=status.HTTP_400_BAD_REQUEST)
 
-        try:
-            author_brainstorms = BrainStorm.objects.filter(owner_id=author_id, assignment_id=assignment_id)
-            serializer = self.get_serializer(author_brainstorms, many=True)
-            return Response(serializer.data)
-        except Assignment.DoesNotExist:
-            return Response({"error": "Assignment not found"}, status=status.HTTP_404_NOT_FOUND)
+    #     try:
+    #         author_id = int(author_id)
+    #         assignment_id = int(assignment_id)
+    #     except ValueError:
+    #         return Response({"error": "author_id and assignment_id must be integers"}, status=status.HTTP_400_BAD_REQUEST)
 
+    #     try:
+    #         author_brainstorms = BrainStorm.objects.filter(owner_id=author_id, assignment_id=assignment_id)
+    #         serializer = self.get_serializer(author_brainstorms, many=True)
+    #         return Response(serializer.data)
+    #     except Assignment.DoesNotExist:
+    #         return Response({"error": "Assignment not found"}, status=status.HTTP_404_NOT_FOUND)
