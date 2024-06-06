@@ -77,8 +77,9 @@ ROOT_URLCONF = "backend.urls"
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
+    "http://82.115.20.169:3000",
+    "http://82.115.20.169:80",
     "http://*",
-    "http://localhost:3000",
 ]
 
 CORS_ALLOW_HEADERS = (
