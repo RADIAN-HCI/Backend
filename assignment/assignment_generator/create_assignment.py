@@ -39,7 +39,7 @@ def generate_assignment_pdf(assignment, questions, university_name, university_l
         with doc.create(MiniPage(width=r"0.6\linewidth")):
             doc.append(NoEscape(r"\begin{flushleft}"))
             # Left Column: Course name, assignment type, professor name
-            doc.append(NoEscape(r"\large{Course: \textbf{%s}}" % assignment.course.name))
+            doc.append(NoEscape(r"\large{Course: \textbf{%s}}" % assignment.course.name.encode("utf-8").decode("utf-8")))
             doc.append(Command("vspace", "0.1cm"))
             doc.append(Command("newline"))
             doc.append(Command("vspace", "0.1cm"))
@@ -47,7 +47,7 @@ def generate_assignment_pdf(assignment, questions, university_name, university_l
             doc.append(
                 NoEscape(
                     r"\normalsize{Professor: \textbf{%s}}"
-                    % assignment.course.professor_name
+                    % assignment.course.professor_name.encode("utf-8").decode("utf-8")
                 )
             )
             doc.append(Command("newline"))
@@ -55,7 +55,7 @@ def generate_assignment_pdf(assignment, questions, university_name, university_l
             # doc.append(Command('vspace', '0.3cm'))
             doc.append(
                 NoEscape(
-                    r"\normalsize{\textbf{%s} assignment}" % assignment.assignment_type
+                    r"\normalsize{\textbf{%s} assignment}" % assignment.assignment_type.encode("utf-8").decode("utf-8")
                 )
             )
             doc.append(NoEscape(r"\end{flushleft}"))
@@ -74,7 +74,7 @@ def generate_assignment_pdf(assignment, questions, university_name, university_l
             doc.append(NoEscape(r"\hfill"))
             doc.append(
                 Command(
-                    "textbf", arguments=Command("normalsize", arguments=university_name)
+                    "textbf", arguments=Command("normalsize", arguments=university_name.encode("utf-8").decode("utf-8"))
                 )
             )
             doc.append(NoEscape(r"\end{flushright}"))
@@ -82,7 +82,7 @@ def generate_assignment_pdf(assignment, questions, university_name, university_l
         doc.append(NoEscape(r"\begin{center}"))
         doc.append(NoEscape(r"\hrule height 0.02cm"))
         doc.append(Command("vspace", "0.2cm"))
-        doc.append(NoEscape(r"\large{\textbf{%s}}" % assignment.title))
+        doc.append(NoEscape(r"\large{\textbf{%s}}" % assignment.title.encode("utf-8").decode("utf-8")))
         doc.append(Command("vspace", "0.2cm"))
         doc.append(NoEscape(r"\hrule height 0.02cm"))
         doc.append(NoEscape(r"\end{center}"))
@@ -91,9 +91,9 @@ def generate_assignment_pdf(assignment, questions, university_name, university_l
         for idx, question in enumerate(
             questions.filter(is_selected_for_assignment=True).order_by("order"), start=1
         ):
-            with doc.create(Section(NoEscape(r"\textbf{%s}" % question.title))):
+            with doc.create(Section(NoEscape(r"\textbf{%s}" % question.title.encode("utf-8").decode("utf-8")))):
                 # Question details
-                doc.append(NoEscape(r"%s" % question.details_modified))
+                doc.append(NoEscape(r"%s" % question.details_modified.encode("utf-8").decode("utf-8")))
                 # Add attachment if available
                 if question.attachment:
                     doc.append(NoEscape(r"\begin{center}"))
@@ -161,7 +161,8 @@ def retrieve_and_generate_pdf(assignment_id):
         return
 
     # Retrieve questions associated with Assignment 1
-    questions = Question.objects.filter(assignment=assignment)
+    questions = Question.objects.filter(assignment_id=assignment_id, is_selected_for_assignment=True)
+    print(len(questions)) 
 
     # University details
     university_name = "Sharif University of Technology"

