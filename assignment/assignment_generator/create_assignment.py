@@ -121,17 +121,9 @@ def generate_assignment_pdf(assignment, questions, university_name, university_l
             rel = f"questionattachments/{basename}"
             return f"./{rel}", os.path.join(latex_dir, rel)
 
-        # Build iterable of questions
-        if hasattr(questions, "order_by"):
-            iterable = questions.order_by("order")
-        else:
-            try:
-                iterable = sorted(questions, key=lambda q: getattr(q, "order", 0))
-            except Exception:
-                iterable = list(questions)
-
+        # Iterate questions (list or queryset)
         any_rendered = False
-        for idx, question in enumerate(iterable, start=1):
+        for idx, question in enumerate(questions, start=1):
             any_rendered = True
             with doc.create(Section(NoEscape(r"\textbf{%s}" % escape_latex(question.title)))):
                 details_text = getattr(question, "details_modified", None) or getattr(question, "details_original", None) or ""
@@ -216,9 +208,14 @@ def retrieve_and_generate_pdf(assignment_id):
     except Assignment.DoesNotExist:
         raise ValueError(f"Assignment with ID {assignment_id} does not exist.")
 
-    # Retrieve questions associated with Assignment
-    questions = Question.objects.filter(assignment_id=assignment_id, is_selected_for_assignment=True)
+    # Retrieve questions associated with Assignment; eagerly materialize in order
+    qs = Question.objects.filter(assignment_id=assignment_id, is_selected_for_assignment=True).order_by("order")
+    questions = list(qs)
     print(len(questions))
+    try:
+        print([f"{q.id}:{q.title}" for q in questions])
+    except Exception:
+        pass
 
     # University details
     university_name = "Sharif University of Technology"
