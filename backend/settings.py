@@ -46,6 +46,11 @@ ALLOWED_HOSTS = [
     "*"
 ]
 
+
+CORS_ALLOWED_ORIGINS = [
+    "http://91.228.186.5",          # frontend URL
+]
+
 CSRF_TRUSTED_ORIGINS = [
     "http://82.115.20.169",
     "http://82.115.20.169:3000",
