@@ -47,13 +47,6 @@ ALLOWED_HOSTS = [
 ]
 
 
-CORS_ALLOWED_ORIGINS = [
-    "localhost",
-    "127.0.0.1",
-    "http://91.228.186.5",     
-    "*"
-]
-
 CSRF_TRUSTED_ORIGINS = [
     "http://82.115.20.169",
     "http://82.115.20.169:3000",
@@ -108,6 +101,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://82.115.20.169:80",
     "http://82.115.20.169",
     "http://*",
+    "http://91.228.186.5",    
 ]
 
 CORS_ALLOW_HEADERS = (
