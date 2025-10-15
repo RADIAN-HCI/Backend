@@ -11,6 +11,13 @@ def generate_assignment_pdf(assignment, questions, university_name, university_l
         # doc = Document()
         doc = Document(geometry_options={"margin": "2cm"})
         doc.packages.append(pylatex.Package("graphicx"))
+        latex_dir = os.path.join(settings.BASE_DIR, "latex")
+        os.makedirs(latex_dir, exist_ok=True)
+
+        # Resolve and validate university logo path
+        logo_abs_path = os.path.join(latex_dir, university_logo)
+        if not os.path.exists(logo_abs_path):
+            raise FileNotFoundError(f"University logo not found at {logo_abs_path}")
     
         # Add header with university logo, name, professor, etc.
         # with doc.create(Section('')):
@@ -88,6 +95,24 @@ def generate_assignment_pdf(assignment, questions, university_name, university_l
         doc.append(NoEscape(r"\hrule height 0.02cm"))
         doc.append(NoEscape(r"\end{center}"))
     
+        # Helper to map attachment URL to a relative LaTeX path and absolute FS path under latex dir
+        def map_url_to_latex_paths(url: str):
+            if url is None:
+                return None, None
+            clean = url.lstrip("/")
+            # Case: starts with latex/
+            if clean.startswith("latex/"):
+                rel = clean[len("latex/"):]
+                return f"./{rel}", os.path.join(latex_dir, rel)
+            # Case: starts directly with questionattachments/
+            if clean.startswith("questionattachments/"):
+                rel = clean
+                return f"./{rel}", os.path.join(latex_dir, rel)
+            # Fallback: try to use basename under questionattachments
+            basename = os.path.basename(clean)
+            rel = f"questionattachments/{basename}"
+            return f"./{rel}", os.path.join(latex_dir, rel)
+
         # Add questions
         for idx, question in enumerate(
             questions.filter(is_selected_for_assignment=True).order_by("order"), start=1
@@ -97,12 +122,15 @@ def generate_assignment_pdf(assignment, questions, university_name, university_l
                 doc.append(NoEscape(r"%s" % question.details_modified.encode("utf-8").decode("utf-8")))
                 # Add attachment if available
                 if question.attachment:
+                    rel_tex_path, abs_fs_path = map_url_to_latex_paths(getattr(question.attachment, "url", None))
+                    if not abs_fs_path or not os.path.exists(abs_fs_path):
+                        raise FileNotFoundError(f"Attachment not found for question '{question.title}': expected at {abs_fs_path}")
                     doc.append(NoEscape(r"\begin{center}"))
                     doc.append(
                         Command(
                             "includegraphics",
                             options="width=8cm",
-                            arguments=question.attachment.url.replace("/latex/", "./"),
+                            arguments=rel_tex_path,
                         )
                     )
                     doc.append(NoEscape(r"\end{center}"))
