@@ -40,6 +40,8 @@ ALLOWED_HOSTS = [
     "testserver",
     "82.115.20.169",
     "91.228.186.5",
+    "http://91.228.186.5",
+    "*"
 ]
 
 CSRF_TRUSTED_ORIGINS = [
