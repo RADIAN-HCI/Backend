@@ -151,23 +151,23 @@ def generate_assignment_pdf(assignment, questions, university_name, university_l
             rel = f"questionattachments/{basename}"
             return f"./{rel}", os.path.join(latex_dir, rel)
 
-        # Add questions
-        for idx, question in enumerate(
-            questions.filter(is_selected_for_assignment=True).order_by("order"), start=1
-        ):
+        # Add questions (avoid re-filtering, in case 'questions' is already filtered)
+        for idx, question in enumerate(questions.order_by("order"), start=1):
             with doc.create(Section(NoEscape(r"\textbf{%s}" % escape_latex(question.title)))):
-                # Question details (supports markdown inline/bold/code blocks)
-                formatted = markdown_to_latex(question.details_modified)
+                # Choose details with fallback
+                details_text = question.details_modified or question.details_original or ""
+                formatted = markdown_to_latex(details_text)
+                if not formatted.strip():
+                    formatted = r"\\emph{No content}"  # visible placeholder
                 doc.append(NoEscape(formatted))
                 # Add attachment if available
                 if question.attachment:
                     rel_tex_path, abs_fs_path = map_url_to_latex_paths(getattr(question.attachment, "url", None))
-                    if not abs_fs_path or not os.path.exists(abs_fs_path):
-                        raise FileNotFoundError(f"Attachment not found for question '{question.title}': expected at {abs_fs_path}")
-                    doc.append(NoEscape(r"\begin{center}"))
-                    doc.append(Command("includegraphics", options="width=8cm", arguments=rel_tex_path))
-                    doc.append(NoEscape(r"\end{center}"))
-                    # doc.append(NoEscape(r'\textbf{Attachment:} %s' % question.attachment.url))
+                    if abs_fs_path and os.path.exists(abs_fs_path):
+                        doc.append(NoEscape(r"\begin{center}"))
+                        doc.append(Command("includegraphics", options="width=8cm", arguments=rel_tex_path))
+                        doc.append(NoEscape(r"\end{center}"))
+                    # If missing, skip instead of raising to keep content visible
 
         # Generate PDF at absolute path inside the project latex folder
         output_base = os.path.join(settings.BASE_DIR, "latex", "assignment_pdf")
