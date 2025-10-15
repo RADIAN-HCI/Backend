@@ -76,31 +76,6 @@ def generate_assignment_pdf(assignment, questions, university_name, university_l
             out.append(format_inline(md[i:]))
             return "".join(out)
 
-        # Add header with university logo, name, professor, etc.
-        # with doc.create(Section('')):
-        # doc.append(NoEscape(r'\hrule'))
-        # doc.append(NoEscape(r'\begin{center}'))
-        # # Include university logo
-        # doc.append(NoEscape(r'\includegraphics[width=2cm]{%s}' % university_logo))
-        # doc.append(NoEscape(r'\vspace{0.5cm}'))  # Adjust vertical space
-        # # University name
-        # doc.append(NoEscape(r'\textbf{\LARGE %s}' % university_name))
-        # doc.append(NoEscape(r'\vspace{0.3cm}'))  # Adjust vertical space
-        # doc.append(NoEscape(r'\vspace{0.3cm}'))  # Adjust vertical space
-        # # Professor name
-        # doc.append(NoEscape(r'\textbf{Professor:} %s' % professor_name))
-        # doc.append(NoEscape(r'\vspace{0.3cm}'))  # Adjust vertical space
-        # # Course details
-        # doc.append(NoEscape(r'\textbf{Course:} %s' % assignment.course.name))
-        # doc.append(NoEscape(r'\vspace{0.3cm}'))  # Adjust vertical space
-        # # Assignment type and title
-        # doc.append(NoEscape(r'\textbf{Assignment Type:} %s' % assignment.assignment_type))
-        # doc.append(NoEscape(r'\vspace{0.3cm}'))  # Adjust vertical space
-        # doc.append(NoEscape(r'\textbf{Title:} %s' % assignment.title))
-        # doc.append(NoEscape(r'\vspace{0.5cm}'))
-        # doc.append(NoEscape(r'\hrule'))
-        # doc.append(NoEscape(r'\end{center}'))
-
         with doc.create(MiniPage(width=r"0.6\linewidth")):
             doc.append(NoEscape(r"\begin{flushleft}"))
             # Left Column: Course name, assignment type, professor name
@@ -108,18 +83,16 @@ def generate_assignment_pdf(assignment, questions, university_name, university_l
             doc.append(Command("vspace", "0.1cm"))
             doc.append(Command("par"))
             doc.append(Command("vspace", "0.1cm"))
-            # doc.append(Command('vspace', '0.3cm'))
             doc.append(NoEscape(r"\normalsize{Professor: \textbf{%s}}" % escape_latex(assignment.course.professor_name)))
             doc.append(Command("par"))
             doc.append(Command("vspace", "0.1cm"))
-            # doc.append(Command('vspace', '0.3cm'))
             doc.append(NoEscape(r"\normalsize{\textbf{%s} assignment}" % escape_latex(assignment.assignment_type)))
             doc.append(NoEscape(r"\end{flushleft}"))
 
         with doc.create(MiniPage(width=r"0.36\linewidth")):
             doc.append(NoEscape(r"\begin{flushright}"))
             doc.append(Command("includegraphics", options="width=1.75cm", arguments=university_logo))
-            doc.append(NoEscape(r"\hfill"))  # Add horizontal space to push content to the right
+            doc.append(NoEscape(r"\hfill"))
             doc.append(Command("par"))
             doc.append(NoEscape(r"\hfill"))
             doc.append(Command("textbf", arguments=Command("normalsize", arguments=escape_latex(university_name))))
@@ -138,43 +111,49 @@ def generate_assignment_pdf(assignment, questions, university_name, university_l
             if url is None:
                 return None, None
             clean = url.lstrip("/")
-            # Case: starts with latex/
             if clean.startswith("latex/"):
                 rel = clean[len("latex/"):]
                 return f"./{rel}", os.path.join(latex_dir, rel)
-            # Case: starts directly with questionattachments/
             if clean.startswith("questionattachments/"):
                 rel = clean
                 return f"./{rel}", os.path.join(latex_dir, rel)
-            # Fallback: try to use basename under questionattachments
             basename = os.path.basename(clean)
             rel = f"questionattachments/{basename}"
             return f"./{rel}", os.path.join(latex_dir, rel)
 
-        # Add questions (avoid re-filtering, in case 'questions' is already filtered)
-        for idx, question in enumerate(questions.order_by("order"), start=1):
+        # Build iterable of questions
+        if hasattr(questions, "order_by"):
+            iterable = questions.order_by("order")
+        else:
+            try:
+                iterable = sorted(questions, key=lambda q: getattr(q, "order", 0))
+            except Exception:
+                iterable = list(questions)
+
+        any_rendered = False
+        for idx, question in enumerate(iterable, start=1):
+            any_rendered = True
             with doc.create(Section(NoEscape(r"\textbf{%s}" % escape_latex(question.title)))):
-                # Choose details with fallback
-                details_text = question.details_modified or question.details_original or ""
+                details_text = getattr(question, "details_modified", None) or getattr(question, "details_original", None) or ""
                 formatted = markdown_to_latex(details_text)
                 if not formatted.strip():
-                    formatted = r"\\emph{No content}"  # visible placeholder
+                    formatted = r"\\emph{No content}"
                 doc.append(NoEscape(formatted))
-                # Add attachment if available
-                if question.attachment:
+                if getattr(question, "attachment", None):
                     rel_tex_path, abs_fs_path = map_url_to_latex_paths(getattr(question.attachment, "url", None))
                     if abs_fs_path and os.path.exists(abs_fs_path):
                         doc.append(NoEscape(r"\begin{center}"))
                         doc.append(Command("includegraphics", options="width=8cm", arguments=rel_tex_path))
                         doc.append(NoEscape(r"\end{center}"))
-                    # If missing, skip instead of raising to keep content visible
+
+        if not any_rendered:
+            doc.append(NoEscape(r"\par \emph{No questions selected for this assignment.}"))
 
         # Generate PDF at absolute path inside the project latex folder
         output_base = os.path.join(settings.BASE_DIR, "latex", "assignment_pdf")
         try:
             doc.generate_pdf(output_base, clean_tex=False)
         except Exception as e:
-            # Attach relevant tail of the LaTeX log for easier debugging
             log_path = f"{output_base}.log"
             log_tail = ""
             try:
@@ -184,12 +163,10 @@ def generate_assignment_pdf(assignment, questions, university_name, university_l
                         tail_lines = lines[-80:]
                         log_tail = "".join(tail_lines)
             except Exception:
-                # Ignore secondary errors while trying to read logs
                 pass
             raise RuntimeError(f"LaTeX compilation failed: {e}\n--- assignment_pdf.log (tail) ---\n{log_tail}")
         return os.path.join(settings.BASE_DIR, "latex", "assignment_pdf.pdf")
     except Exception as e:
-        # Re-raise so the API layer can return a proper error
         raise
 
 
