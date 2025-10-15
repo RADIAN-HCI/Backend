@@ -138,7 +138,22 @@ def generate_assignment_pdf(assignment, questions, university_name, university_l
     
         # Generate PDF at absolute path inside the project latex folder
         output_base = os.path.join(settings.BASE_DIR, "latex", "assignment_pdf")
-        doc.generate_pdf(output_base, clean_tex=False)
+        try:
+            doc.generate_pdf(output_base, clean_tex=False)
+        except Exception as e:
+            # Attach relevant tail of the LaTeX log for easier debugging
+            log_path = f"{output_base}.log"
+            log_tail = ""
+            try:
+                if os.path.exists(log_path):
+                    with open(log_path, "r", encoding="utf-8", errors="ignore") as f:
+                        lines = f.readlines()
+                        tail_lines = lines[-80:]
+                        log_tail = "".join(tail_lines)
+            except Exception:
+                # Ignore secondary errors while trying to read logs
+                pass
+            raise RuntimeError(f"LaTeX compilation failed: {e}\n--- assignment_pdf.log (tail) ---\n{log_tail}")
         return os.path.join(settings.BASE_DIR, "latex", "assignment_pdf.pdf")
     except Exception as e:
         # Re-raise so the API layer can return a proper error
