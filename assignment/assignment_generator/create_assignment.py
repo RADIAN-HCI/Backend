@@ -3,6 +3,7 @@ import pylatex
 from question.models import Question
 from assignment.models import Assignment
 from django.conf import settings
+from pylatex.utils import escape_latex
 
 
 def generate_assignment_pdf(assignment, questions, university_name, university_logo):
@@ -47,7 +48,7 @@ def generate_assignment_pdf(assignment, questions, university_name, university_l
         with doc.create(MiniPage(width=r"0.6\linewidth")):
             doc.append(NoEscape(r"\begin{flushleft}"))
             # Left Column: Course name, assignment type, professor name
-            doc.append(NoEscape(r"\large{Course: \textbf{%s}}" % assignment.course.name.encode("utf-8").decode("utf-8")))
+            doc.append(NoEscape(r"\large{Course: \textbf{%s}}" % escape_latex(assignment.course.name)))
             doc.append(Command("vspace", "0.1cm"))
             doc.append(Command("newline"))
             doc.append(Command("vspace", "0.1cm"))
@@ -55,7 +56,7 @@ def generate_assignment_pdf(assignment, questions, university_name, university_l
             doc.append(
                 NoEscape(
                     r"\normalsize{Professor: \textbf{%s}}"
-                    % assignment.course.professor_name.encode("utf-8").decode("utf-8")
+                    % escape_latex(assignment.course.professor_name)
                 )
             )
             doc.append(Command("newline"))
@@ -63,7 +64,7 @@ def generate_assignment_pdf(assignment, questions, university_name, university_l
             # doc.append(Command('vspace', '0.3cm'))
             doc.append(
                 NoEscape(
-                    r"\normalsize{\textbf{%s} assignment}" % assignment.assignment_type.encode("utf-8").decode("utf-8")
+                    r"\normalsize{\textbf{%s} assignment}" % escape_latex(assignment.assignment_type)
                 )
             )
             doc.append(NoEscape(r"\end{flushleft}"))
@@ -82,7 +83,7 @@ def generate_assignment_pdf(assignment, questions, university_name, university_l
             doc.append(NoEscape(r"\hfill"))
             doc.append(
                 Command(
-                    "textbf", arguments=Command("normalsize", arguments=university_name.encode("utf-8").decode("utf-8"))
+                    "textbf", arguments=Command("normalsize", arguments=escape_latex(university_name))
                 )
             )
             doc.append(NoEscape(r"\end{flushright}"))
@@ -90,7 +91,7 @@ def generate_assignment_pdf(assignment, questions, university_name, university_l
         doc.append(NoEscape(r"\begin{center}"))
         doc.append(NoEscape(r"\hrule height 0.02cm"))
         doc.append(Command("vspace", "0.2cm"))
-        doc.append(NoEscape(r"\large{\textbf{%s}}" % assignment.title.encode("utf-8").decode("utf-8")))
+        doc.append(NoEscape(r"\large{\textbf{%s}}" % escape_latex(assignment.title)))
         doc.append(Command("vspace", "0.2cm"))
         doc.append(NoEscape(r"\hrule height 0.02cm"))
         doc.append(NoEscape(r"\end{center}"))
@@ -117,9 +118,9 @@ def generate_assignment_pdf(assignment, questions, university_name, university_l
         for idx, question in enumerate(
             questions.filter(is_selected_for_assignment=True).order_by("order"), start=1
         ):
-            with doc.create(Section(NoEscape(r"\textbf{%s}" % question.title.encode("utf-8").decode("utf-8")))):
+            with doc.create(Section(NoEscape(r"\textbf{%s}" % escape_latex(question.title)))):
                 # Question details
-                doc.append(NoEscape(r"%s" % question.details_modified.encode("utf-8").decode("utf-8")))
+                doc.append(NoEscape(r"%s" % escape_latex(question.details_modified)))
                 # Add attachment if available
                 if question.attachment:
                     rel_tex_path, abs_fs_path = map_url_to_latex_paths(getattr(question.attachment, "url", None))
