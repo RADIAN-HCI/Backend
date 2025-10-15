@@ -4,6 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 from .assignment_generator.create_assignment import retrieve_and_generate_pdf
 from django.conf import settings
 import os
+from django.urls import reverse
 
 from rest_framework import viewsets
 from .models import Assignment
@@ -33,9 +34,12 @@ def generate_pdf_api(request):
             assignment_id = int(assignment_id_str)
 
             # Call the function to retrieve the PDF for the specified assignment_id
-            retrieve_and_generate_pdf(assignment_id)
+            pdf_path = retrieve_and_generate_pdf(assignment_id)
 
-            return JsonResponse({"message": "PDF generated successfully"}, status=200)
+            # Also include a URL for clients to retrieve/view the PDF
+            pdf_url = request.build_absolute_uri(reverse("assignment_pdf"))
+
+            return JsonResponse({"message": "PDF generated successfully", "pdf_path": pdf_path, "pdf_url": pdf_url}, status=200)
         except ValueError:
             return JsonResponse(
                 {"error": "Invalid assignment_id. It must be an integer."}, status=400

@@ -2,6 +2,7 @@ from pylatex import Document, Section, NoEscape, MiniPage, Command
 import pylatex
 from question.models import Question
 from assignment.models import Assignment
+from django.conf import settings
 
 
 def generate_assignment_pdf(assignment, questions, university_name, university_logo):
@@ -107,12 +108,13 @@ def generate_assignment_pdf(assignment, questions, university_name, university_l
                     doc.append(NoEscape(r"\end{center}"))
                     # doc.append(NoEscape(r'\textbf{Attachment:} %s' % question.attachment.url))
     
-        # Generate PDF
-        doc.generate_pdf("latex/assignment_pdf", clean_tex=False)
+        # Generate PDF at absolute path inside the project latex folder
+        output_base = os.path.join(settings.BASE_DIR, "latex", "assignment_pdf")
+        doc.generate_pdf(output_base, clean_tex=False)
+        return os.path.join(settings.BASE_DIR, "latex", "assignment_pdf.pdf")
     except Exception as e:
-        print("An error occurred:", e)
-
-    return doc.dumps()
+        # Re-raise so the API layer can return a proper error
+        raise
 
 
 from core.models import Course
@@ -121,9 +123,11 @@ import os
 
 def remove_files_in_latex_folder():
     # Define the directory path
-    latex_folder = "latex"
+    latex_folder = os.path.join(settings.BASE_DIR, "latex")
 
     try:
+        # Ensure the latex directory exists
+        os.makedirs(latex_folder, exist_ok=True)
         # Get a list of all files and directories in the latex folder
         files_in_folder = os.listdir(latex_folder)
 
@@ -153,23 +157,27 @@ def retrieve_and_generate_pdf(assignment_id):
     # Call the function to remove files in the latex folder
     remove_files_in_latex_folder()
 
-    # Retrieve Assignment 1
+    # Retrieve Assignment
     try:
         assignment = Assignment.objects.get(id=assignment_id)
     except Assignment.DoesNotExist:
-        print("Assignment with ID 1 does not exist.")
-        return
+        raise ValueError(f"Assignment with ID {assignment_id} does not exist.")
 
-    # Retrieve questions associated with Assignment 1
+    # Retrieve questions associated with Assignment
     questions = Question.objects.filter(assignment_id=assignment_id, is_selected_for_assignment=True)
-    print(len(questions)) 
+    print(len(questions))
 
     # University details
     university_name = "Sharif University of Technology"
-    university_logo = "logo.png"  # Provide the path to your university logo
+    university_logo = "logo.png"  # Expected to be inside the latex directory
 
     # Call generate_assignment_pdf function
-    generate_assignment_pdf(assignment, questions, university_name, university_logo)
+    pdf_path = generate_assignment_pdf(assignment, questions, university_name, university_logo)
+
+    # Verify the PDF exists before returning success
+    if not os.path.exists(pdf_path):
+        raise RuntimeError("PDF generation reported success but the file was not found.")
+    return pdf_path
 
 
 # Call the function to retrieve Assignment 1 and generate the PDF
