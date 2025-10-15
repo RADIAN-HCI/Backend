@@ -1,7 +1,9 @@
 # views.py
-from django.http import JsonResponse
+from django.http import JsonResponse, FileResponse, Http404
 from django.views.decorators.csrf import csrf_exempt
 from .assignment_generator.create_assignment import retrieve_and_generate_pdf
+from django.conf import settings
+import os
 
 from rest_framework import viewsets
 from .models import Assignment
@@ -42,3 +44,14 @@ def generate_pdf_api(request):
             return JsonResponse({"error": str(e)}, status=500)
     else:
         return JsonResponse({"error": "Method not allowed"}, status=405)
+
+
+def assignment_pdf_view(request):
+    pdf_path = os.path.join(settings.BASE_DIR, "latex", "assignment_pdf.pdf")
+    if not os.path.exists(pdf_path):
+        raise Http404("PDF not found. Generate it first.")
+
+    response = FileResponse(open(pdf_path, "rb"), as_attachment=False, filename="assignment_pdf.pdf", content_type="application/pdf")
+    # Ensure inline display in browsers
+    response["Content-Disposition"] = 'inline; filename="assignment_pdf.pdf"'
+    return response
