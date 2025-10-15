@@ -62,11 +62,12 @@ def generate_assignment_pdf(assignment, questions, university_name, university_l
                 return ""
             out = []
             i = 0
-            code_block_pattern = re.compile(r"```(\w+)?\n([\s\S]*?)```", re.MULTILINE)
+            # Support CRLF and flexible language token
+            code_block_pattern = re.compile(r"```([^\n\r]*)\r?\n([\s\S]*?)```", re.MULTILINE)
             for m in code_block_pattern.finditer(md):
                 # Text before code block
                 out.append(format_inline(md[i:m.start()]))
-                lang = m.group(1) or ""
+                lang = (m.group(1) or "").strip()
                 code = m.group(2)
                 lang_opt = f"[language={lang.capitalize()}]" if lang else ""
                 out.append("\n\\begin{lstlisting}%s\n%s\n\\end{lstlisting}\n" % (lang_opt, code))
@@ -105,42 +106,23 @@ def generate_assignment_pdf(assignment, questions, university_name, university_l
             # Left Column: Course name, assignment type, professor name
             doc.append(NoEscape(r"\large{Course: \textbf{%s}}" % escape_latex(assignment.course.name)))
             doc.append(Command("vspace", "0.1cm"))
-            doc.append(Command("newline"))
+            doc.append(Command("par"))
             doc.append(Command("vspace", "0.1cm"))
             # doc.append(Command('vspace', '0.3cm'))
-            doc.append(
-                NoEscape(
-                    r"\normalsize{Professor: \textbf{%s}}"
-                    % escape_latex(assignment.course.professor_name)
-                )
-            )
-            doc.append(Command("newline"))
+            doc.append(NoEscape(r"\normalsize{Professor: \textbf{%s}}" % escape_latex(assignment.course.professor_name)))
+            doc.append(Command("par"))
             doc.append(Command("vspace", "0.1cm"))
             # doc.append(Command('vspace', '0.3cm'))
-            doc.append(
-                NoEscape(
-                    r"\normalsize{\textbf{%s} assignment}" % escape_latex(assignment.assignment_type)
-                )
-            )
+            doc.append(NoEscape(r"\normalsize{\textbf{%s} assignment}" % escape_latex(assignment.assignment_type)))
             doc.append(NoEscape(r"\end{flushleft}"))
 
         with doc.create(MiniPage(width=r"0.36\linewidth")):
             doc.append(NoEscape(r"\begin{flushright}"))
-            doc.append(
-                Command(
-                    "includegraphics", options="width=1.75cm", arguments=university_logo
-                )
-            )
-            doc.append(
-                NoEscape(r"\hfill")
-            )  # Add horizontal space to push content to the right
-            doc.append(Command("newline"))
+            doc.append(Command("includegraphics", options="width=1.75cm", arguments=university_logo))
+            doc.append(NoEscape(r"\hfill"))  # Add horizontal space to push content to the right
+            doc.append(Command("par"))
             doc.append(NoEscape(r"\hfill"))
-            doc.append(
-                Command(
-                    "textbf", arguments=Command("normalsize", arguments=escape_latex(university_name))
-                )
-            )
+            doc.append(Command("textbf", arguments=Command("normalsize", arguments=escape_latex(university_name))))
             doc.append(NoEscape(r"\end{flushright}"))
 
         doc.append(NoEscape(r"\begin{center}"))
@@ -183,13 +165,7 @@ def generate_assignment_pdf(assignment, questions, university_name, university_l
                     if not abs_fs_path or not os.path.exists(abs_fs_path):
                         raise FileNotFoundError(f"Attachment not found for question '{question.title}': expected at {abs_fs_path}")
                     doc.append(NoEscape(r"\begin{center}"))
-                    doc.append(
-                        Command(
-                            "includegraphics",
-                            options="width=8cm",
-                            arguments=rel_tex_path,
-                        )
-                    )
+                    doc.append(Command("includegraphics", options="width=8cm", arguments=rel_tex_path))
                     doc.append(NoEscape(r"\end{center}"))
                     # doc.append(NoEscape(r'\textbf{Attachment:} %s' % question.attachment.url))
 
