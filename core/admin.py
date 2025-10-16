@@ -1,7 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
-from django.contrib.auth.models import User
-from .models import Course, User  # Import your custom user model
+from .models import Course, User  # Use the custom user model
 
 # Register your custom user model with the admin site
 # admin.site.register(UserProfile, UserAdmin)
@@ -22,7 +21,26 @@ from .models import Course, User  # Import your custom user model
 # admin.site.unregister(User)
 # admin.site.register(User, UserAdmin)
 
-admin.site.register(User, BaseUserAdmin)
+class CustomUserAdmin(BaseUserAdmin):
+    list_display = ("username", "email", "first_name", "last_name", "role", "is_staff")
+    list_filter = ("role", "is_staff", "is_superuser", "is_active", "groups")
+    search_fields = ("username", "first_name", "last_name", "email")
+    ordering = ("username",)
+
+    # Show role (and courses) on the user edit page
+    fieldsets = BaseUserAdmin.fieldsets + (
+        ("Role & Access", {"fields": ("role",)}),
+        ("Courses", {"fields": ("courses",)}),
+    )
+
+    # Include role (and courses) on the user creation page
+    add_fieldsets = BaseUserAdmin.add_fieldsets + (
+        ("Role & Access", {"fields": ("role",)}),
+        ("Courses", {"fields": ("courses",)}),
+    )
+
+
+admin.site.register(User, CustomUserAdmin)
 
 
 @admin.register(Course)
