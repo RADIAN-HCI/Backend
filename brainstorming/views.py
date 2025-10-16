@@ -30,6 +30,11 @@ class BrainstormViewSet(viewsets.ModelViewSet):
 
             queryset = queryset.filter(assignment_id=assignment_id)
 
+        # Role-based visibility: TAs see only their own
+        user = self.request.user
+        if getattr(user, 'role', None) == 'TA':
+            queryset = queryset.filter(owner=user)
+
         return queryset
 
     def parse_response(self, response):

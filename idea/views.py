@@ -24,6 +24,11 @@ class IdeaViewSet(viewsets.ModelViewSet):
 
             queryset = queryset.filter(brainstorm_id=brainstorm_id)
 
+        # Role-based visibility: TAs see only their own
+        user = getattr(self.request, 'user', None)
+        if getattr(user, 'role', None) == 'TA':
+            queryset = queryset.filter(owner=user)
+
         return queryset
 
     def list(self, request, *args, **kwargs):

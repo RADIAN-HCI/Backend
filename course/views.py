@@ -14,6 +14,14 @@ class CourseViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        # Role-based visibility: TAs see only their own
+        user = self.request.user
+        if getattr(user, 'role', None) == 'TA':
+            queryset = queryset.filter(owner=user)
+        return queryset
+
     @action(detail=True, methods=["post"])
     def add_course(self, request, pk=None):
         course = self.get_object()

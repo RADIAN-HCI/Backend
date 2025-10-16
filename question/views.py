@@ -27,6 +27,11 @@ class QuestionViewSet(viewsets.ModelViewSet):
 
             queryset = queryset.filter(assignment_id=assignment_id)
 
+        # Role-based visibility: TAs see only their own
+        user = self.request.user
+        if getattr(user, 'role', None) == 'TA':
+            queryset = queryset.filter(author=user)
+
         return queryset
 
     def partial_update(self, request, pk=None):
@@ -115,7 +120,13 @@ class QuestionViewSet(viewsets.ModelViewSet):
         
     def list_sorted_for_assignment(self, request, assignment_id):
         try:
-            questions = Question.objects.filter(assignment_id=assignment_id).order_by('order')
+            questions = Question.objects.filter(assignment_id=assignment_id)
+            # Role-based visibility: TAs see only their own
+            user = request.user
+            if getattr(user, 'role', None) == 'TA':
+                questions = questions.filter(author=user)
+
+            questions = questions.order_by('order')
             serializer = self.get_serializer(questions, many=True)
             return Response(serializer.data)
         except Question.DoesNotExist:
@@ -124,6 +135,10 @@ class QuestionViewSet(viewsets.ModelViewSet):
     def update_order_for_assignment(self, request, assignment):
         try:
             questions = Question.objects.filter(assignment=assignment)
+            # Role-based visibility: TAs can only update their own questions' order
+            user = request.user
+            if getattr(user, 'role', None) == 'TA':
+                questions = questions.filter(author=user)
             
             # Convert list of dictionaries to a dictionary for easy lookup
             order_mapping = {str(item['id']): item['order'] for item in request.data}
