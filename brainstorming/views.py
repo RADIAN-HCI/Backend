@@ -18,6 +18,20 @@ class BrainstormViewSet(viewsets.ModelViewSet):
     serializer_class = BrainStormSerializer
     permission_classes = [IsAuthenticated]
 
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        assignment_param = self.request.query_params.get("assignment_id") or self.request.query_params.get("assignment")
+
+        if assignment_param:
+            try:
+                assignment_id = int(assignment_param)
+            except (TypeError, ValueError):
+                return queryset.none()
+
+            queryset = queryset.filter(assignment_id=assignment_id)
+
+        return queryset
+
     def parse_response(self, response):
         questions = []
         pattern = r"Question\d+\|([^|]+)\|([^|]+)\|<?(\d+)>?\|<?(\d+)>?"
