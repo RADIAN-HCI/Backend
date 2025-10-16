@@ -57,7 +57,7 @@ class BrainstormViewSet(viewsets.ModelViewSet):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.validated_data["owner"] = request.user
-        brainstorm_obj = serializer.save()
+        brainstorm_obj = serializer.save(owner=request.user)
         headers = self.get_success_headers(serializer.data)
 
         assignment = Assignment.objects.get(id=request.data["assignment"])
@@ -120,6 +120,7 @@ class BrainstormViewSet(viewsets.ModelViewSet):
                 "difficulty": difficulty,
                 "innovation": innovation,
                 "brainstorm": brainstorm_obj,
+                "owner": request.user,
             }
             Idea(**data).save()
 

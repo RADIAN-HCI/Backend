@@ -17,6 +17,7 @@ class Assignment(models.Model):
     title = models.CharField(max_length=255)
     assignment_type = models.CharField(max_length=20, choices=TYPE_CHOICES)
     deadline = models.DateField()  
+    owner = models.ForeignKey('core.User', on_delete=models.SET_NULL, null=True, blank=True)
     # 'questions' field is defined as a ManyToManyField in Assignment class
 
     def __str__(self):

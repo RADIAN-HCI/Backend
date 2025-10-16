@@ -11,21 +11,25 @@ class IdeaViewSet(viewsets.ModelViewSet):
     serializer_class = IdeaSerializer
     # permission_classes = [IsAuthenticated]
 
+    def get_queryset(self):
+        queryset = Idea.objects.all()
+        # Support nested route /brainstorms/{brainstorm_pk}/ideas and query param brainstorm_id
+        brainstorm_param = self.kwargs.get('brainstorm_pk') or self.request.query_params.get('brainstorm_id') or self.request.query_params.get('brainstorm')
+
+        if brainstorm_param:
+            try:
+                brainstorm_id = int(brainstorm_param)
+            except (TypeError, ValueError):
+                return queryset.none()
+
+            queryset = queryset.filter(brainstorm_id=brainstorm_id)
+
+        return queryset
+
     def list(self, request, *args, **kwargs):
-        brainstorm = request.query_params.get('brainstorm_id')
+        queryset = self.get_queryset()
+        serializer = self.get_serializer(queryset, many=True)
+        return Response(serializer.data)
 
-        if not brainstorm:
-            return Response({"error": "Brainstorm ID is required"}, status=status.HTTP_400_BAD_REQUEST)
-
-        try:
-            brainstorm = int(brainstorm)
-        except ValueError:
-            return Response({"error": "Brainstorm ID must be an integer"}, status=status.HTTP_400_BAD_REQUEST)
-
-        print(brainstorm)
-        try:
-            ideas = Idea.objects.filter(brainstorm=brainstorm)
-            serializer = self.get_serializer(ideas, many=True)
-            return Response(serializer.data)
-        except Idea.DoesNotExist:
-            return Response({"error": "Ideas not found for the specified brainstorm"}, status=status.HTTP_404_NOT_FOUND)
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)

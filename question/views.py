@@ -15,6 +15,19 @@ class QuestionListByAssignment(generics.ListAPIView):
 
 
 class QuestionViewSet(viewsets.ModelViewSet):
+    def get_queryset(self):
+        queryset = Question.objects.all()
+        assignment_param = self.request.query_params.get("assignment_id") or self.request.query_params.get("assignment")
+
+        if assignment_param:
+            try:
+                assignment_id = int(assignment_param)
+            except (TypeError, ValueError):
+                return queryset.none()
+
+            queryset = queryset.filter(assignment_id=assignment_id)
+
+        return queryset
 
     def partial_update(self, request, pk=None):
         try:

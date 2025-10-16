@@ -10,6 +10,7 @@ class Idea(models.Model):
     difficulty = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(100)])
     innovation = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(100)])
     brainstorm = models.ForeignKey(BrainStorm, on_delete=models.CASCADE, related_name='ideas')
+    owner = models.ForeignKey('core.User', on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return self.title
