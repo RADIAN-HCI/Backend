@@ -1,11 +1,13 @@
 from pylatex import Document, Section, NoEscape, MiniPage, Command
 import pylatex
 from question.models import Question
-from assignment.models import Assignment
+from assignment.models import Assignment, GeneratedPDF
 from django.conf import settings
 from pylatex.utils import escape_latex
 import subprocess
 import re
+from django.utils import timezone
+from uuid import uuid4
 
 
 def generate_assignment_pdf(assignment, questions, university_name, university_logo):
@@ -206,8 +208,11 @@ def generate_assignment_pdf(assignment, questions, university_name, university_l
         if not any_rendered:
             doc.append(NoEscape(r"\par \emph{No questions selected for this assignment.}"))
 
-        # Generate TEX first, sanitize, then compile to PDF
-        output_base = os.path.join(settings.BASE_DIR, "latex", "assignment_pdf")
+        # Generate TEX first, sanitize, then compile to PDF with a unique name
+        timestamp_str = timezone.now().strftime("%Y%m%d_%H%M%S")
+        unique_suffix = uuid4().hex[:8]
+        output_basename = f"assignment_{assignment.id}_{timestamp_str}_{unique_suffix}"
+        output_base = os.path.join(settings.BASE_DIR, "latex", output_basename)
         tex_dir = os.path.dirname(output_base)
         tex_path = f"{output_base}.tex"
         try:
@@ -322,7 +327,7 @@ def generate_assignment_pdf(assignment, questions, university_name, university_l
                 f"STDERR:\n{e.stderr.decode('utf-8', errors='ignore')}\n" +
                 f"--- assignment_pdf.log (tail) ---\n{log_tail}"
             )
-        return os.path.join(settings.BASE_DIR, "latex", "assignment_pdf.pdf")
+        return f"{output_base}.pdf"
     except Exception as e:
         raise
 
@@ -341,23 +346,17 @@ def remove_files_in_latex_folder():
         # Get a list of all files and directories in the latex folder
         files_in_folder = os.listdir(latex_folder)
 
-        # Iterate over each file in the folder
+        # Iterate over each file in the folder, but only remove LaTeX aux/log files
+        aux_suffixes = (".aux", ".fdb_latexmk", ".fls", ".log", ".out", ".synctex.gz")
         for file_name in files_in_folder:
-            # Construct the full path to the file
             if file_name == "logo.png":
                 continue
             file_path = os.path.join(latex_folder, file_name)
-
-            # Check if the path points to a file (not a directory)
             if os.path.isfile(file_path):
-                # Remove the file
-                os.remove(file_path)
-                print(f"Removed: {file_path}")
-            else:
-                # Optionally, you can add handling for directories if needed
-                pass
-
-        print("All files in the latex folder have been removed successfully.")
+                if any(file_name.endswith(sfx) for sfx in aux_suffixes):
+                    os.remove(file_path)
+                    print(f"Removed: {file_path}")
+        print("Temporary LaTeX aux/log files have been removed successfully.")
 
     except Exception as e:
         print(f"An error occurred: {str(e)}")
@@ -389,9 +388,23 @@ def retrieve_and_generate_pdf(assignment_id):
     # Call generate_assignment_pdf function
     pdf_path = generate_assignment_pdf(assignment, questions, university_name, university_logo)
 
-    # Verify the PDF exists before returning success
+    # Verify the PDF exists before returning success and record metadata
     if not os.path.exists(pdf_path):
         raise RuntimeError("PDF generation reported success but the file was not found.")
+
+    try:
+        file_size = os.path.getsize(pdf_path)
+    except Exception:
+        file_size = 0
+
+    GeneratedPDF.objects.create(
+        assignment=assignment,
+        author=getattr(assignment, 'owner', None),
+        file_name=os.path.basename(pdf_path),
+        file_path=pdf_path,
+        file_size_bytes=file_size,
+    )
+
     return pdf_path
 
 
