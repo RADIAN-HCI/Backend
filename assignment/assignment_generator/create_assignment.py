@@ -213,14 +213,81 @@ def generate_assignment_pdf(assignment, questions, university_name, university_l
         try:
             # Write .tex file
             doc.generate_tex(output_base)
-            # Sanitize problematic tokens that can cause vertical-mode errors
+            # Sanitize problematic tokens and convert simple Markdown to LaTeX if any slipped through
             try:
                 with open(tex_path, "r", encoding="utf-8", errors="ignore") as f:
-                    tex_src = f.read()
-                # Replace low-level \newline with inline line breaks
-                tex_src = tex_src.replace(r"\newline", r"\\")
+                    lines = f.readlines()
+
+                processed = []
+                in_itemize = False
+                in_enumerate = False
+
+                def close_lists():
+                    nonlocal in_itemize, in_enumerate
+                    if in_itemize:
+                        processed.append("\\end{itemize}\n")
+                        in_itemize = False
+                    if in_enumerate:
+                        processed.append("\\end{enumerate}\n")
+                        in_enumerate = False
+
+                for line in lines:
+                    # Normalize low-level newline tokens from earlier layers
+                    if "\\newline" in line:
+                        line = line.replace(r"\newline", r"\\")
+
+                    stripped = line.lstrip()
+                    # Skip conversion on explicit LaTeX command lines
+                    if stripped.startswith("\\"):
+                        close_lists()
+                        processed.append(line)
+                        continue
+
+                    # Headings: support both escaped (\#) and raw (#)
+                    m3 = re.match(r"^\s*(?:(?:\\#){3}|###)\s+(.*)$", line)
+                    if m3:
+                        close_lists()
+                        processed.append(f"\\subsubsection{{{m3.group(1).rstrip()}}}\n")
+                        continue
+                    m2 = re.match(r"^\s*(?:(?:\\#){2}|##)\s+(.*)$", line)
+                    if m2:
+                        close_lists()
+                        processed.append(f"\\subsection{{{m2.group(1).rstrip()}}}\n")
+                        continue
+                    m1 = re.match(r"^\s*(?:(?:\\#){1}|#)\s+(.*)$", line)
+                    if m1:
+                        close_lists()
+                        processed.append(f"\\section{{{m1.group(1).rstrip()}}}\n")
+                        continue
+
+                    # Ordered list: "1. item"
+                    mo = re.match(r"^\s*(\d+)\.\s+(.*)$", line)
+                    if mo:
+                        if not in_enumerate:
+                            close_lists()
+                            processed.append("\\begin{enumerate}\n")
+                            in_enumerate = True
+                        processed.append(f"\\item {mo.group(2).rstrip()}\n")
+                        continue
+
+                    # Unordered list: "- item"
+                    mu = re.match(r"^\s*-\s+(.*)$", line)
+                    if mu:
+                        if not in_itemize:
+                            close_lists()
+                            processed.append("\\begin{itemize}\n")
+                            in_itemize = True
+                        processed.append(f"\\item {mu.group(1).rstrip()}\n")
+                        continue
+
+                    # Normal text line
+                    close_lists()
+                    processed.append(line)
+
+                close_lists()
+
                 with open(tex_path, "w", encoding="utf-8", errors="ignore") as f:
-                    f.write(tex_src)
+                    f.writelines(processed)
             except Exception:
                 # If sanitization fails, proceed to compile with original file
                 pass
