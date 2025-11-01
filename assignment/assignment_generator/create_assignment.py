@@ -65,16 +65,87 @@ def generate_assignment_pdf(assignment, questions, university_name, university_l
             i = 0
             # Support CRLF and flexible language token
             code_block_pattern = re.compile(r"```([^\n\r]*)\r?\n([\s\S]*?)```", re.MULTILINE)
+
+            # Known languages for listings; otherwise omit language option
+            known_langs = {"python", "py", "bash", "sh", "c", "cpp", "java", "javascript", "js", "text"}
+
+            def convert_blocks(text: str) -> str:
+                lines = text.splitlines()
+                buf = []
+                in_itemize = False
+                in_enumerate = False
+
+                def close_lists():
+                    nonlocal in_itemize, in_enumerate
+                    if in_itemize:
+                        buf.append("\\end{itemize}\n")
+                        in_itemize = False
+                    if in_enumerate:
+                        buf.append("\\end{enumerate}\n")
+                        in_enumerate = False
+
+                for raw in lines:
+                    line = raw.rstrip()
+                    if not line.strip():
+                        # blank line: close lists and add paragraph break
+                        close_lists()
+                        buf.append("\n")
+                        continue
+
+                    # Headings
+                    m3 = re.match(r"^###\s+(.*)$", line)
+                    if m3:
+                        close_lists()
+                        buf.append("\\subsubsection{" + format_inline(m3.group(1)) + "}\n")
+                        continue
+                    m2 = re.match(r"^##\s+(.*)$", line)
+                    if m2:
+                        close_lists()
+                        buf.append("\\subsection{" + format_inline(m2.group(1)) + "}\n")
+                        continue
+                    m1 = re.match(r"^#\s+(.*)$", line)
+                    if m1:
+                        close_lists()
+                        buf.append("\\section{" + format_inline(m1.group(1)) + "}\n")
+                        continue
+
+                    # Ordered list: 1. item
+                    mo = re.match(r"^\s*(\d+)\.\s+(.*)$", line)
+                    if mo:
+                        if not in_enumerate:
+                            close_lists()
+                            buf.append("\\begin{enumerate}\n")
+                            in_enumerate = True
+                        buf.append("\\item " + format_inline(mo.group(2)) + "\n")
+                        continue
+
+                    # Unordered list: - item
+                    mu = re.match(r"^\s*-\s+(.*)$", line)
+                    if mu:
+                        if not in_itemize:
+                            close_lists()
+                            buf.append("\\begin{itemize}\n")
+                            in_itemize = True
+                        buf.append("\\item " + format_inline(mu.group(1)) + "\n")
+                        continue
+
+                    # Normal paragraph line
+                    close_lists()
+                    buf.append(format_inline(line) + "\n")
+
+                close_lists()
+                return "".join(buf)
+
             for m in code_block_pattern.finditer(md):
                 # Text before code block
-                out.append(format_inline(md[i:m.start()]))
-                lang = (m.group(1) or "").strip()
+                out.append(convert_blocks(md[i:m.start()]))
+                lang = (m.group(1) or "").strip().lower()
                 code = m.group(2)
-                lang_opt = f"[language={lang.capitalize()}]" if lang else ""
+                lang_opt = f"[language={lang}]" if lang in known_langs else ""
                 out.append("\n\\begin{lstlisting}%s\n%s\n\\end{lstlisting}\n" % (lang_opt, code))
                 i = m.end()
             # Remainder text
-            out.append(format_inline(md[i:]))
+            out.append(convert_blocks(md[i:]))
             return "".join(out)
 
         with doc.create(MiniPage(width=r"0.6\linewidth")):
