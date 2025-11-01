@@ -156,13 +156,17 @@ def generate_assignment_pdf(assignment, questions, university_name, university_l
 
             # Compile with latexmk
             subprocess.run(
-                ["latexmk", "--pdf", "--interaction=nonstopmode", os.path.basename(tex_path)],
+                ["latexmk", "--pdf", "-f", "--interaction=nonstopmode", os.path.basename(tex_path)],
                 cwd=tex_dir,
                 check=True,
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
             )
         except subprocess.CalledProcessError as e:
+            # If PDF was produced despite errors, return it
+            pdf_path = f"{output_base}.pdf"
+            if os.path.exists(pdf_path):
+                return pdf_path
             log_path = f"{output_base}.log"
             log_tail = ""
             try:
