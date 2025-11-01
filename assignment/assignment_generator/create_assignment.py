@@ -4,6 +4,7 @@ from question.models import Question
 from assignment.models import Assignment
 from django.conf import settings
 from pylatex.utils import escape_latex
+import subprocess
 import re
 
 
@@ -134,11 +135,34 @@ def generate_assignment_pdf(assignment, questions, university_name, university_l
         if not any_rendered:
             doc.append(NoEscape(r"\par \emph{No questions selected for this assignment.}"))
 
-        # Generate PDF at absolute path inside the project latex folder
+        # Generate TEX first, sanitize, then compile to PDF
         output_base = os.path.join(settings.BASE_DIR, "latex", "assignment_pdf")
+        tex_dir = os.path.dirname(output_base)
+        tex_path = f"{output_base}.tex"
         try:
-            doc.generate_pdf(output_base, clean_tex=False)
-        except Exception as e:
+            # Write .tex file
+            doc.generate_tex(output_base)
+            # Sanitize problematic tokens that can cause vertical-mode errors
+            try:
+                with open(tex_path, "r", encoding="utf-8", errors="ignore") as f:
+                    tex_src = f.read()
+                # Replace low-level \newline with inline line breaks
+                tex_src = tex_src.replace(r"\newline", r"\\")
+                with open(tex_path, "w", encoding="utf-8", errors="ignore") as f:
+                    f.write(tex_src)
+            except Exception:
+                # If sanitization fails, proceed to compile with original file
+                pass
+
+            # Compile with latexmk
+            subprocess.run(
+                ["latexmk", "--pdf", "--interaction=nonstopmode", os.path.basename(tex_path)],
+                cwd=tex_dir,
+                check=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+            )
+        except subprocess.CalledProcessError as e:
             log_path = f"{output_base}.log"
             log_tail = ""
             try:
@@ -149,7 +173,13 @@ def generate_assignment_pdf(assignment, questions, university_name, university_l
                         log_tail = "".join(tail_lines)
             except Exception:
                 pass
-            raise RuntimeError(f"LaTeX compilation failed: {e}\n--- assignment_pdf.log (tail) ---\n{log_tail}")
+            raise RuntimeError(
+                "LaTeX compilation failed (latexmk).\n" +
+                f"Return code: {e.returncode}\n" +
+                f"STDOUT:\n{e.stdout.decode('utf-8', errors='ignore')}\n" +
+                f"STDERR:\n{e.stderr.decode('utf-8', errors='ignore')}\n" +
+                f"--- assignment_pdf.log (tail) ---\n{log_tail}"
+            )
         return os.path.join(settings.BASE_DIR, "latex", "assignment_pdf.pdf")
     except Exception as e:
         raise
