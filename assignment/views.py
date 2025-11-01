@@ -10,6 +10,7 @@ from rest_framework import viewsets
 from .models import Assignment
 from .serializers import AssignmentSerializer
 from rest_framework.permissions import IsAuthenticated
+import posixpath
 
 
 class AssignmentViewSet(viewsets.ModelViewSet):
@@ -47,10 +48,11 @@ def generate_pdf_api(request):
             # Call the function to retrieve the PDF for the specified assignment_id
             pdf_path = retrieve_and_generate_pdf(assignment_id)
 
-            # Also include a URL for clients to retrieve/view the PDF
-            pdf_url = request.build_absolute_uri(reverse("assignment_pdf"))
+            # Build a direct URL to the generated file
+            filename = os.path.basename(pdf_path)
+            pdf_url = request.build_absolute_uri(reverse("serve_generated_pdf", kwargs={"filename": filename}))
 
-            return JsonResponse({"message": "PDF generated successfully", "pdf_path": pdf_path, "pdf_url": pdf_url}, status=200)
+            return JsonResponse({"message": "PDF generated successfully", "pdf_url": pdf_url, "file_name": filename}, status=200)
         except ValueError:
             return JsonResponse(
                 {"error": "Invalid assignment_id. It must be an integer."}, status=400
@@ -69,4 +71,24 @@ def assignment_pdf_view(request):
     response = FileResponse(open(pdf_path, "rb"), as_attachment=False, filename="assignment_pdf.pdf", content_type="application/pdf")
     # Ensure inline display in browsers
     response["Content-Disposition"] = 'inline; filename="assignment_pdf.pdf"'
+    return response
+
+
+def serve_generated_pdf(request, filename: str):
+    # Only allow simple filenames (defend against path traversal)
+    if "/" in filename or ".." in filename or filename.startswith("."):
+        raise Http404("Invalid filename")
+    if not filename.lower().endswith(".pdf"):
+        raise Http404("Unsupported file type")
+
+    latex_dir = os.path.join(settings.BASE_DIR, "latex")
+    pdf_path = os.path.normpath(os.path.join(latex_dir, filename))
+    # Ensure the file is inside the latex directory
+    if not pdf_path.startswith(os.path.abspath(latex_dir) + os.sep):
+        raise Http404("Invalid path")
+    if not os.path.exists(pdf_path):
+        raise Http404("PDF not found")
+
+    response = FileResponse(open(pdf_path, "rb"), as_attachment=False, filename=filename, content_type="application/pdf")
+    response["Content-Disposition"] = f'inline; filename="{filename}"'
     return response

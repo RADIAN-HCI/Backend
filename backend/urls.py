@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
-from assignment.views import generate_pdf_api, assignment_pdf_view
+from assignment.views import generate_pdf_api, assignment_pdf_view, serve_generated_pdf
 
 urlpatterns = [
     path("api/", include("question.urls")),
@@ -12,5 +12,6 @@ urlpatterns = [
     path("auth/", include("djoser.urls.jwt")),
     path("generate_pdf/", generate_pdf_api, name="generate_pdf_api"),
     path("assignment_pdf.pdf", assignment_pdf_view, name="assignment_pdf"),
+    path("latex/<str:filename>", serve_generated_pdf, name="serve_generated_pdf"),
     path("admin/", admin.site.urls),
 ]
