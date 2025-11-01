@@ -79,22 +79,15 @@ def generate_assignment_pdf(assignment, questions, university_name, university_l
         with doc.create(MiniPage(width=r"0.6\linewidth")):
             doc.append(NoEscape(r"\begin{flushleft}"))
             # Left Column: Course name, assignment type, professor name
-            doc.append(NoEscape(r"\large{Course: \textbf{%s}}" % escape_latex(assignment.course.name)))
-            doc.append(Command("vspace", "0.1cm"))
-            doc.append(Command("par"))
-            doc.append(Command("vspace", "0.1cm"))
-            doc.append(NoEscape(r"\normalsize{Professor: \textbf{%s}}" % escape_latex(assignment.course.professor_name)))
-            doc.append(Command("par"))
-            doc.append(Command("vspace", "0.1cm"))
+            doc.append(NoEscape(r"\large{Course: \textbf{%s}}\\[0.1cm]" % escape_latex(assignment.course.name)))
+            doc.append(NoEscape(r"\normalsize{Professor: \textbf{%s}}\\[0.1cm]" % escape_latex(assignment.course.professor_name)))
             doc.append(NoEscape(r"\normalsize{\textbf{%s} assignment}" % escape_latex(assignment.assignment_type)))
             doc.append(NoEscape(r"\end{flushleft}"))
 
         with doc.create(MiniPage(width=r"0.36\linewidth")):
             doc.append(NoEscape(r"\begin{flushright}"))
             doc.append(Command("includegraphics", options="width=1.75cm", arguments=university_logo))
-            doc.append(NoEscape(r"\hfill"))
-            doc.append(Command("par"))
-            doc.append(NoEscape(r"\hfill"))
+            doc.append(NoEscape(r"\\[0.1cm]"))
             doc.append(Command("textbf", arguments=Command("normalsize", arguments=escape_latex(university_name))))
             doc.append(NoEscape(r"\end{flushright}"))
 
